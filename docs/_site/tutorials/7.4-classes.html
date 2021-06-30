@@ -1,0 +1,481 @@
+
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+    
+<!-- how to read page -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<!-- icons -->
+<link rel="icon" href="/assets/images/favicon.ico">
+
+<!-- get title from page meta -->
+<title>classes &#8211; Fieldnotes-2021</title>
+
+
+<!-- store meta info on page -->
+
+
+
+
+
+<!-- Store full web url -->
+
+<link rel="canonical" href="
+	
+	
+		/tutorials/7.4-classes.html
+	
+">
+
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/custom.css">
+<link rel="stylesheet" href="/assets/css/syntax.css">
+</head>
+
+
+<body id="default">
+
+    <header>
+	    
+
+<!-- NAVBAR (DARK) -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="">Fieldnotes-2021</a>
+
+    <!-- The toggle switch for collapsed navbar-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Make collapsable -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        <!-- The elements of the navbar -->
+        <ul class="navbar-nav">
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+                        <a class="nav-link" href=/>Home</a>
+                    
+                </li>
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Itinerary</a>
+                        
+                        <div class="dropdown-menu">
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-2.html">Day 2 (Shimian to Xinduqiao)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-3.html">Day 3 (Xinduqiao to Litang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-4.html">Day 4 (Litang to Litang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-5.html">Day 5 (Litang to Bamei)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 6 (Dawu to Luhuo)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 7 (Luhuo to Wengdaxiang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 8 (Wengdaxiang to Zamtang)</a>
+                            
+                        
+                        </div>
+
+                    <!-- open link in new window -->
+                    
+                </li>
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+                        <a class="nav-link" href=/pages/assignments.html>Methods</a>
+                    
+                </li>
+            
+            <!-- LINK TO HOME -->
+            <li class="nav-item mr-3">
+
+        </ul>
+    </div>
+</nav>
+  
+	    
+
+
+<!-- Splash header about the news -->
+<div class="jumbotron" style="background-image: url(/assets/images/hackers-panel.png);">
+    <!-- <div class="mb-3 mt-0"><img src="/assets/images/E3B-logo.png"></div> -->
+    <!-- <h1 class="display-5 font-italic">classes</h1> -->
+    <!-- <p class="lead mt-3 mb-0"><i></i></p> -->
+</div>
+    </header>
+
+    <main role="main" class="container-md">
+    	<div class="col-sm-10 mx-auto">
+		    <style>
+h3 {
+    margin-top: 30px
+}
+pre {
+    line-height: 1.5em;
+}
+pre code {
+    font-size: 0.9em;
+}
+</style>
+
+<h3 id="python-classes">Python classes</h3>
+
+<p><strong>Table of Contents:</strong></p>
+<ul id="markdown-toc">
+  <li><a href="#python-classes" id="markdown-toc-python-classes">Python classes</a></li>
+  <li><a href="#learning-objectives" id="markdown-toc-learning-objectives">Learning objectives:</a></li>
+  <li><a href="#everything-is-an-object" id="markdown-toc-everything-is-an-object">Everything is an object</a></li>
+  <li><a href="#object-oriented-programming" id="markdown-toc-object-oriented-programming">Object-oriented programming</a></li>
+  <li><a href="#creating-custom-classes" id="markdown-toc-creating-custom-classes">Creating custom classes</a></li>
+  <li><a href="#self-what-does-it-mean" id="markdown-toc-self-what-does-it-mean"><code class="language-plaintext highlighter-rouge">self</code>: what does it mean?</a></li>
+  <li><a href="#class-init-arguments" id="markdown-toc-class-init-arguments">class init arguments</a></li>
+  <li><a href="#class-functions" id="markdown-toc-class-functions">class functions</a></li>
+  <li><a href="#thinking-of-object-design" id="markdown-toc-thinking-of-object-design">Thinking of object design</a></li>
+  <li><a href="#reiterate" id="markdown-toc-reiterate">Reiterate</a></li>
+</ul>
+
+<p>The final Python object we have yet to learn is the <code class="language-plaintext highlighter-rouge">class</code> object. 
+Classes are used to implement object-oriented design in Python. 
+It is actually possible to use Python and even write Python programs
+completely without ever creating a <code class="language-plaintext highlighter-rouge">class</code> object. Classes are not 
+fundamental to Python. They are a design choice. But, by learning
+to use <code class="language-plaintext highlighter-rouge">class</code> definitions in your code you will find that you are
+able to write much better organized code that is easier to write
+and to use.</p>
+
+<h3 id="learning-objectives">Learning objectives:</h3>
+<p>By the end of this tutorial you will:</p>
+<ul>
+  <li>Understand why <code class="language-plaintext highlighter-rouge">class</code> objects are used in Python.</li>
+  <li>Be familiar with the convention for defining custom classes.</li>
+</ul>
+
+<h3 id="everything-is-an-object">Everything is an object</h3>
+<p>You’ve heard this before: everything in Python is an object. 
+An integer is an object, a list is an object, a module is 
+an object. So far we have learned ways to combine these to accomplish
+interesting tasks. But, the next frontier is to define your own
+objects as custom classes.</p>
+
+<h3 id="object-oriented-programming">Object-oriented programming</h3>
+<p>The goal of object-oriented design is to <em>organize</em> objects so that
+they have an intuitive design where the attributes and functions of
+an object are accessible from the object itself. We saw this before
+when we learned about the basic object types in Python. List objects
+have functions accessible from the object itself for appending and 
+removing items, or counting and finding items in the list. We saw
+the same thing for strings, dicts, and other object types.
+So what is an example of a custom class? It could be anything. 
+For example, we could create a custom class for storing student grades; 
+the class could store the student’s name and UNI, much like a string
+object stores a variable, and it could have functions for storing new 
+grades or accessing existing grades, much like a dictionary. Thus, 
+our Student class object would be a hybrid between a string and dictionary
+object, with function and attribute names specific to its intended task.</p>
+
+<h3 id="creating-custom-classes">Creating custom classes</h3>
+<p>New classes are created using the <code class="language-plaintext highlighter-rouge">class</code> statement, and by convention
+are named using the CamelCase style, with capital letters for the start
+of words, and underscores between words. (By contrast, the convention
+for naming functions is snake_case, with only lowercase and using 
+underscores.)</p>
+
+<p>Let’s start by creating the most simple type of class, an empty one that
+does nothing. I’ll call it Box, since we can think of a class as a type
+of container.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># create a new simple class
+</span><span class="k">class</span> <span class="nc">Box</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</code></pre></div></div>
+
+<p>You can see that the convention for creating a class object includes
+defining a special function within the class, called <code class="language-plaintext highlighter-rouge">__init__</code>. Looks
+familiar, right? We learned in the last tutorial that an init file is
+automatically run when a package is imported. So what do you think the
+init function does? That’s right, it is automatically run when the class
+object is created. This is referred to as the “init function”, or 
+as a “constructor function”. In this simple example nothing happens within 
+the init function. We just tell it to <code class="language-plaintext highlighter-rouge">pass</code> (do nothing).</p>
+
+<h3 id="self-what-does-it-mean"><code class="language-plaintext highlighter-rouge">self</code>: what does it mean?</h3>
+<p>The init function <em>always</em> takes <code class="language-plaintext highlighter-rouge">self</code> as an argument. This is a special
+name in Python that refers to an <em>instance</em> of a class. The init function
+can take additional arguments in addition to self, but self will always be
+the first argument.</p>
+
+<p>To understand what an <em>instance</em> of a class is, let’s create an example. 
+You can follow along with this tutorial in a notebook. To create an 
+instance of our Box class object we simply call it like a function to 
+<em>initialize</em> an instance, and store it to a variable.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># create an instance of the Box class
+</span><span class="n">box</span> <span class="o">=</span> <span class="n">Box</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">Box()</code> class constructor can be thought of as a <strong>Box class factory</strong>. 
+Whenever called it returns a new instance of the box class. Thus, like the 
+example below, we can create and store multiple instances of the Box class, 
+each as a separate object.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># create multiple instances
+</span><span class="n">box1</span> <span class="o">=</span> <span class="n">Box</span><span class="p">()</span>
+<span class="n">box2</span> <span class="o">=</span> <span class="n">Box</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Class objects serve as useful containers since you can store any other object 
+to them as an attribute and retrieve it later using the dot access.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">box1</span> <span class="o">=</span> <span class="n">Box</span><span class="p">()</span>
+<span class="n">box1</span><span class="p">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"hello world"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">box1</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="class-init-arguments">class init arguments</h3>
+<p>The example above only serves as a simple demonstration. Usually we will
+want to initialize class object with some kind of attribute from their 
+start. This can be done by providing additional arguments to the class
+init function. Let’s consider a new class:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</code></pre></div></div>
+
+<p>We now have a Dog class that will return instances that will already have
+an attribute called <code class="language-plaintext highlighter-rouge">.name</code> that stores the string that is required
+to be passed to the class constructor during init. We can now see clearly 
+that if we initialize two separate instances of the class with different
+names that the two instances will have different attributes.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># init two Dog class instances
+</span><span class="n">dog1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"Phylo"</span><span class="p">)</span>
+<span class="n">dog2</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"Hank"</span><span class="p">)</span>
+
+<span class="c1"># print the names of each instance
+</span><span class="k">print</span><span class="p">(</span><span class="n">dog1</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dog2</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="class-functions">class functions</h3>
+<p>Class objects become really useful once you start to define custom functions.
+This is especially aesthetically pleasing, compared to a non-object oriented 
+approach, since all of the information about the current instance is available
+to the functions, such that they usually only need to take <code class="language-plaintext highlighter-rouge">self</code> as an argument,
+rather than entering many arguments to a function. This is demonstrated below.</p>
+
+<p>Let’s add some additional arguments to init, and define some custom functions
+of our dog class object.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+
+    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"""
+        Returns Dog's speech as a string. Larger dogs speak in all caps.
+        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">weight</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Bork, hi my name is </span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">!"</span><span class="p">.</span><span class="n">upper</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Bork, hi my name is </span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Now let’s try using this class with instances that are defined by different
+input arguments. Notice two things: we were able to define a function (speak)
+that performs differently depending on the properties of the instance (its weight);
+and second that we were able to define the <code class="language-plaintext highlighter-rouge">speak()</code> function to work this
+way without us having to pass it the name or weight of the instance as arguments, 
+since the <code class="language-plaintext highlighter-rouge">speak()</code> function can access these attributes from <code class="language-plaintext highlighter-rouge">self</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dog1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"Phylo"</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">dog1</span><span class="p">.</span><span class="n">speak</span><span class="p">()</span>
+</code></pre></div></div>
+<pre style="background-color: lightgray; padding:10px">Bork, hi my name is phylo
+</pre>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dog2</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"Hank"</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">dog2</span><span class="p">.</span><span class="n">speak</span><span class="p">()</span>
+</code></pre></div></div>
+<pre style="background-color: lightgray; padding:10px">BORK, HI MY NAME IS HANK!
+</pre>
+
+<h3 id="thinking-of-object-design">Thinking of object design</h3>
+<p>The examples above may still seem a bit abstract, and simple. But as we collect
+more and more functions that operate of the same set of information – in this 
+case a Dog’s name and weight – it becomes simpler to have these organized into
+a single object, rather than as many separate functions that each take name and 
+weight as arguments.</p>
+
+<p>Let’s consider the example task we defined in tutorial 7.1 on <em>thinking functionally</em>:</p>
+
+<div class="blockquote alert alert-light" style="font-size: 0.9em">
+As an example, let's imagine our coding task is to search a database
+of biomedical publications in PDF format and to count all mentions 
+or references of any gene names that exist in a Human Genome database. 
+Before you even begin this task you should start by creating an outline of 
+the atomized tasks involved. For example, we could break this problem into 
+a number of functions where each accomplishes one of the following tasks:
+
+<ul>
+    <li>extract gene names from a biomedical database into a dict object mapping names to integer 0.</li>
+    <li>check for special formatting of gene names and attempt to standardize (e.g., make all uppercase).</li>
+    <li>extract text from PDFs into a dictionary mapping article name to contents.</li>
+    <li>parse article text into list of words and format to match gene names (e.g., all uppercase).</li>
+    <li>iterate over articles counting occurrence of all gene names among word lists in each.</li>
+    <li>format the count results dictionary into a table and print to a file or stdout.</li>
+</ul>
+</div>
+
+<p>If I were planning to accomplish this task I would organize it into a class with the following
+outline, starting with empty functions definitions that I would then begin to fill in as I 
+coded each in turn.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CountGenesInPDFs</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gene_database</span><span class="p">,</span> <span class="n">pdf_database</span><span class="p">):</span>
+        <span class="c1"># store input arguments
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">gene_database</span> <span class="o">=</span> <span class="n">gene_database</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">pdf_database</span> <span class="o">=</span> <span class="n">pdf_database</span>
+
+        <span class="c1"># attributes to fill with function calls
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">count_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">article_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">extract_gene_names_from_database</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"extract genes names from database and store in count_dict as {gene_name: 0}"</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">standardize_gene_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"standardize gene names in self.count_dict()"</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">extract_text_from_pdfs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"extract text from pdfs and store in article_dict {filename: test-string}"</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">parse_article_text_into_wordlist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"parse text in article_dict values into a list of words"</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">count_genes_in_articles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"iterate over articles in article_dict and store counts in count_dict"</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">count_genes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"the main function that returns a dictionary with counts of genes in all articles"</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">extract_gene_names_from_database</span><span class="p">()</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">standardize_gene_names</span><span class="p">()</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">extract_text_from_pdfs</span><span class="p">()</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">parse_article_text_into_wordlist</span><span class="p">()</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">count_genes_in_articles</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">count_dict</span>
+</code></pre></div></div>
+
+<p>We had the plan of defining 6 different functions to accomplish our task. Each of these
+functions would take one or more arguments as an input, and we would need to pass the 
+output from some of them into others. This workflow is made much easier by using a class.
+Here we <em>only</em> need to pass the arguments to the class constructor, and then the class
+object makes it possible to call only a single function (<code class="language-plaintext highlighter-rouge">self.count_genes()</code>) to run
+all of the six functions to accomplish the task. In addition, we were able to mock up
+an outline of the entire workflow before we even begin coding the functions themselves.
+This design principle helps you to decide what is the best order and flow to accomplish
+your task before you even really begin to code.</p>
+
+<p>Now, if the functions were all defined to accomplish their goals, as opposed to just 
+calling <code class="language-plaintext highlighter-rouge">pass</code>, we would be able to accomplish our task by just running the following:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">counter</span> <span class="o">=</span> <span class="n">CountGenesInPDFs</span><span class="p">(</span><span class="n">gene_database</span><span class="p">,</span> <span class="n">pdf_database</span><span class="p">)</span>
+<span class="n">counter</span><span class="p">.</span><span class="n">count_genes</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="reiterate">Reiterate</h3>
+<p>Watch the following video for further reiteration of how to create and use classes, 
+including more advanced topics. This example demonstrates how to write and test Python
+scripts from within a text editor (in this case sublimetext). We will learn to 
+to do this in the next set of tutorials.</p>
+
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/ZDa-Z5JzLYM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+    Sorry, your browser doesn't support embedded videos.
+</div>
+
+<hr />
+
+<p>There is no assessment for this tutorial.</p>
+
+		</div>
+	</main>
+
+	<footer>
+	    
+
+
+
+<div class="container text-center mt-5">
+	<p>Copyright &copy; 
+	 <script>document.write( new Date().getFullYear() );</script> 
+	 Deren Eaton
+	 </p>
+</div>
+
+
+	    
+
+
+
+
+<!-- JS: jQuery, Popper.js, and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	var BASE_URL = '';
+</script>
+
+
+	</footer>
+
+</body>
+</html>

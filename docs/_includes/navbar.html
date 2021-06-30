@@ -1,0 +1,52 @@
+
+
+<!-- NAVBAR (DARK) -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="{{ site.url }}{{ site.baseurl }}">{{ site.title }}</a>
+
+    <!-- The toggle switch for collapsed navbar-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Make collapsable -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        <!-- The elements of the navbar -->
+        <ul class="navbar-nav">
+            {% for item in site.data.navbar %}
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    {% if item.dropdown %}
+
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ item.name }}</a>
+                        
+                        <div class="dropdown-menu">
+                        {% for sub in item.dropdown %}
+                            {% if sub.external %}
+                                <a class="dropdown-item" href="{{ sub.link }}" target="_blank">{{ sub.name }}</a>
+                            {% else %}
+                                <a class="dropdown-item" href="{{ site.url }}{{ site.baseurl}}{{ sub.link }}">{{ sub.name }}</a>
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+
+                    <!-- open link in new window -->
+                    {% elsif item.external %}
+                        <a class="nav-link" href={{ item.link }} target="_blank">{{ item.name }}</a>
+
+                    <!-- simple link -->
+                    {% else %}
+                        <a class="nav-link" href={{ site.url }}{{ site.baseurl }}{{ item.link }}>{{ item.name }}</a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+            <!-- LINK TO HOME -->
+            <li class="nav-item mr-3">
+
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,101 @@
+I"Ô<style>
+h2 {
+    margin-top: 30px;
+}
+h3 {
+    margin-top: 30px;
+}
+pre {
+    line-height: 1.25em;
+}
+pre code {
+    font-size: 0.9em;
+}
+</style>
+
+<h3 id="assignment">Assignment</h3>
+<p>In class you will meet with other students that are members of your same 
+<i>group</i> (A-D), and outside of class you will fork and clone the
+repo of your paired-programming companion working on the same topic (
+see table below). Try to run the minimal working example of their code.</p>
+
+<h3 id="exploring-their-code">Exploring their code</h3>
+<p>Your goal is to gain a better understanding of their code. You have been paired
+together because your project goals share some similarities. If you see a place
+in their code that is poorly formatted (e.g., your linter has highlighted it), 
+then fix it. Commit the change and in the comment field state why you 
+re-formatted it. If you are unsure why a certain part of code exists then 
+stick a print or logger statement inside of the code block to print the state
+of variables before and after that section of code runs. If you are still 
+unsure then write a chat to your partner to ask about it.</p>
+
+<p>Your goal is to make a commit to their project, and specifically, to identify
+a place in their code where your commit can be useful. This means going beyond
+the goal of our first paired-programming exercise where you could commit 
+anything. Weâ€™re looking for more than just a comment line here. Need help? 
+Just ask in the chatroom.</p>
+
+<h3 id="paired-programming-groups">Paired programming groups</h3>
+
+<table class="table table-sm table-hover table-bordered" style="font-size: 14px">
+  <caption>Paired programming groups</caption>
+  <thead class="thead-dark">
+    <tr>   
+      <th scope="col">Group</th>
+      <th scope="col">Topic</th>      
+      <th scope="col"></th>
+      <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="col">A</th>
+      <th scope="col"><i>statistical</i></th>
+      <th scope="col">Roiak2</th>  
+      <th scope="col">Clan2021</th>
+    </tr>
+    <tr>
+      <th scope="col">A</th>    	
+      <th scope="col"><i>GUI</i></th>
+      <th scope="col">ttl2132</th>
+      <th scope="col">lili4127</th>
+    </tr>
+    <tr>
+      <th scope="col">B</th>    	
+      <th scope="col"><i>streamlit webapp</i></th>
+      <th scope="col">3amMcspicy</th>
+      <th scope="col">alicerk</th>
+    </tr>
+    <tr>
+      <th scope="col">B</th>
+      <th scope="col"><i>map viz webapp</i></th>
+      <th scope="col">floodowen</th>
+      <th scope="col">yam020</th>
+    </tr>
+    <tr>
+      <th scope="col">C</th>    	
+      <th scope="col"><i>API mapping</i></th>
+      <th scope="col">j-meek</th>
+      <th scope="col">HenryLandis</th>
+    </tr>        
+    <tr>
+      <th scope="col">C</th>
+      <th scope="col"><i>CLI parse/analyze</i></th>
+      <th scope="col">aparnac25</th>
+      <th scope="col">jasmina-dzurlic</th>
+    </tr>        
+    <tr>
+      <th scope="col">D</th>    	
+      <th scope="col"><i>evolution</i></th>
+      <th scope="col">elissasoroj</th>
+      <th scope="col">cohen-r</th>
+    </tr>    
+    <tr>
+      <th scope="col">D</th>    	
+      <th scope="col"><i>biology</i></th>
+      <th scope="col">athe1sm</th>
+      <th scope="col">smau8</th>      
+    </tr>        
+  </tbody>
+</table>
+:ET

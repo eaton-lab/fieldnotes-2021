@@ -1,0 +1,23 @@
+I"�<h1 id="notes-on-how-i-set-up-this-site">Notes on how I set up this site…</h1>
+
+<ul>
+  <li><a href="https://jekyllrb.com/docs/">jekyll official docs</a></li>
+  <li><a href="https://medium.com/better-programming/an-introduction-to-using-jekyll-with-bootstrap-4-6f2433afeda9">jekyll w/ bootstrap guide</a></li>
+  <li><a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">bootstrap docs</a></li>
+</ul>
+
+<ol>
+  <li>install or update ruby (apt or brew)</li>
+  <li>install jekyll and bundler: <code class="language-plaintext highlighter-rouge">gem install bundle jekyll</code></li>
+  <li>clone a fresh repo: <code class="language-plaintext highlighter-rouge">clone https://github.com/myrepo</code></li>
+  <li>init a new jekyll site: <code class="language-plaintext highlighter-rouge">jekyll new docs --blank</code></li>
+  <li>move into site dir: <code class="language-plaintext highlighter-rouge">cd docs/</code></li>
+  <li>Create Gemfile: <code class="language-plaintext highlighter-rouge">bundle init</code></li>
+  <li>Add jekyll to Gemfile: <code class="language-plaintext highlighter-rouge">echo "gem 'jekyll'" &gt;&gt; ./Gemfile</code></li>
+  <li>Install gems and create Gemfile.lock: <code class="language-plaintext highlighter-rouge">bundle</code></li>
+  <li>Serve site: <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve -w</code></li>
+  <li>edit site with text editor: <code class="language-plaintext highlighter-rouge">subl .</code></li>
+  <li>Edit the config.yml…</li>
+</ol>
+
+:ET

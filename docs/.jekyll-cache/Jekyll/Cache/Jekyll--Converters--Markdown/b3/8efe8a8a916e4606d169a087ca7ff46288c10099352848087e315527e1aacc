@@ -1,0 +1,49 @@
+I"�<h2 id="advanced-tips-for-your-github-pages-website">Advanced tips for your GitHub pages website</h2>
+
+<p><strong>Table of Contents:</strong></p>
+<ul id="markdown-toc">
+  <li><a href="#advanced-tips-for-your-github-pages-website" id="markdown-toc-advanced-tips-for-your-github-pages-website">Advanced tips for your GitHub pages website</a>    <ul>
+      <li><a href="#github-pages-tip-1-shrink-images-for-faster-load-times" id="markdown-toc-github-pages-tip-1-shrink-images-for-faster-load-times">Github pages tip 1: shrink images for faster load times.</a></li>
+      <li><a href="#github-pages-tip-2-yaml-front-matter-for-page-templates" id="markdown-toc-github-pages-tip-2-yaml-front-matter-for-page-templates">Github pages tip 2: YAML front matter for page templates</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="github-pages-tip-1-shrink-images-for-faster-load-times">Github pages tip 1: shrink images for faster load times.</h3>
+<p>A simple way to make your site load much faster is to shrink
+the size of any photos that need to be loaded. 
+To do this, you could use a complex program like Photoshop,
+or a simple command line tool like <code class="language-plaintext highlighter-rouge">convert</code>. I recommend
+using an even simpler approach of uploading files to a website
+called <a href="https://tinyjpg.com/">tinyjpg</a> that will shrink them to a size that is optimal for displaying on the web.</p>
+
+<h3 id="github-pages-tip-2-yaml-front-matter-for-page-templates">Github pages tip 2: YAML front matter for page templates</h3>
+<p>If you wish to create additional webpages using Markdown 
+separate from your README file – for example to use as 
+a blog, or for writing notes, or for sharing/hosting some
+kind of information – you can do so by simply adding 
+a special header to any Markdown files that you create.
+The file must have what is called 
+<a href="https://assemble.io/docs/YAML-front-matter.html">YAML front matter</a>, 
+which is used internally by jekyll to apply HTML templates 
+to your Markdown file. This simply means you need to add 
+a section with two lines containing three dashed lines at the top
+of the file. In the case of a simple GitHub-pages setup, 
+this will apply the ‘default’ style of your selected Theme.</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="nn">---</span>
+
+<span class="gu">### This is a post about ...</span>
+I love to write in <span class="ge">*Markdown*</span>...
+</code></pre></div></div>
+
+<p>In my example I created a new folder called <em>posts/</em> and added 
+a file to it called <em>vacation.md</em>. Once I push these changes to 
+GitHub my site will have new content viewable at 
+<a href="https://hackers-test.github.io/posts/vacation.html">https://hackers-test.github.io/posts/vacation.html</a>.</p>
+
+<p>Once again, to learn more about this topic you can dig into the 
+Jekyll documentation.</p>
+
+:ET

@@ -1,0 +1,592 @@
+
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+    
+<!-- how to read page -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<!-- icons -->
+<link rel="icon" href="/assets/images/favicon.ico">
+
+<!-- get title from page meta -->
+<title>visualization &#8211; Fieldnotes-2021</title>
+
+
+<!-- store meta info on page -->
+
+
+
+
+
+<!-- Store full web url -->
+
+<link rel="canonical" href="
+	
+	
+		/tutorials/25.2-folium.html
+	
+">
+
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/custom.css">
+<link rel="stylesheet" href="/assets/css/syntax.css">
+</head>
+
+
+<body id="default">
+
+    <header>
+	    
+
+<!-- NAVBAR (DARK) -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="">Fieldnotes-2021</a>
+
+    <!-- The toggle switch for collapsed navbar-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Make collapsable -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        <!-- The elements of the navbar -->
+        <ul class="navbar-nav">
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+                        <a class="nav-link" href=/>Home</a>
+                    
+                </li>
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Itinerary</a>
+                        
+                        <div class="dropdown-menu">
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-2.html">Day 2 (Shimian to Xinduqiao)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-3.html">Day 3 (Xinduqiao to Litang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-4.html">Day 4 (Litang to Litang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-5.html">Day 5 (Litang to Bamei)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 6 (Dawu to Luhuo)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 7 (Luhuo to Wengdaxiang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 8 (Wengdaxiang to Zamtang)</a>
+                            
+                        
+                        </div>
+
+                    <!-- open link in new window -->
+                    
+                </li>
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+                        <a class="nav-link" href=/pages/assignments.html>Methods</a>
+                    
+                </li>
+            
+            <!-- LINK TO HOME -->
+            <li class="nav-item mr-3">
+
+        </ul>
+    </div>
+</nav>
+  
+	    
+
+
+<!-- Splash header about the news -->
+<div class="jumbotron" style="background-image: url(/assets/images/hackers-1.jpg);">
+    <!-- <div class="mb-3 mt-0"><img src="/assets/images/E3B-logo.png"></div> -->
+    <!-- <h1 class="display-5 font-italic">visualization</h1> -->
+    <!-- <p class="lead mt-3 mb-0"><i></i></p> -->
+</div>
+    </header>
+
+    <main role="main" class="container-md">
+    	<div class="col-sm-10 mx-auto">
+		    <style>
+h2 {
+    margin-top: 30px;
+}
+h3 {
+    margin-top: 30px;
+}
+pre {
+    line-height: 1.1em;
+}
+pre code {
+    font-size: 0.9em;
+}
+#example {
+  height: 500px;
+  display: block;
+  margin: auto;
+}
+.pngmap {
+    display: block; 
+    margin: auto; 
+    width: 100%; 
+    margin-top:2%;
+}
+</style>
+
+<h1 id="raster-analysis-in-google-earth-engine">Raster analysis in Google earth engine</h1>
+
+<p>In this tutorial you will be introduced to the raster image visualization and
+analysis in the context of geospatial analyses using the Google Earth Engine
+REST API. Rasters are bitmap images, with values assigned to grid cells that 
+can be overlaid on a map. So far we have examined pre-existing rasters as 
+tilesets on maps that are fetched from a REST API to visualize a baselayer
+containing information like land cover, roads, borders, etc. These base layers
+are often used as a background on which vector data is plotted on top as the 
+true focus of analyses (e.g., points or polygons). However, raster data itself
+can serve as an incredibly rich source of information not only for producing
+vector information, but also for representing variation in measured variables
+using raster visualizations.</p>
+
+<p>In fact, raster visualization has spurred an entire field of geospatial analyses
+around the concept of <em>remote sensing</em> data. This involves analyses of global
+datasets that typically use satellite images composing measurements over multiple
+spectra, which provides reflectance data informative about climate and land cover.
+Because these images are repeated on uniform cycles time-series analyses of these
+images can further provide measurement of changes over time in weather, climate,
+and land-use. For these reasons remote-sensing data has become a central part
+of conservation and biodiversity science. The data available from the largest
+remote-sensing datasets is truly incredible. Check out the descriptions of the
+LandSat, MODIS, and Sentinel datasets <a href="https://developers.google.com/earth-engine/datasets/catalog/landsat">here</a>.</p>
+
+<p>The image below is a beautiful example, showing a series of images that are 
+joined to create a GIF movie. In these images a raster layer is used to show
+temperate values as a linear colormap (blue to green to yellow to red), 
+and this is projected with a low opacity over another layer showing 
+elevation/topography. Together, the image clearly show the 
+insolating effect of mountains versus lowland in temperature fluctuations
+over some amount of time. This example comes from the Google Earth Engine
+documentation, which we will soon explore.</p>
+
+<div style="background-color: black">
+    <img id="example" src="https://developers.google.com/earth-engine/images/ImageCollection_video_south_am_hillshade.gif" />
+</div>
+
+<h2 id="sign-up-for-earthengine">Sign up for earthengine</h2>
+<p>To get started using Google earthengine you will need to first signup 
+with a gmail account. Your University account is probably best to use, since 
+you can likely take advantage of extra free storage space.
+<a href="https://signup.earthengine.google.com/">https://signup.earthengine.google.com/</a>.
+The approval process was nearly instant when I tested recently.</p>
+
+<h2 id="what-is-google-earthengine">What is Google earthengine</h2>
+<p>Google earthengine (abbreviated <code class="language-plaintext highlighter-rouge">ee</code> here) is a REST API service provided 
+by Google that allows you to make <em>programmatic requests</em> to their servers 
+to access data and cloud-based computing functions to operate on data. The 
+final result will be a REST API URL for a vector or raster dataset that can
+be fetched and visualized on a map, like with folium.</p>
+
+<p>The instructions for creating the particular dataset you want to access 
+are sent from you to Google in JSON format, and has a fairly complicated 
+structure. Therefore, Google developed two programmatic APIs for building 
+and sending the JSON requests, based on instructions that you can write in 
+JavaScript or Python code. The JavaScript version is the default, and is 
+much better documented. The Python API can do pretty much everything the JS 
+version does, but figuring out how to translate from one set of instructions
+to the other takes some practice. Fortunately, you’re all Pythonistas 
+by now, and should be able to figure it out.</p>
+
+<p>We’ll discuss some of these differences, starting with the first major one, 
+which is that in Python we will need to use the <code class="language-plaintext highlighter-rouge">folium</code> library to visualize
+maps, rather than the JavaScript Map object. Thus, this tutorial will build 
+off of our last tutorials that introduced <code class="language-plaintext highlighter-rouge">folium</code>.</p>
+
+<h2 id="getting-the-earthengine-python-api">Getting the earthengine Python API</h2>
+<p>As usual, you can install the package from conda-forge.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda <span class="nb">install</span> <span class="nt">-c</span> conda-forge earthengine-api
+</code></pre></div></div>
+
+<h2 id="why-use-earthengine">Why use earthengine?</h2>
+
+<h4 id="the-data">The data</h4>
+<p>Google hosts a huge number of large and complex datasets. This includes
+both raster images and vector data. The raster data is often in the form
+of <code class="language-plaintext highlighter-rouge">ImageCollection</code> objects, which represent series of images such as time
+series. You can search these datasets in the <a href="https://developers.google.com/earth-engine/datasets">earthengine data catalog</a>. These datasets are 
+very interesting to analyze on their own, but they can also be treated
+as raw data (measurements in cells) and combined in creative ways using 
+mathematical and statistical operations, to generate new raster layers 
+representing new values. This ability to combine and analyze existing large
+datasets to create new measurements is really the bread and butter of 
+remote sensing analyses.</p>
+
+<h4 id="the-workflow">The workflow</h4>
+<p>Working with such enormous image data collections can be extremely cumbersome.
+Just the process of downloading the images could take hours. For this reason, 
+EarthEngine was designed to perform calculations in the cloud, <em>where the data
+is already located</em>. This is why the workflow is centered around you sending 
+instructions for how to analyze the data, rather than having Google send all 
+the data and then you analyze it on your computer. In fact, the entire earthengine
+workflow is built around the concept of <em>delayed execution</em>: it does not run
+the computation (fetch data and compute on it) until after you’ve written a full
+set of all the instructions you plan to run. This is great because it makes 
+everything run much faster and more efficiently. However, it involves a steep
+learning curve to understand how to actually view the data in Python, and 
+also how to write the most efficient set of instructions (there is a lot on 
+this topic in the documentation).</p>
+
+<h4 id="the-library">The library</h4>
+<p>The documentation for earthengine is quite good. Although
+the Python API is less well documented than the JavaScript version, it is 
+easy enough to translate from one to the other once you get a hang of it. You
+can combine vector and raster data from earthengine objects in folium
+with raster and vectors from other Python geospatial libraries that we learned
+about in previous tutorials. But, a nice thing about the earthengine library
+(<code class="language-plaintext highlighter-rouge">ee</code>) is that it provides many of these same functions (and using a similar 
+syntax) in a single library. For example, the <code class="language-plaintext highlighter-rouge">ee.Feature</code> and <code class="language-plaintext highlighter-rouge">ee.Geometry</code> 
+objects serve the same purpose as <code class="language-plaintext highlighter-rouge">geojson.Feature</code> and <code class="language-plaintext highlighter-rouge">geojson.Geometry</code>, 
+or of <code class="language-plaintext highlighter-rouge">shapely.geometry</code> objects that we learned previously. Thus, you can 
+add any of these vector objects to a folium map by making them into 
+GeoJSON and using <code class="language-plaintext highlighter-rouge">.add_child()</code>.</p>
+
+<h4 id="the-community">The community</h4>
+<p>In addition to the enormous work that Google has done in setting up this 
+resource, it is largely used by and maintained by academics. And that’s a 
+good thing. There are tons of tutorials and datasets created by users and 
+made publicly available for the broader community. And when you create new 
+datasets you can share them through the earthengine data catalog.</p>
+
+<h2 id="how-to-learn-earthengine">How to learn earthengine</h2>
+<p>Visit the <a href="https://developers.google.com/earth-engine/guides">official API documentation</a>. 
+I recommend starting with the “Get Started” section, and then going over the 
+entire “API Tutorials” section. In addition, the <a href="https://developers.google.com/earth-engine/guides/python_install">Python section</a> will be helpful for understanding how to 
+change the JS instructions to work in Python. You don’t need to read all of it
+now, but it is your best resource for reference in the future.</p>
+
+<h2 id="the-javascript-console">The JavaScript console</h2>
+<p>To follow along with JavaScript-based tutorials you can enter data directly
+into the <a href="https://developers.google.com/earth-engine/guides/getstarted">interactive console</a> 
+to generate plots. This is really cool since you
+can save the code and visualization, and even share a link to share this with
+others. All of the computing is done remotely, so you don’t even need to 
+install anything locally to use it. The drawback of this approach, of course,
+is that you can’t integrate the code with your Python workflow, and you 
+likely need to learn more about writing JavaScript.</p>
+
+<h2 id="earthengine-in-pythonjupyter">Earthengine in Python/jupyter</h2>
+<p>Let’s get started using the earthengine Python API. Follow along in a 
+jupyter notebook. 
+To start you will need to import <code class="language-plaintext highlighter-rouge">ee</code> and <code class="language-plaintext highlighter-rouge">folium</code>, and then to call 
+<code class="language-plaintext highlighter-rouge">Authenticate</code> and <code class="language-plaintext highlighter-rouge">Initalize</code> from <code class="language-plaintext highlighter-rouge">ee</code>. The Authenticate call only needs to 
+be made once, then you can remove the code block from your notebook. 
+It will open your browser and ask you to login with Google. After
+that your browser will store a token to remember who you are. After this 
+whenever you call <code class="language-plaintext highlighter-rouge">ee.Initialize()</code> Google will know that you have logged 
+in, and any work that you ask it to do (e.g., REST API requests) 
+should be charged to your account quota.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">ee</span>
+<span class="kn">import</span> <span class="nn">folium</span>
+
+<span class="c1"># opens browser to request authenticatication token (OAUTH2) and store it.
+</span><span class="n">ee</span><span class="p">.</span><span class="n">Authenticate</span><span class="p">()</span>
+
+<span class="c1"># uses your stored auth token to login to ee.
+</span><span class="n">ee</span><span class="p">.</span><span class="n">Initialize</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="alert alert-info">
+
+<b>An aside about quotas:</b> 
+Each account has a quota that limits the number of requests that you can make.
+If you exceed this quota then you will simply receive an error message and 
+your request will not return data. The default quota levels are very high, so 
+you really don't need to worry about it unless you are publicly sharing a map
+that thousands of people are going to view. You will never be charged for using
+earthengine unless you very purposefully set up a mechanism for doing so. If
+you do wish to develop an app or something that requires sharing ee data with
+thousands of people, then the documentation has details about how to set something
+like that up.
+</div>
+
+<h3 id="a-custom-map-class-object">A custom Map class object</h3>
+<p>To support adding an <code class="language-plaintext highlighter-rouge">ee</code> raster to a <code class="language-plaintext highlighter-rouge">folium</code> Map we need to create a custom
+function or class. I prefer to do this by subclassing the <code class="language-plaintext highlighter-rouge">folium.Map</code> object.
+This creates a new class called <code class="language-plaintext highlighter-rouge">EngineMap</code> which inherits all of the same 
+attributes and functions of a <code class="language-plaintext highlighter-rouge">folium.Map</code> class object, but also has the two
+additional functions below which can add an <code class="language-plaintext highlighter-rouge">ee</code> vector or raster object to 
+the map. You don’t need to fully understand this code now, but I recommend 
+revisiting it later after you’re more experienced in earthengine to see what
+the two functions are doing:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">EngineMap</span><span class="p">(</span><span class="n">folium</span><span class="p">.</span><span class="n">Map</span><span class="p">):</span>
+    <span class="s">"""
+    Subclass of folium Map for adding EE images. Here
+    self is a folium.Map class instance, and we are adding 
+    additional functions to this class type.
+    """</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># inherit from parent class
+</span>        <span class="nb">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="n">zoom_start</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    
+    
+    <span class="k">def</span> <span class="nf">add_ee_vector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">feature</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="s">"""
+        Add a google earth engine vector feature to a folium map.
+        """</span>
+        <span class="c1"># create vector feature
+</span>        <span class="n">feature</span> <span class="o">=</span> <span class="n">folium</span><span class="p">.</span><span class="n">GeoJson</span><span class="p">(</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">feature</span><span class="p">.</span><span class="n">geometry</span><span class="p">().</span><span class="n">getInfo</span><span class="p">(),</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span>
+        
+        <span class="c1"># add vector to Map and return self to allow chaining
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">feature</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+    
+    
+    <span class="k">def</span> <span class="nf">add_ee_raster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">vis_params</span><span class="o">=</span><span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="s">"""
+        Add a google earth engine raster layer to a folium map.
+        """</span>       
+        <span class="c1"># handle ImageCollections and Images
+</span>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">ee</span><span class="p">.</span><span class="n">ImageCollection</span><span class="p">):</span>
+            <span class="n">ee_image</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">mosaic</span><span class="p">()</span>
+
+        <span class="c1"># get the JSON instructions to show image tiles
+</span>        <span class="n">map_id_dict</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">getMapId</span><span class="p">(</span><span class="n">vis_params</span><span class="p">)</span>
+        
+        <span class="c1"># get url of the raster tiles
+</span>        <span class="n">tiles</span> <span class="o">=</span> <span class="n">map_id_dict</span><span class="p">[</span><span class="s">'tile_fetcher'</span><span class="p">].</span><span class="n">url_format</span>
+        
+        <span class="c1"># create a folium raster layer and add to self
+</span>        <span class="n">raster</span> <span class="o">=</span> <span class="n">folium</span><span class="p">.</span><span class="n">raster_layers</span><span class="p">.</span><span class="n">TileLayer</span><span class="p">(</span>
+            <span class="n">tiles</span><span class="o">=</span><span class="n">tiles</span><span class="p">,</span>
+            <span class="n">attr</span><span class="o">=</span><span class="n">kwargs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"attr"</span><span class="p">,</span> <span class="s">"TODO-attr"</span><span class="p">),</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">kwargs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"name"</span><span class="p">,</span> <span class="s">"test"</span><span class="p">),</span>
+            <span class="n">overlay</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+            <span class="n">control</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+        <span class="p">)</span>
+        
+        <span class="c1"># add raster to Map and return self to allow chaining
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">raster</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+</code></pre></div></div>
+
+<h3 id="adding-vectors">Adding vectors</h3>
+<p>First things first, we can create vectors as GeoJson structured objects 
+composed of Feature objects with a Geometry. This object can be used like
+a shapely geometry object to do all sorts of computations on geometries. 
+Also, we can add it as a vector on the map.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># create an ee vector object
+</span><span class="n">region</span> <span class="o">=</span> <span class="n">ee</span><span class="p">.</span><span class="n">Feature</span><span class="p">(</span>
+    <span class="n">ee</span><span class="p">.</span><span class="n">Geometry</span><span class="p">.</span><span class="n">Polygon</span><span class="p">([</span>
+        <span class="p">[</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span>
+        <span class="p">[</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span>
+        <span class="p">[</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span>
+    <span class="p">])</span>
+<span class="p">)</span>
+
+<span class="c1"># create a map
+</span><span class="n">emap</span> <span class="o">=</span> <span class="n">EngineMap</span><span class="p">()</span>
+
+<span class="c1"># add ee vector feature
+</span><span class="n">emap</span><span class="p">.</span><span class="n">add_ee_vector</span><span class="p">(</span><span class="n">region</span><span class="p">)</span>
+
+<span class="c1"># focus location/bounds of the map on its child features
+</span><span class="n">emap</span><span class="p">.</span><span class="n">fit_bounds</span><span class="p">(</span><span class="n">emap</span><span class="p">.</span><span class="n">get_bounds</span><span class="p">(),</span> <span class="n">max_zoom</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">emap</span>
+</code></pre></div></div>
+
+<p><img class="pngmap" src="./images/folium-ee-4.png" /></p>
+
+<h3 id="adding-rasters">Adding rasters</h3>
+<p>Raster datasets can be accessed from the google earthengine data catalog by 
+name using the <code class="language-plaintext highlighter-rouge">ee.Image</code> class. We’ll discuss more details of just what is 
+possible with Image class objects later. Let’s start by adding it to the map
+and setting visual parameters to tell the map how to apply colors to the values,
+in this case black=0 and white=3000. This dataset is composed of elevation 
+values, and the region we are showing is centered on the Grand Canyon.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># load a raster Image dataset from ee
+</span><span class="n">raster</span> <span class="o">=</span> <span class="n">ee</span><span class="p">.</span><span class="n">Image</span><span class="p">(</span><span class="s">'CGIAR/SRTM90_V4'</span><span class="p">)</span>
+
+<span class="c1"># create a map
+</span><span class="n">emap</span> <span class="o">=</span> <span class="n">EngineMap</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">(</span><span class="mf">36.2841</span><span class="p">,</span> <span class="o">-</span><span class="mf">112.8598</span><span class="p">),</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="c1"># add raster to map
+</span><span class="n">emap</span><span class="p">.</span><span class="n">add_ee_raster</span><span class="p">(</span><span class="n">raster</span><span class="p">,</span> <span class="n">vis_params</span><span class="o">=</span><span class="p">{</span><span class="s">'min'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'max'</span><span class="p">:</span> <span class="mi">3000</span><span class="p">})</span>
+<span class="n">emap</span>
+</code></pre></div></div>
+
+<p><img class="pngmap" src="./images/folium-ee-3.png" /></p>
+
+<h3 id="using-vectors-and-rasters">Using vectors and rasters</h3>
+<p>In addition to showing vectors on a map, they can also be used as selectors
+to <em>clip</em> raster data to only process or show data for smaller regions. This
+can increase the speed of your code and visualization. Here we select a 
+triangular shaped region around the Missouri river.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># load a raster Image dataset from ee
+</span><span class="n">raster</span> <span class="o">=</span> <span class="n">ee</span><span class="p">.</span><span class="n">Image</span><span class="p">(</span><span class="s">'CGIAR/SRTM90_V4'</span><span class="p">)</span>
+
+<span class="c1"># create a map
+</span><span class="n">emap</span> <span class="o">=</span> <span class="n">EngineMap</span><span class="p">([</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">95</span><span class="p">],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># clip raster to polygon region of interest
+</span><span class="n">clipped</span> <span class="o">=</span> <span class="n">raster</span><span class="p">.</span><span class="n">clip</span><span class="p">(</span><span class="n">region</span><span class="p">)</span>
+
+<span class="c1"># add raster to map
+</span><span class="n">emap</span><span class="p">.</span><span class="n">add_ee_raster</span><span class="p">(</span><span class="n">clipped</span><span class="p">,</span> <span class="n">vis_params</span><span class="o">=</span><span class="p">{</span><span class="s">'min'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'max'</span><span class="p">:</span> <span class="mi">800</span><span class="p">})</span>
+
+<span class="c1"># show it
+</span><span class="n">emap</span>
+</code></pre></div></div>
+
+<p><img class="pngmap" src="./images/folium-ee-5.png" /></p>
+
+<h3 id="measurements-on-data">Measurements on data</h3>
+<p>In addition to visualizing data, we can also sample data for performing 
+statistics. There are a number of methods for sampling, the simplest of which
+is called <code class="language-plaintext highlighter-rouge">.sample()</code>. Here we select points from the clipped region of the 
+raster image. Once the data is extracted we can operate on it further with 
+numpy or pandas. The extracted data will be in GeoJson format, with features
+representing Point geometries with property attributes that include the data.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># returns a featureCollection of points with property['elevation']
+</span><span class="n">points</span> <span class="o">=</span> <span class="n">raster</span><span class="p">.</span><span class="n">sample</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">numPixels</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">geometries</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="c1"># load a raster Image dataset from ee
+</span><span class="n">raster</span> <span class="o">=</span> <span class="n">ee</span><span class="p">.</span><span class="n">Image</span><span class="p">(</span><span class="s">'CGIAR/SRTM90_V4'</span><span class="p">)</span>
+
+<span class="c1"># create a map
+</span><span class="n">emap</span> <span class="o">=</span> <span class="n">EngineMap</span><span class="p">([</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">95</span><span class="p">],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># clip raster to polygon region of interest
+</span><span class="n">clipped</span> <span class="o">=</span> <span class="n">raster</span><span class="p">.</span><span class="n">clip</span><span class="p">(</span><span class="n">region</span><span class="p">)</span>
+
+<span class="c1"># add raster and vector points to map
+</span><span class="n">emap</span><span class="p">.</span><span class="n">add_ee_raster</span><span class="p">(</span><span class="n">clipped</span><span class="p">,</span> <span class="n">vis_params</span><span class="o">=</span><span class="p">{</span><span class="s">'min'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'max'</span><span class="p">:</span> <span class="mi">800</span><span class="p">})</span>
+<span class="n">emap</span><span class="p">.</span><span class="n">add_ee_vector</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+
+<span class="c1"># show it
+</span><span class="n">emap</span>
+</code></pre></div></div>
+
+<p><img class="pngmap" src="./images/folium-ee-6.png" /></p>
+
+<p>To extract data from the GeoJson features in the <code class="language-plaintext highlighter-rouge">points</code> variable we need to
+dive into the nested JSON (dictionary) structure. In addition, we need to call
+<code class="language-plaintext highlighter-rouge">.getInfo()</code> to tell earthengine to actually do the sampling (to not defer 
+execution). Then I plot a histogram and compute the mean.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">toyplot</span>
+
+<span class="c1"># extract elevation values
+</span><span class="n">elevs</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">[</span><span class="n">feature</span><span class="p">[</span><span class="s">'properties'</span><span class="p">][</span><span class="s">'elevation'</span><span class="p">]</span> 
+    <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">points</span><span class="p">.</span><span class="n">getInfo</span><span class="p">()[</span><span class="s">'features'</span><span class="p">]]</span>
+<span class="p">)</span>
+
+<span class="c1"># plot a histogram
+</span><span class="n">toyplot</span><span class="p">.</span><span class="n">bars</span><span class="p">(</span>
+    <span class="n">np</span><span class="p">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">elevs</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">350</span><span class="p">,</span>
+    <span class="n">xlabel</span><span class="o">=</span><span class="s">"elevation"</span><span class="p">,</span>
+<span class="p">);</span>
+
+<span class="c1"># return the mean
+</span><span class="k">print</span><span class="p">(</span><span class="s">"mean elevation: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">elevs</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mean elevation: 421.63
+</code></pre></div></div>
+
+<p><img class="pngmap" style="width: 400px" src="./images/folium-hist-0.svg" /></p>
+
+<h3 id="summary">Summary</h3>
+<p>We introduced the Google EarthEngine Python API (<code class="language-plaintext highlighter-rouge">ee</code>) for accessing data 
+and cloud computing from the earthengine REST API. Then we added vectors
+and raster, and used vectors to clip the region of the raster, and to sample
+points (data) from the raster. Using these simple operations on the enormous
+datasets available on the Google Earthengine data catalog you can collect and
+analyze data at incredible scales easily in Python. This is just the tip of 
+the iceberg. In the next tutorial we will dive deeper into raster data.</p>
+
+		</div>
+	</main>
+
+	<footer>
+	    
+
+
+
+<div class="container text-center mt-5">
+	<p>Copyright &copy; 
+	 <script>document.write( new Date().getFullYear() );</script> 
+	 Deren Eaton
+	 </p>
+</div>
+
+
+	    
+
+
+
+
+<!-- JS: jQuery, Popper.js, and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	var BASE_URL = '';
+</script>
+
+
+	</footer>
+
+</body>
+</html>

@@ -1,0 +1,667 @@
+
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+    
+<!-- how to read page -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<!-- icons -->
+<link rel="icon" href="/assets/images/favicon.ico">
+
+<!-- get title from page meta -->
+<title>data science &#8211; Fieldnotes-2021</title>
+
+
+<!-- store meta info on page -->
+
+
+
+
+
+<!-- Store full web url -->
+
+<link rel="canonical" href="
+	
+	
+		/tutorials/12.0-fastapi.html
+	
+">
+
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/custom.css">
+<link rel="stylesheet" href="/assets/css/syntax.css">
+</head>
+
+
+<body id="default">
+
+    <header>
+	    
+
+<!-- NAVBAR (DARK) -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="">Fieldnotes-2021</a>
+
+    <!-- The toggle switch for collapsed navbar-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Make collapsable -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        <!-- The elements of the navbar -->
+        <ul class="navbar-nav">
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+                        <a class="nav-link" href=/>Home</a>
+                    
+                </li>
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Itinerary</a>
+                        
+                        <div class="dropdown-menu">
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-2.html">Day 2 (Shimian to Xinduqiao)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-3.html">Day 3 (Xinduqiao to Litang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-4.html">Day 4 (Litang to Litang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-5.html">Day 5 (Litang to Bamei)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 6 (Dawu to Luhuo)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 7 (Luhuo to Wengdaxiang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 8 (Wengdaxiang to Zamtang)</a>
+                            
+                        
+                        </div>
+
+                    <!-- open link in new window -->
+                    
+                </li>
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+                        <a class="nav-link" href=/pages/assignments.html>Methods</a>
+                    
+                </li>
+            
+            <!-- LINK TO HOME -->
+            <li class="nav-item mr-3">
+
+        </ul>
+    </div>
+</nav>
+  
+	    
+
+
+<!-- Splash header about the news -->
+<div class="jumbotron" style="background-image: url(/assets/images/hackers-1.jpg);">
+    <!-- <div class="mb-3 mt-0"><img src="/assets/images/E3B-logo.png"></div> -->
+    <!-- <h1 class="display-5 font-italic">data science</h1> -->
+    <!-- <p class="lead mt-3 mb-0"><i></i></p> -->
+</div>
+    </header>
+
+    <main role="main" class="container-md">
+    	<div class="col-sm-10 mx-auto">
+		    <style>
+h2 {
+    margin-top: 30px;
+}
+h3 {
+    margin-top: 30px;
+}
+pre {
+    line-height: 1.15em;
+}
+pre code {
+    font-size: 0.9em;
+}
+</style>
+
+<h2 id="python-web-servers">Python web servers</h2>
+
+<p><strong>Table of Contents:</strong></p>
+<ul id="markdown-toc">
+  <li><a href="#python-web-servers" id="markdown-toc-python-web-servers">Python web servers</a>    <ul>
+      <li><a href="#learning-objectives" id="markdown-toc-learning-objectives">Learning objectives</a></li>
+      <li><a href="#requirements" id="markdown-toc-requirements">Requirements</a></li>
+      <li><a href="#extending-the-records-package" id="markdown-toc-extending-the-records-package">Extending the records package</a></li>
+    </ul>
+  </li>
+  <li><a href="#your-first-web-app" id="markdown-toc-your-first-web-app">Your first web app</a>    <ul>
+      <li><a href="#running-the-app" id="markdown-toc-running-the-app">Running the app</a></li>
+      <li><a href="#so-what" id="markdown-toc-so-what">So what?</a></li>
+    </ul>
+  </li>
+  <li><a href="#restful-api" id="markdown-toc-restful-api">RESTful API</a>    <ul>
+      <li><a href="#serving-json-data" id="markdown-toc-serving-json-data">Serving JSON data</a></li>
+      <li><a href="#api-documentation" id="markdown-toc-api-documentation">API documentation</a></li>
+      <li><a href="#assessment" id="markdown-toc-assessment">Assessment</a></li>
+      <li><a href="#a-web-app-for-any-package-or-module" id="markdown-toc-a-web-app-for-any-package-or-module">A web app for any package or module</a></li>
+      <li><a href="#setup-for-heroku" id="markdown-toc-setup-for-heroku">Setup for heroku</a></li>
+      <li><a href="#deploy-your-app-to-a-public-url" id="markdown-toc-deploy-your-app-to-a-public-url">Deploy your app to a public URL</a></li>
+      <li><a href="#a-route-for-your-code" id="markdown-toc-a-route-for-your-code">A route for your code</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="learning-objectives">Learning objectives</h3>
+<p>By the end of this tutorial you will:</p>
+
+<ul class="hash-table">
+    <li>Have an improved understanding of what a web server is.</li>
+    <li>Be introduced to the concept of <i>decorators</i> in Python.</li>
+    <li>Be able to write and run a web server for an arbirary Python module.</li>
+    <li>Be familiar with the fastAPI Python package.</li>
+    <li>Be introduced to the heroku web app service.</li>    
+</ul>
+
+<h3 id="requirements">Requirements</h3>
+<p>Install the <a href="https://fastapi.tiangolo.com/">fastAPI</a> and 
+<a href="https://www.uvicorn.org/">uvicorn</a> Python packages using conda. 
+The first is used to create a webserver and/or API and the second is used
+to run a webserver, to communicate information between your Python code 
+and a network (e.g., localhost:8888).</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda <span class="nb">install </span>fastapi uvicorn <span class="nt">-c</span> conda-forge
+</code></pre></div></div>
+
+<h3 id="extending-the-records-package">Extending the records package</h3>
+<div class="alert alert-info">
+This tutorial builds upon completion of the instructions in notebook 12.0, 
+so you should first complete that assignment which will instruct you to 
+create a Python package called 'records'.
+</div>
+
+<p>In the last tutorial you created a Python package called <code class="language-plaintext highlighter-rouge">records</code>. Here 
+we are going to create a new entry-point to this package. Whereas previously
+we have created entry points as command line interfaces (CLIs) – where you can 
+call a function from your terminal – here we will instead be creating a
+web server entry point, where functions can be executed through your 
+web browser. Technically, this is called a web server gateway interface (WSGI;
+pronounced like whiskey).</p>
+
+<p>Our web server will be written in a module called <code class="language-plaintext highlighter-rouge">app.py</code>. Create a new 
+empty file at <code class="language-plaintext highlighter-rouge">records/records/app.py</code> so that your package looks like the
+file tree below.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>records/
+├── setup.py
+└── records/
+    ├── __init__.py
+    ├── app.py    
+    └── records.py
+</code></pre></div></div>
+
+<h2 id="your-first-web-app">Your first web app</h2>
+<p>In the <code class="language-plaintext highlighter-rouge">app.py</code> file enter the following code, which is copied from the 
+introductory tutorial from <a href="https://fastapi.tiangolo.com/">fastAPI</a>. If at
+any point you get stuck in this tutorial, try reading the fastapi docs for 
+more information. This is a really well written library with really nice
+documentation.</p>
+
+<p>In this tutorial we will incrementally build up our web app, starting with 
+a very simple example and becoming more complex. Let’s start with the 
+typical simple exercise of a function that says “hello world”.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">root</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s">"message"</span><span class="p">:</span> <span class="s">"Hello World"</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>This code is similar to Python scripts we have seen before, but it includes
+a new feature you haven’t seen before, called a <i>decorator</i>. Decorators
+are a feature in Python that start with the @ character, and are written on
+the line directly above a function definition. Decorators <em>modify</em> the way 
+a function runs. That is all you really need to know about it for now.</p>
+
+<p>In this case the decorator is <code class="language-plaintext highlighter-rouge">@app.get('/')</code>, meaning it is calling the 
+function <code class="language-plaintext highlighter-rouge">get()</code> from the the FastAPI class instance <code class="language-plaintext highlighter-rouge">app</code>, with the argument
+<code class="language-plaintext highlighter-rouge">'/'</code>. Since this script is pretty short, let’s walk through it line-by-line.</p>
+
+<ol>
+  <li>
+    <p>First we imported the FastAPI Class object from the fastapi package.</p>
+  </li>
+  <li>
+    <p>Next we created an instance of this class and named in <code class="language-plaintext highlighter-rouge">app</code>.</p>
+  </li>
+  <li>
+    <p>In the final step we created a function called <code class="language-plaintext highlighter-rouge">root()</code> that simply returns
+a dictionary with the key “message” and value “Hello World”. The only tricky 
+thing here is the decorator. The decorator is designating the <i>path</i> 
+where the returned result of the <code class="language-plaintext highlighter-rouge">root()</code> function should be sent. It will be
+sent to the root location of the server address (<code class="language-plaintext highlighter-rouge">/</code>). As an example, we will
+be running a local server (just like we do when running a jupyter notebook 
+server) and it will serve to <code class="language-plaintext highlighter-rouge">localhost:8000</code>, which you will view in your 
+web browser. When I say this result will be routed to <code class="language-plaintext highlighter-rouge">/</code>, what I really 
+mean is it will be routed to localhost:8000<code class="language-plaintext highlighter-rouge">/</code>.</p>
+  </li>
+</ol>
+
+<h3 id="running-the-app">Running the app</h3>
+<p>To run the app we now just need to call a server tool and point it to the
+corrent entry point in the code where the app exists. This is a similar 
+syntax to when we pointed to a specific function in the setup.py file to 
+define a CLI entry point.</p>
+
+<p>Here we will be using the <code class="language-plaintext highlighter-rouge">uvicorn</code> server, and <em>call it from the terminal</em> as
+a command line tool. Like other servers we’ve run before, you can just leave
+this running in the corner of your screen until you want to stop it. As long
+as it is running your server will be accessible. Here we give it the option
+<code class="language-plaintext highlighter-rouge">--reload</code> which means that as we make changes to our code it will automatically
+reload to update the server.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># called from within records/ repo directory.</span>
+<span class="c"># argument points to records folder, app.py file, app instance</span>
+uvicorn records.app:app <span class="nt">--reload</span>
+</code></pre></div></div>
+<pre style="background-color: lightgrey; padding:10px">
+<font color="#4E9A06">INFO</font>:     Uvicorn running on <b>http://127.0.0.1:8000</b> (Press CTRL+C to quit)
+<font color="#4E9A06">INFO</font>:     Started reloader process [<font color="#34E2E2"><b>488393</b></font>] using <font color="#34E2E2"><b>watchgod</b></font>
+<font color="#4E9A06">INFO</font>:     Started server process [<font color="#06989A">488395</font>]
+<font color="#4E9A06">INFO</font>:     Waiting for application startup.
+<font color="#4E9A06">INFO</font>:     Application startup complete.
+</pre>
+
+<p>Now open your browser to the address shown by the server, likely 
+<a href="localhost:8000">localhost:8000</a>. You should see a single JSON result
+showing “message”, “Hello World”. Success. Your Python function is 
+writing its results to this web address.</p>
+
+<h3 id="so-what">So what?</h3>
+<p>In this simple example we can see that the <i>returned value</i> of the 
+function <code class="language-plaintext highlighter-rouge">root()</code> is printed to the local network address on port 8000
+at the <code class="language-plaintext highlighter-rouge">/</code> (root) path. Very simple, right? But why is this useful?</p>
+
+<p>Well, following 
+from this example, we could imagine writing any arbitrary Python code to 
+return any kind of results to a webpage. This becomes especially powerful 
+when we begin to use the web browser to <i>receive inputs</i> as well. 
+This can now replace the need for a command-line interface. Furthermore,
+if the web server is made public, then <em>any user</em> could interact with your
+program <em>from any browser</em>.</p>
+
+<h2 id="restful-api">RESTful API</h2>
+<p>Let’s go to the next step: adding arguments to our functions. 
+To do this you just add need to add arguments to the function being served 
+as the endpoint. For example, our root function can now take an optional 
+<code class="language-plaintext highlighter-rouge">name</code> argument with a default value of ‘person’. Modify your code to 
+include the following updates:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">root</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"person"</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s">"message"</span><span class="p">:</span> <span class="sa">f</span><span class="s">"Hello World to you, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">"</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>Save the app.py file after making this change and you should see your 
+browser update automatically. Now try modifying the URL to enter a
+params argument to the root path like in ths example: 
+<a href="localhost:8000/?name=Phylo">localhost:8000/?name=Phylo</a>.</p>
+
+<h3 id="serving-json-data">Serving JSON data</h3>
+<p>Great. Let’s extend our script with even further. In this case we will return 
+JSON formatted data from a database, just like the GBIF API. For simplicity
+we will just use a pandas dataframe to represent the database, but more 
+commonly web sites/servers will use a different kind of database, like SQL,
+which is faster for getting individual results from a very large database. 
+But that is beyond the scope of our current interest, and pandas will work fine
+for now. Add code to your script so it looks like the example below:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+
+<span class="c1"># create the app as an instance of the fastAPI class
+</span><span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+
+<span class="c1"># load the database once when the server starts
+</span><span class="n">DATA</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s">"https://eaton-lab.org/data/iris-data-dirty.csv"</span><span class="p">,</span>
+    <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">"trait1"</span><span class="p">,</span> <span class="s">"trait2"</span><span class="p">,</span> <span class="s">"trait3"</span><span class="p">,</span> <span class="s">"trait4"</span><span class="p">,</span> <span class="s">"species"</span><span class="p">],</span>
+<span class="p">)</span>
+
+<span class="c1"># create a root endpoint that say's hello
+</span><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">root</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"person"</span><span class="p">):</span>
+    <span class="s">"returns a hello world message in JSON"</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s">"message"</span><span class="p">:</span> <span class="sa">f</span><span class="s">"Hello World to you, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">"</span><span class="p">}</span>
+
+<span class="c1"># create another endpoint for returning iris data
+</span><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/iris"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">iris</span><span class="p">(</span><span class="n">species</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="s">"""
+    returns iris data in JSON with option to subselect a species
+    """</span>
+    <span class="c1"># get subset or full data
+</span>    <span class="k">if</span> <span class="n">species</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">DATA</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">DATA</span><span class="p">.</span><span class="n">species</span> <span class="o">==</span> <span class="n">species</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">DATA</span>
+
+    <span class="c1"># convert to JSON and return to endpoint
+</span>    <span class="n">sdata</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s">"index"</span><span class="p">)</span>
+    <span class="n">jdata</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">loads</span><span class="p">(</span><span class="n">sdata</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">jdata</span>
+</code></pre></div></div>
+
+<p>We have now added a function called <code class="language-plaintext highlighter-rouge">iris()</code> that takes a species argument
+and uses it to optionally select a subset of the pandas dataframe containing
+the iris data set. The results are then converted to JSON format and returned.</p>
+
+<p>After making these changes and saving the app.py file, visit 
+<a href="localhost:8000/iris">localhost:8000/iris</a> to see all of the data records,
+ and also try entering params arguments such as 
+<a href="localhost:8000/iris?species=Iris-setosa">localhost:8000/iris?species=Iris-setosa</a>
+to see only a subset of records returned that match your query. 
+You just created a REST API!</p>
+
+<h3 id="api-documentation">API documentation</h3>
+<p>One of the coolest features of fastAPI is that it automatically generates
+documentation for your API as you write it. Simply visit the address
+<a href="localhost:8000/docs">localhost:8000/docs</a> and you can see all of the endpoints
+for your API, including the parameters that they support, and you can even 
+click on <kbd>Try it out</kbd> to enter the parameters and see the results.
+Such a cool feature, I wish the GBIF API supported this!</p>
+
+<h3 id="assessment">Assessment</h3>
+<div class="alert alert-success">
+    Commit and push the new app.py file to your GitHub records repo after
+    you have tested it and are able to successfully run the api requests
+    in the examples above. 
+</div>
+
+<h3 id="a-web-app-for-any-package-or-module">A web app for any package or module</h3>
+<p>Let’s now create a web app that will make this code publicly accessible 
+instead of only being available on localhost.</p>
+
+<div class="alert alert-info">
+This part of the tutorial is optional, and a bit complicated, so you do not 
+need to run it yourself -- but you are welcome to. 
+</div>
+
+<p>I think this final step is worth walking through, even if it is complex, 
+just so you have an idea of the steps involved with making your API 
+globally accessible from a public URL. There are several ways
+to deploy your Python code to run on a public server, but a great option is 
+to use the <em>free</em> service <a href="https://heroku.com/">heroku</a>.</p>
+
+<p>You can find instructions to install heroku for either Linux 
+(WSL2) or OSX at the <a href="https://devcenter.heroku.com/articles/getting-started-with-python#set-up">following link</a>.
+Unfortunately this tool cannot be installed using conda. My instructions 
+for using heroku below are quite similar to those from the example in their 
+getting-started docs. So if you get stuck be sure to take a look there as well.
+You will need to create a heroku login on their website. It is all free. 
+(Again, this is optional for now.)</p>
+
+<h3 id="setup-for-heroku">Setup for heroku</h3>
+<p>We will need to add three additional files so that your repo looks like 
+the following file tree:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">.</span>
+├── Procfile
+├── records
+│   ├── app.py
+│   ├── __init__.py
+│   └── records.py
+├── requirements.txt
+└── runtime.txt
+</code></pre></div></div>
+
+<p>We first need to create a file called <code class="language-plaintext highlighter-rouge">Procfile</code> that will tell heroku how 
+to run the server. This simply contains the command we called to run uvicorn; 
+here I tell it some additional details that I found online by googling 
+‘uvicorn on heroku’:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Procfile</span>
+web: uvicorn records.app:app <span class="nt">--host</span><span class="o">=</span>0.0.0.0 <span class="nt">--port</span><span class="o">=</span><span class="k">${</span><span class="nv">PORT</span><span class="k">:-</span><span class="nv">5000</span><span class="k">}</span>
+</code></pre></div></div>
+
+<p>Then create a file called requirements.txt, which tells the server how to
+install all of the Python dependencies using <code class="language-plaintext highlighter-rouge">pip</code>. This simply lists the 
+required packages one per line. List everything in the app that is not 
+from the Python standard library:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># requirements.txt</span>
+requests
+pandas
+fastAPI
+uvicorn
+</code></pre></div></div>
+
+<p>Then we need to create a runtime.txt file that says which version of 
+Python to use:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># runtime.txt</span>
+python-3.7.10
+</code></pre></div></div>
+
+<h3 id="deploy-your-app-to-a-public-url">Deploy your app to a public URL</h3>
+<p>Now you can call the <code class="language-plaintext highlighter-rouge">heroku</code> command line tool from within your package
+to create a new git <em>remote</em> that will host your heroku app. Remember, a 
+remote is a location where a copy of your repo is stored. We usually use 
+GitHub as a remote (and refer to it as origin), but here we will be using 
+heroku as a remote. To create this new remote, call the heroku create 
+command from within your package, which will assign your app a 
+random name unless you provide one.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># login to heroku (opens your browser)</span>
+heroku login
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># create a heroku app named 'hack-records' (if name is available)</span>
+heroku apps:create hack-records
+</code></pre></div></div>
+
+<p>Great, now use <code class="language-plaintext highlighter-rouge">git add</code> and <code class="language-plaintext highlighter-rouge">git commit</code> to commit all changes to your repo
+<em>on the heroku remote</em>, including the addition of your new Procfile and 
+requirements.txt, and runtime.txt. You can <em>also</em> push these changes to your
+GitHub remote (origin) if you want. No harm.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># push updates to your heroku remote main branch</span>
+git add records/records.py records/app.py      <span class="c"># stage changed file</span>
+git add requirements.txt runtime.txt Procfile  <span class="c"># stage new files</span>
+git commit <span class="nt">-m</span> <span class="s2">"heroku app created"</span>             <span class="c"># commit changes</span>
+git push heroku main                           <span class="c"># push to heroku remote</span>
+</code></pre></div></div>
+<p>When you push heroku will begin to install the app on the remote and will 
+print some information like the following:</p>
+
+<pre style="background-color: lightgrey; padding:10px; max-height: 400px; font-size:0.8rem">
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (10/10), 2.04 KiB | 1.02 MiB/s, done.
+Total 10 (delta 0), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----&gt; Building on the Heroku-20 stack
+remote: -----&gt; Python app detected
+remote: -----&gt; Installing python-3.6.13
+remote: -----&gt; Installing pip 20.1.1, setuptools 47.1.1 and wheel 0.34.2
+remote: -----&gt; Installing SQLite3
+remote: -----&gt; Installing requirements with pip
+remote:        Collecting requests
+remote:          Downloading requests-2.25.1-py2.py3-none-any.whl (61 kB)
+remote:        Collecting pandas
+remote:          Downloading pandas-1.1.5-cp36-cp36m-manylinux1_x86_64.whl (9.5 MB)
+remote:        Collecting fastAPI
+remote:          Downloading fastapi-0.63.0-py3-none-any.whl (50 kB)
+remote:        Collecting uvicorn
+remote:          Downloading uvicorn-0.13.3-py3-none-any.whl (45 kB)
+remote:        Collecting urllib3&lt;1.27,&gt;=1.21.1
+remote:          Downloading urllib3-1.26.3-py2.py3-none-any.whl (137 kB)
+remote:        Collecting certifi&gt;=2017.4.17
+remote:          Downloading certifi-2020.12.5-py2.py3-none-any.whl (147 kB)
+remote:        Collecting idna&lt;3,&gt;=2.5
+remote:          Downloading idna-2.10-py2.py3-none-any.whl (58 kB)
+remote:        Collecting chardet&lt;5,&gt;=3.0.2
+remote:          Downloading chardet-4.0.0-py2.py3-none-any.whl (178 kB)
+remote:        Collecting python-dateutil&gt;=2.7.3
+remote:          Downloading python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+remote:        Collecting numpy&gt;=1.15.4
+remote:          Downloading numpy-1.19.5-cp36-cp36m-manylinux2010_x86_64.whl (14.8 MB)
+remote:        Collecting pytz&gt;=2017.2
+remote:          Downloading pytz-2021.1-py2.py3-none-any.whl (510 kB)
+remote:        Collecting starlette==0.13.6
+remote:          Downloading starlette-0.13.6-py3-none-any.whl (59 kB)
+remote:        Collecting pydantic&lt;2.0.0,&gt;=1.0.0
+remote:          Downloading pydantic-1.7.3-cp36-cp36m-manylinux2014_x86_64.whl (9.2 MB)
+remote:        Collecting h11&gt;=0.8
+remote:          Downloading h11-0.12.0-py3-none-any.whl (54 kB)
+remote:        Collecting typing-extensions; python_version &lt; &quot;3.8&quot;
+remote:          Downloading typing_extensions-3.7.4.3-py3-none-any.whl (22 kB)
+remote:        Collecting click==7.*
+remote:          Downloading click-7.1.2-py2.py3-none-any.whl (82 kB)
+remote:        Collecting six&gt;=1.5
+remote:          Downloading six-1.15.0-py2.py3-none-any.whl (10 kB)
+remote:        Collecting dataclasses&gt;=0.6; python_version &lt; &quot;3.7&quot;
+remote:          Downloading dataclasses-0.8-py3-none-any.whl (19 kB)
+remote:        Installing collected packages: urllib3, certifi, idna, chardet, requests, six, python-dateutil, numpy, pytz, pandas, starlette, dataclasses, pydantic, fastAPI, h11, typing-extensions, click, uvicorn
+remote:        Successfully installed certifi-2020.12.5 chardet-4.0.0 click-7.1.2 dataclasses-0.8 fastAPI-0.63.0 h11-0.12.0 idna-2.10 numpy-1.19.5 pandas-1.1.5 pydantic-1.7.3 python-dateutil-2.8.1 pytz-2021.1 requests-2.25.1 six-1.15.0 starlette-0.13.6 typing-extensions-3.7.4.3 urllib3-1.26.3 uvicorn-0.13.3
+remote: -----&gt; Discovering process types
+remote:        Procfile declares types -&gt; web
+remote: 
+remote: -----&gt; Compressing...
+remote:        Done: 86.9M
+remote: -----&gt; Launching...
+remote:        Released v3
+remote:        https://hack-records.herokuapp.com/ deployed to Heroku
+remote: 
+remote: Verifying deploy... done.
+To https://git.heroku.com/hack-records.git
+ * [new branch]      main -&gt; main
+</pre>
+
+<p>The app is now live! Following from instructions in the heroku documentation,
+we can tell it to use one “worker” to run our server (I think on the free 
+tier you are limited only a few workers total).</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># scale how many concurrent requests your server can handle</span>
+heroku ps:scale <span class="nv">web</span><span class="o">=</span>1
+</code></pre></div></div>
+
+<p>Now you should be able to visit your app at https://{app-name}.herokuapp.com.
+Check out my working example for this tutorial. We can see that there are 
+working endpoints to run each of our defined functions, and even an automated
+documentation endpoint.</p>
+
+<ul>
+  <li>root: <a href="https://hack-records.herokuapp.com/">https://hack-records.herokuapp.com/</a></li>
+  <li>docs: <a href="https://hack-records.herokuapp.com/docs">https://hack-records.herokuapp.com/docs</a></li>
+  <li>iris: <a href="https://hack-records.herokuapp.com/iris">https://hack-records.herokuapp.com/iris</a></li>
+  <li>iris query “species=Iris-setosa”: <a href="https://hack-records.herokuapp.com/iris?species=Iris-setosa">https://hack-records.herokuapp.com/iris?species=Iris-setosa</a></li>
+</ul>
+
+<h3 id="a-route-for-your-code">A route for your code</h3>
+<p>If you were able to get all of that to work then congratulations, amazing!
+Here’s one more challenge for you… you could add another function to your
+app.py script that will return results of a request to your Records class
+object.</p>
+
+<p>How would you go about this? I would start by importing your class from 
+the records module, and then creating a function that returns its json result 
+to a specific endpoint. Here I use the <code class="language-plaintext highlighter-rouge">get_single_record()</code> function for now
+since it is much faster than querying all records.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># example code to add an endpoint to run the records.Records function
+</span><span class="kn">from</span> <span class="nn">records.records</span> <span class="kn">import</span> <span class="n">Records</span>
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/gbif"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">gbif</span><span class="p">(</span><span class="n">genusKey</span><span class="o">=</span><span class="mi">3171670</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="s">"2000,2020"</span><span class="p">):</span>
+    <span class="s">"returns a specific gbif query as JSON"</span>
+    <span class="n">rec</span> <span class="o">=</span> <span class="n">Records</span><span class="p">(</span><span class="n">genusKey</span><span class="o">=</span><span class="n">genusKey</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="n">year</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">rec</span><span class="p">.</span><span class="n">get_single_record</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>As you can see from this example, we could create a public endpoint to 
+run <em>any arbitrary Python code</em>. This is the reason that Python is used
+so widely for web development <em>as a backend server</em>. The only thing left
+to do to create fancy looking web or mobile app is to design the front-end
+which includes things like buttons or forms to accept user input which 
+could be sent to your API to get a response. Pretty cool!</p>
+
+		</div>
+	</main>
+
+	<footer>
+	    
+
+
+
+<div class="container text-center mt-5">
+	<p>Copyright &copy; 
+	 <script>document.write( new Date().getFullYear() );</script> 
+	 Deren Eaton
+	 </p>
+</div>
+
+
+	    
+
+
+
+
+<!-- JS: jQuery, Popper.js, and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	var BASE_URL = '';
+</script>
+
+
+	</footer>
+
+</body>
+</html>

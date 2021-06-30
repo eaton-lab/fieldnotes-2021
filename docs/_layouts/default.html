@@ -1,0 +1,30 @@
+
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+    {% include head.html %}
+</head>
+
+
+<body id="default">
+
+    <header>
+	    {% include navbar.html %}  
+	    {% include splash.html %}
+    </header>
+
+    <main role="main" class="container-md">
+    	<div class="col-sm-10 mx-auto">
+		    {{ content }}
+		</div>
+	</main>
+
+	<footer>
+	    {% include footer.html %}
+	    {% include scripts.html %}
+	</footer>
+
+</body>
+</html>

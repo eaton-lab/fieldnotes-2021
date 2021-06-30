@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+    
+<!-- how to read page -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<!-- icons -->
+<link rel="icon" href="/assets/images/favicon.ico">
+
+<!-- get title from page meta -->
+<title>git collab assignment &#8211; Fieldnotes-2021</title>
+
+
+<!-- store meta info on page -->
+
+
+
+
+
+<!-- Store full web url -->
+
+<link rel="canonical" href="
+	
+	
+		/tutorials/17.0-minimal-working.html
+	
+">
+
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/custom.css">
+<link rel="stylesheet" href="/assets/css/syntax.css">
+</head>
+
+
+<body id="default">
+
+    <header>
+	    
+
+<!-- NAVBAR (DARK) -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="">Fieldnotes-2021</a>
+
+    <!-- The toggle switch for collapsed navbar-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Make collapsable -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        <!-- The elements of the navbar -->
+        <ul class="navbar-nav">
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+                        <a class="nav-link" href=/>Home</a>
+                    
+                </li>
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Itinerary</a>
+                        
+                        <div class="dropdown-menu">
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-2.html">Day 2 (Shimian to Xinduqiao)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-3.html">Day 3 (Xinduqiao to Litang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-4.html">Day 4 (Litang to Litang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-5.html">Day 5 (Litang to Bamei)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 6 (Dawu to Luhuo)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 7 (Luhuo to Wengdaxiang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 8 (Wengdaxiang to Zamtang)</a>
+                            
+                        
+                        </div>
+
+                    <!-- open link in new window -->
+                    
+                </li>
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+                        <a class="nav-link" href=/pages/assignments.html>Methods</a>
+                    
+                </li>
+            
+            <!-- LINK TO HOME -->
+            <li class="nav-item mr-3">
+
+        </ul>
+    </div>
+</nav>
+  
+	    
+
+
+<!-- Splash header about the news -->
+<div class="jumbotron" style="background-image: url(/assets/images/hackers-1.jpg);">
+    <!-- <div class="mb-3 mt-0"><img src="/assets/images/E3B-logo.png"></div> -->
+    <!-- <h1 class="display-5 font-italic">git collab assignment</h1> -->
+    <!-- <p class="lead mt-3 mb-0"><i></i></p> -->
+</div>
+    </header>
+
+    <main role="main" class="container-md">
+    	<div class="col-sm-10 mx-auto">
+		    <style>
+h2 {
+    margin-top: 30px;
+}
+h3 {
+    margin-top: 30px;
+}
+pre {
+    line-height: 1.25em;
+}
+pre code {
+    font-size: 0.9em;
+}
+</style>
+
+<h3 id="projects-a-minimal-working-example">Projects: a minimal working example</h3>
+
+<p>Your goal for Monday’s class is to produce a minimal working example of your
+project. This includes two key components:</p>
+
+<ol>
+  <li>
+    <p>Developing the code of your project to run and produce something (even 
+if the thing it produces is far from your intended final product).</p>
+  </li>
+  <li>
+    <p>Updating your README file to include instructions for running the minimal
+working example of your code. I should be able to clone your repo, install
+any dependencies (as described in your README), and run this block of code
+successfully.</p>
+  </li>
+</ol>
+
+<div class="alert alert-info">
+If you have already produced a minimal working example and documented it in 
+your README file then that is great. Your task for Monday is simply to 
+continue working on your project and to make new commits. If you want advice
+or help with any aspects of your code please reach out on the chatroom and I 
+will be happy to provide feedback.
+</div>
+
+<h3 id="prioritizing">Prioritizing</h3>
+
+<p>Let’s imagine that my project goal was to develop a webapp. My plan
+for the final product is for it to be served on a publicly accessible URI
+(perhaps using heroku), and to include several interactive plots displaying
+up to date information fetched from a public REST API.</p>
+
+<p>So, there are at least three major steps to developing my program: (1) write
+code to serve a webapp; (2) write code to generate plots from data; and 
+(3) write code to fetch data from a REST API and format it for my use.</p>
+
+<p>These three steps may take a few weeks to complete. I will need to develop
+each step, and some steps are dependent on results from the other steps. So 
+how should I best plan the development?</p>
+
+<p>My recommendation is always to start by trying to develop a working 
+entrypoint to the program. This can be a Python API, a CLI, or GUI/webapp.
+This provides the minimal framework for you to test your code, and particularly
+to do so in the context of how you expect a user to eventually use your 
+program.</p>
+
+<h3 id="steps">Steps</h3>
+
+<p>In the example webapp project described above, I would first prioritize 
+getting a webapp server to run, since that is the user-facing component of 
+my project. This would be as simple as taking the most basic example from 
+the documentation of the webapp server (e.g., streamlit) and copying it 
+into your repo. Done, you now have a webapp server. You can start the server
+from the command line and interact with it on localhost in your browser.</p>
+
+<p>Next, I would begin to remove the components of that webapp that I don’t need,
+such as the plots and data that were written into it. I will begin to develop
+my own plots. Here I will benefit from having developed the webserver component
+first, since the plots that I develop can now be embedded and viewed 
+directly in the webapp. This will likely save me a lot of time compared to 
+developing the plots first, and perhaps finding later that they do not look 
+or work right when moved from a jupyter notebook to the webserver framework.
+To generate these initial plots I would download a single test dataset 
+(e.g. CSV) that I could use, or else generate one randomly with numpy. But 
+I would take care at this step to ensure the data that I am developing the 
+plotting code for will be representative of the full range of data that is
+likely to be fetched from the REST API.</p>
+
+<p>Finally, updating my data files from the REST API would likely be my third 
+step. Even though this step is relatively easy, it doesn’t get me closer to 
+having a working example of my program. I only need a single example dataset
+to work on steps 1 and 2, not a continually updating one.</p>
+
+<h3 id="drafting-and-then-polishing">Drafting and then polishing</h3>
+
+<p>To be clear, the order of steps described above is likely to be only 
+steps 1, 2, and 3 out of what might eventually become 10 or 20 steps in total.
+Later steps will likely involve revisiting the webapp server code, 
+or the plotting code, and refining these further. Steps 1-3 here are simply
+plans for getting to a first working example of the app. A draft. Once you 
+have this working draft it will be much simpler for you to refine and polish 
+the code to improve your project.</p>
+
+<h3 id="another-example-cli-tool">Another example (CLI tool)</h3>
+<p>In case the first example feel too different from your project here is another
+example. Consider a project aimed at producing a command line tool to analyze
+some input data that is provided as an argument by the user. The first three
+steps would then be: (1) write a CLI interface; (2) write code to read the 
+input data; (3) write code to perform an analysis.</p>
+
+<p>Here steps 1 and 2 are clearly much simpler than step 3, and so you should 
+prioritize those components. Designing the CLI interface was already part of 
+your proposal, and so you should have a plan for this. Before even starting 
+the analysis steps I would write steps 1 and 2 to load the user inputs and 
+simply print to the user that this was successfully done. Something like 
+this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># write your CLI interface (write a __main__.py and setup.py file)</span>
+myprogram <span class="nt">--data</span> data.csv <span class="nt">--option1</span> 100 <span class="nt">--option2</span> 0.5
+</code></pre></div></div>
+<p>And it would produce an example output like below, where you can simply put
+print statements in your code to report what is happening in each step. Later
+you can remove these print statements (or, use <em>logging</em> as described in one
+of your readings for this week).</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># this could be done by inserting print() commands into your code</span>
+myprogram started.
+received arguments: <span class="nv">data</span><span class="o">=</span>data.csv, <span class="nv">option1</span><span class="o">=</span>100, <span class="nv">option2</span><span class="o">=</span>0.5
+parsing data.csv with pandas
+loaded data file with the following columns: ...
+</code></pre></div></div>
+
+<p>Steps 1 and 2 are complete. You can now begin to develop your analysis code
+and anytime you want to test the entire program you can simply call it from
+the command line.</p>
+
+
+		</div>
+	</main>
+
+	<footer>
+	    
+
+
+
+<div class="container text-center mt-5">
+	<p>Copyright &copy; 
+	 <script>document.write( new Date().getFullYear() );</script> 
+	 Deren Eaton
+	 </p>
+</div>
+
+
+	    
+
+
+
+
+<!-- JS: jQuery, Popper.js, and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	var BASE_URL = '';
+</script>
+
+
+	</footer>
+
+</body>
+</html>

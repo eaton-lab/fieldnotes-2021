@@ -1,0 +1,345 @@
+
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="author" content="Deren Eaton">
+  <meta name="description" content="Programming Course">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Lecture-11.0</title>
+
+  <!-- CSS styling -->
+  <link rel="stylesheet" href="../revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../revealjs/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../hack-the-planet.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./custom.css">
+</head>
+
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section class="present">
+        <div class="title_slide">
+          <h2 id="title">Programming and Data Science for Biology<br>(EEEB G4050)</h2>
+          <h4 id="subtitle">Dept. of Ecology, Evolution, and Environmental Biology<br>Columbia University</h4>
+        </div>
+      </section>
+
+
+      <!-- OUTLINE -->
+      <section class="future">
+        <div class="standard10 text-center">
+          <h3 id="title">Lecture 11.0 Outline:</h3>
+          <ul class="bullets">
+            <li>Review: numpy and pandas</li>
+            <li>Share hack-program v2</li>            
+            <li>Introduce Python plotting</li>
+            <li>Project planning</li>
+          </ul>
+        </div>
+      </section>
+
+
+
+      <!-- SECTION ON NUMPY PANDAS -->
+      <section class="future">
+        <section class="future">
+          <div class="standard10">
+            <h3 id="title">Python Data Science</h3>
+              <div class="mx-auto"><p>
+                Numpy is the core of Python Data Science. Composed of custom class objects<br>
+                for storing array data for numerical processing using compiled functions.
+              </p></div>
+              <img src="../10.0/python-datascience-stack.jpg" style="width:50%">
+          </div>
+        </section>
+
+        <section class="future">        
+          <div class="standard10">
+            <h3 id="title">Numpy basics</h3>
+            <div class="mx-auto"><p>
+              Numpy ndarrays are n-dimensional typed array data objects.
+            </p></div>            
+            <pre class="mx-sm-auto" style="font-size: 0.8rem"><code class="python" data-trim>
+                # create an array full of zeros that is 3 x 4 x 5
+                arr = np.zeros(shape=(3, 4, 5), dtype=float)
+                print(arr[0])
+            </code></pre>
+            <pre><code data-trim>
+                [[0. 0. 0. 0. 0.]
+                 [0. 0. 0. 0. 0.]
+                 [0. 0. 0. 0. 0.]
+                 [0. 0. 0. 0. 0.]]
+            </code></pre>
+          </div>
+        </section>
+
+
+        <section class="future">        
+          <div class="standard10">
+            <h3 id="title">Numpy basics</h3>
+            <div class="mx-auto"><p>
+              Functions of arrays can be broadcast over specific dimensions.
+            </p></div>            
+            <pre class="mx-sm-auto" style="font-size: 0.8rem"><code class="python" data-trim>
+                # calculate mean by row, or by column.
+                arr = np.random.binomial(n=1, p=0.5, size=(10, 3))
+                print(arr.mean(axis=0))
+                print(arr.mean(axis=1))                
+            </code></pre>
+            <pre><code data-trim>
+                [0.7 0.4 0.5]
+                [0.33333333 0.66666667 0.66666667 0.33333333 0.33333333 0.33333333
+                 0.66666667 0.         1.         1.        ]
+            </code></pre>
+          </div>
+        </section>
+
+        <section class="future">
+          <div class="standard10">
+            <h3 id="title">Pandas basics</h3>
+            <div class="mx-auto"><p>
+              Pandas provides a wrapper around numpy arrays with row (index) and column names.
+            </p></div>            
+            <pre class="mx-sm-auto" style="font-size: 0.8rem"><code class="python" data-trim>
+                import pandas as pd
+
+                # create a Pandas DataFrame by taking a numpy array as input
+                print(pd.DataFrame(arr))
+            </code></pre>
+            <pre><code data-trim>
+                   0  1  2
+                0  1  0  0
+                1  1  0  1
+                2  1  1  0
+                3  0  0  1
+                4  0  0  1
+                5  1  0  0
+                6  1  1  0
+                7  0  0  0
+                8  1  1  1
+                9  1  1  1
+            </code></pre>
+          </div>
+        </section>
+
+        <section class="future">
+          <div class="standard10">
+            <h3 id="title">Pandas basics</h3>
+            <div class="mx-auto"><p>
+              Data can be accessed more easily from dataframes by using indexing and slicing<br>
+              not only on indices but also on label names (many options).
+            </p></div>            
+            <pre class="mx-sm-auto" style="font-size: 0.8rem"><code class="python" data-trim>
+                # create a Pandas DataFrame by taking a numpy array as input
+                df = pd.DataFrame(arr, columns=['a', 'b', 'c'])
+            </code></pre>
+            <pre><code data-trim>
+                   a  b  c
+                0  1  0  0
+                1  1  0  1
+                2  1  1  0
+                3  0  0  1
+                4  0  0  1
+                5  1  0  0
+                6  1  1  0
+                7  0  0  0
+                8  1  1  1
+                9  1  1  1
+              </code></pre>
+          </div>
+        </section>
+
+        <section class="future">
+          <div class="standard10">
+            <h3 id="title">Pandas basics</h3>
+            <div class="mx-auto"><p>
+              Many ways to index or slice dataframes to access data.
+            </p></div>            
+            <pre class="mx-sm-auto" style="font-size: 0.8rem"><code class="python" data-trim>
+                # set all values in column 'a' to be 0
+                df.loc[:, 'a'] = 0
+
+                # or, set values in column 'a' to be the following 10 values.
+                df.loc[:, 'a'] = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+
+                # set all values in column 0 to be 0
+                df.iloc[:, 0] = 0
+
+                # or, set values in column 0 to be the following 10 values.
+                df.iloc[:, 0] = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+
+                # don't do this: setting on a 'get' operation raises a warning
+                df['a'] = 0
+
+                # don't do this: setting with wrong size causes an error (size=3 here instead of 10)
+                df.loc[:, 0] = [0, 1, 0]
+            </code></pre>
+          </div>
+        </section>
+
+      </section>
+
+
+
+      <!-- SECTION ON PROJECT PLANNING -->
+      <section class="future">
+
+        <section class="future">        
+          <div class="standard10">
+            <h3 id="title">Python packages</h3>
+            <div class="mx-auto"><p>
+              A Python package is a folder of modules (.py scripts).<br> 
+              Two special module names are <code>__init__.py</code> and <code>__main__.py</code>.<br>
+              A <code>setup.py</code> script is used to make a package installable.
+            </p></div>
+            <pre class="mx-sm-auto" style="font-size: 1rem"><code class="bash" data-trim>
+              repo/                            # <-- this is your git repo folder.
+              ├── setup.py                     # <-- installer script
+              └── mypackage/                   # <-- package: a folder of Python modules
+                  ├── mymodule.py              # <-- Python module
+                  ├── __init__.py              # <-- optional: for organizing module imports
+                  └── __main__.py              # <-- optional: for argparse and CLI functions
+            </code></pre>
+          </div>
+        </section>
+
+        <section class="future">        
+          <div class="standard10">
+            <h3 id="title">Python API</h3>
+            <div class="mx-auto"><p>
+              A Python package can be designed for use directly in Python. This is 
+              termed an Application Programming Interface (API).
+            </p></div>
+            <pre class="mx-sm-auto" style="font-size: 1rem"><code class="python" data-trim>
+                import darwinday
+                darwinday.birthday("next")
+            </code></pre>
+          </div>
+        </section>
+
+        <section class="future">        
+          <div class="standard10">
+            <h3 id="title">Python CLI</h3>
+            <div class="mx-auto"><p>
+              Or, it can be designed to be used from a Command Line Interface (CLI). Any
+              function can be made into a command-line program using <i>entry-point</i>
+              in <code>setup.py</code>. Options can be parsed with argparse.
+            </p></div>
+            <pre class="mx-sm-auto" style="font-size: 1rem"><code class="python" data-trim>
+                darwinday --next
+            </code></pre>
+          </div>
+        </section>
+
+      </section>
+
+
+      <!-- SECTION ON PLOTTING IN PYTHON -->
+      <section class="future">
+
+        <section class="future">
+          <div class="standard10">
+            <h3 id="title">Python plotting</h3>
+            <div class="mx-auto"><p>
+              Python plotting packages are <i>mostly</i> object-oriented.<br>
+              Matplotlib is the most popular, but is old, and supports ancient styles.<br>
+              Several newer modern plotting libraries now exist...
+            </p></div>
+            <pre class="mx-sm-auto" style="font-size: 1rem"><code class="python" data-trim>
+                import numpy as np
+                import matplotlib.pyplot as plt
+                %matplotlib inline
+
+                x = np.linspace(0, 10, 100)
+                
+                plt.plot(x, np.sin(x))
+                plt.plot(x, np.cos(x))
+                plt.show()
+            </code></pre>
+          </div>
+        </section>
+
+
+        <section class="future">
+          <div class="standard10">
+            <h3 id="title">Python plotting</h3>
+            <div class="mx-auto"><p>
+              Object-oriented style should always be preferred (more clear).
+            </p></div>
+            <pre class="mx-sm-auto" style="font-size: 1rem"><code class="python" data-trim>            
+              # First create a grid of plots
+              # ax will be an array of two Axes objects
+              fig, ax = plt.subplots(2)
+
+              # Call plot() method on the appropriate object
+              ax[0].plot(x, np.sin(x))
+              ax[1].plot(x, np.cos(x));
+            </code></pre>
+          </div>
+        </section>
+
+
+        <section class="future">
+          <div class="standard10">
+            <h3 id="title">Python plotting</h3>
+            <div class="mx-auto"><p>
+              Other plotting libraries follow a similar style, with a 'canvas/figure'-type
+              object, one or more 'axes' types objects, and then marks painted on the axes.
+            </p></div>
+            <pre class="mx-sm-auto" style="font-size: 1rem"><code class="python" data-trim>            
+              # matplotlib style
+              fig = plt.figure()
+              ax = plt.axes()
+              ax.plot(x, np.sin(x))
+
+              # toyplot style
+              import toyplot
+              canvas = toyplot.Canvas()
+              axes = canvas.cartesian()
+              axes.plot(x, np.sin(x))
+            </code></pre>
+          </div>
+        </section>
+
+
+
+      </section>
+
+
+
+    <!-- SLIDES CLASS ENDING -->
+    </div>
+
+  <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="../revealjs/dist/reveal.js"></script>        
+  <script src="../revealjs/plugin/markdown/markdown.js"></script>  
+  <script src="../revealjs/plugin/highlight/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      plugins: [ RevealMarkdown, RevealHighlight ],
+      minScale:0.1,
+      maxScale:5,
+      width:1600,
+      height:900,
+      controls:true, 
+      progress:true,
+      hash:true,
+      loop:false, 
+      center:false,
+      transition: 'none',
+      // transition: 'none',      
+    });
+  </script>
+</body>
+</html>

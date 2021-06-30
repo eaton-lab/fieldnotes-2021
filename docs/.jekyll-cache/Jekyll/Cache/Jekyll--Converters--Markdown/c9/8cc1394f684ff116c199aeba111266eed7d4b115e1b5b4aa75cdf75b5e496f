@@ -1,0 +1,18 @@
+I"$<h3 id="python-subprocess">Python subprocess</h3>
+<p>Assignment instructions:</p>
+
+<ol>
+  <li>Fork the repo <a href="https://github.com/hackers-test/hack-7-scripting">https://github.com/hackers-test/hack-7-python</a></li>
+  <li>Clone your copy of the repo to <code class="language-plaintext highlighter-rouge">~/hacks/</code></li>
+  <li>Start a jupyter notebook server locally.</li>
+  <li>Navigate to <code class="language-plaintext highlighter-rouge">~/hacks/hack-7-scripting/notebooks/</code></li>
+  <li>Complete all notebooks in the <code class="language-plaintext highlighter-rouge">notebooks/</code> dir.</li>
+  <li>Add, commit, and push changes back to your <code class="language-plaintext highlighter-rouge">origin main</code> copy of the repo.</li>
+</ol>
+
+<h4 id="resources">Resources</h4>
+<ul>
+  <li>Check in on the chatroom if you run into any problems.</li>
+  <li>You can view a read-only version of the notebook assignments on <a href="https://nbviewer.jupyter.org/github/hackers-test/hack-7-scripting/tree/main/notebooks/">nbviewer</a></li>
+</ul>
+:ET

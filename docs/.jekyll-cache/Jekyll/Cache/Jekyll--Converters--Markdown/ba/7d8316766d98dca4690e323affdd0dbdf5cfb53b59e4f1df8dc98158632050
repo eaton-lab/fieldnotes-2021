@@ -1,0 +1,327 @@
+I"<Q<h2 id="on-conda-and-sand-mandalas">On Conda and Sand Mandalas</h2>
+
+<p><strong>Table of Contents:</strong></p>
+<ul id="markdown-toc">
+  <li><a href="#on-conda-and-sand-mandalas" id="markdown-toc-on-conda-and-sand-mandalas">On Conda and Sand Mandalas</a>    <ul>
+      <li><a href="#what-is-conda" id="markdown-toc-what-is-conda">What is conda?</a></li>
+      <li><a href="#why-use-conda" id="markdown-toc-why-use-conda">Why use conda?</a></li>
+      <li><a href="#install-conda-miniconda3" id="markdown-toc-install-conda-miniconda3">Install conda (miniconda3)</a></li>
+      <li><a href="#adding-conda-to-your-path" id="markdown-toc-adding-conda-to-your-path">Adding <code class="language-plaintext highlighter-rouge">conda</code> to your PATH</a></li>
+      <li><a href="#using-conda" id="markdown-toc-using-conda">Using conda</a></li>
+      <li><a href="#conda-channels" id="markdown-toc-conda-channels">Conda channels</a></li>
+      <li><a href="#conda-environments" id="markdown-toc-conda-environments">Conda environments</a></li>
+      <li><a href="#the-purposeful-impermanence-of-conda" id="markdown-toc-the-purposeful-impermanence-of-conda">The purposeful impermanence of conda</a></li>
+      <li><a href="#assessment" id="markdown-toc-assessment">Assessment</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="what-is-conda">What is conda?</h3>
+<p><a href="https://docs.conda.io/en/latest/">Conda</a> is an open-source software management 
+tool for installing software packages, as well as their dependencies, and 
+creating sandboxed environments for executing code. Using the <code class="language-plaintext highlighter-rouge">conda</code> command
+line tool you can use simple commands to search for software packages, select 
+specific versions, and install them locally on your machine. This automated
+process makes installing and removing software simple and reproducible which makes
+it easier to design, distribute and use working software.</p>
+
+<h3 id="why-use-conda">Why use conda?</h3>
+<p>The many advantages of using conda include:</p>
+
+<ul>
+  <li>
+    <p><strong>command-line convenience</strong>: the conda command line program allows you to 
+search for and install tools with simple commands that can even be written
+as scripts for automation. This makes it easy to replicate the set of software
+tools installed on one computer onto another machine.</p>
+  </li>
+  <li>
+    <p><strong>finding dependencies</strong>: Almost every software program builds on and requires
+other software packages as dependencies. Rather than telling a user to go 
+find and install each of these dependencies on their own (a sure sign of 
+a poorly developed tool by today’s standards) a software package manager
+can instead fetch and install of the dependencies for them. This might even
+include different dependencies or versions depending on their specific operating
+system. This is a very complex task and something conda does very well.</p>
+  </li>
+  <li>
+    <p><strong>sandboxed directory</strong>: conda installs software into a <em>sandboxed</em> location 
+on your computer (usually a directory within HOME), which is done purposefully
+to keep your conda software completely separate and isolated from your 
+system-wide software (which is usually in /bin or /usr/bin). 
+This gives you peace of mind to install, update, and remove packages as much
+as you want inside of your conda directory without having to worry that it 
+might ever impact your system programs.</p>
+  </li>
+  <li>
+    <p><strong>environments</strong>: In addition to allowing you to install software programs into
+a sandboxed location, conda also allows you to keep many separate <em>environments</em>,
+where you can keep different sets of software or versions of them. This makes it easy 
+to test software tools across different version of dependencies, or to keep 
+software separate that uses different conflicting dependencies.</p>
+  </li>
+</ul>
+
+<h3 id="install-conda-miniconda3">Install conda (miniconda3)</h3>
+<p>There are two main flavors of conda that you can install: Anaconda and 
+Miniconda. Both include a version of Python and the conda program 
+(which is written in Python) as well as a few dependencies of conda for
+fetching information about packages online. However, the two flavors differ
+in terms of which <em>other</em> tools come pre-loaded with these base resources.
+Anaconda comes fully loaded with dozens of commonly used Python packages, 
+whereas Miniconda in totally minimal, and doesn’t come with anything extra
+at all. I always recommend installing Miniconda, and then adding to it any
+software that you want to install.</p>
+
+<p>To install Miniconda you can google search ‘Miniconda install’ and it will
+point you to the following <a href="https://docs.conda.io/en/latest/miniconda.html">download page</a>.
+Here you will see many links for different versions of Miniconda. First, 
+there is a version for different operating systems (Window, MacOSX, Linux). 
+If you are on a Mac then select from the Mac section, if you are on Linux
+or Windows Subsystem for Linux then select the Linux version. Do not install
+the Windows version. Next you will that within each category there is an option
+for Python 2.7 and 3.8 (or newer). Python 2.7 is the legacy version
+of Python that was most popular for nearly a decade, and so tons of software in 
+the world has been built on 2.7. However, Python3 is newer and better, and it
+is time for the world to move on. So we will be using the Python3 version.
+Under Linux it lists a 32-bit and 64-bit version, be sure to select the 64-bit version 
+(32-bit is only for very old computers). Under Mac it lists <code class="language-plaintext highlighter-rouge">pkg</code> or <code class="language-plaintext highlighter-rouge">bash</code>
+in the name, select the <code class="language-plaintext highlighter-rouge">bash</code> version. OK, now that you have found the version 
+that you should install, click on the blue link and copy the URL address, since
+we are going to use the command line to install conda.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cd to your HOME directory</span>
+<span class="nb">cd</span> ~
+
+<span class="c"># download the Miniconda installer from the URL using wget</span>
+<span class="c"># If you are on Linux this is the appropriate URL</span>
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+<span class="c"># If you are on a Mac this is the appropriate URL</span>
+<span class="c"># wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh</span>
+
+<span class="c"># call bash to install conda from the .sh install script in 'batch' (auto) mode</span>
+bash Miniconda3-latest-Linux-x86_64 <span class="nt">-b</span>
+
+<span class="c"># check that the miniconda3 folder now appears in HOME</span>
+<span class="nb">ls</span> <span class="nt">-l</span> ~
+</code></pre></div></div>
+
+<p>When you execute the <code class="language-plaintext highlighter-rouge">bash</code> command above it will start running the installer
+script. By default, this will select <code class="language-plaintext highlighter-rouge">~/miniconda3</code> as the location to install
+conda and its associated folders. That’s good. 
+It will then list the names of the packages it is installing, 
+including Python3.8 and about 20 Python package dependencies. It 
+should take a minute or less to finish.</p>
+
+<h3 id="adding-conda-to-your-path">Adding <code class="language-plaintext highlighter-rouge">conda</code> to your PATH</h3>
+<p>At this point we have now created a new folder containing conda, but it is
+not yet added to our PATH, meaning that we can’t easily use this software
+yet. Our goal here will be set the miniconda3/ directory at the front
+of our PATH variable. This means that our shell will look here first for
+any software, and only look in the other folders in the PATH for software
+if it was not already found here. One specific reason this is useful is that
+your shell will find this new version of Python (3.8) in Miniconda and use
+it instead of some stodgy old system-wide version that is likely lurking 
+deep in your computer somewhere. Before we proceed let’s look at which 
+version of Python is currently set as your default (i.e., at the front 
+of you PATH). You can do this with tab-completion by starting to type 
+python and then pressing tab. You should see that there is a binary 
+somewhere called python3 or python2.7, etc. You can also see all versions
+in their PATH order by using <code class="language-plaintext highlighter-rouge">whereis</code> like below.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># IF one is in your path this will show it.</span>
+which python
+
+<span class="c"># this will show all versions of Python on your system</span>
+whereis python
+</code></pre></div></div>
+
+<p>Let’s now add conda to your PATH by editing the dotfile (e.g., .bashrc)
+in your HOME directory. While we could do this by hand, conda has 
+developed a convenient script that can do it for us, and do it in kind
+of a fancy way. So let’s use this tool called <code class="language-plaintext highlighter-rouge">conda init</code>. To use it
+we will need to provide the full path to the binary file since it is
+not yet in our PATH. Run the command below and you should see an example
+output similar to below.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/miniconda3/condabin/conda init <span class="nv">$SHELL</span>
+</code></pre></div></div>
+<pre style="background-color: darkgrey; padding:10px">no change     /home/deren/miniconda3/condabin/conda
+no change     /home/deren/miniconda3/bin/conda
+no change     /home/deren/miniconda3/bin/conda-env
+no change     /home/deren/miniconda3/bin/activate
+no change     /home/deren/miniconda3/bin/deactivate
+no change     /home/deren/miniconda3/etc/profile.d/conda.sh
+no change     /home/deren/miniconda3/etc/fish/conf.d/conda.fish
+no change     /home/deren/miniconda3/shell/condabin/Conda.psm1
+no change     /home/deren/miniconda3/shell/condabin/conda-hook.ps1
+no change     /home/deren/miniconda3/lib/python3.8/site-packages/xontrib/conda.xsh
+no change     /home/deren/miniconda3/etc/profile.d/conda.csh
+modified     /home/deren/.bashrc
+
+==&gt; For changes to take effect, close and re-open your current shell &lt;==
+</pre>
+
+<p>You can see that this edited the dotfile in my home directory. Remember, 
+this is the file that is run every time you open a terminal which loads
+a bunch of variables including the PATH where software is found and 
+to set the style and colors of the prompt. When you run <code class="language-plaintext highlighter-rouge">conda init $SHELL</code>
+it writes a new block at the end of the dotfile for your specific shell
+ telling it to make your terminal aware of conda whenever it starts up. 
+ If you wanted to stop it from doing this you would only need to remove that block of text 
+from the dotfile. The code in this block does two things: 
+(1) it tells your prompt to show the name of the conda environment; 
+and (2) it adds the filepath of your miniconda3 directory to the front
+of your PATH variable so that you can find all of the 
+tools there. For this to go into effect close and reopen your terminal.</p>
+
+<p>You can now test whether the <code class="language-plaintext highlighter-rouge">conda</code> command line tool is in your PATH
+by typing the following command, which will print info about your conda
+directory.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda info
+</code></pre></div></div>
+<pre style="background-color: darkgrey;padding:10px">     active environment : base
+    active env location : /home/deren/miniconda3
+            shell level : 1
+       user config file : /home/deren/.condarc
+ populated config files : 
+          conda version : 4.9.2
+    conda-build version : not installed
+         python version : 3.8.5.final.0
+       virtual packages : __glibc=2.31=0
+                          __unix=0=0
+                          __archspec=1=x86_64
+       base environment : /home/deren/miniconda3  (writable)
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /home/deren/miniconda3/pkgs
+                          /home/deren/.conda/pkgs
+       envs directories : /home/deren/miniconda3/envs
+                          /home/deren/.conda/envs
+               platform : linux-64
+             user-agent : conda/4.9.2 requests/2.25.1 CPython/3.8.5 Linux/5.8.0-38-generic ubuntu/20.04.1 glibc/2.31
+                UID:GID : 1000:1000
+             netrc file : None
+           offline mode : False
+</pre>
+
+<p>Let’s also look again for where Python is installed on our system. We should
+see a version of Python located in our miniconda3 directory at the front of 
+the PATH:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># this should show the miniconda Python path</span>
+which python
+</code></pre></div></div>
+<pre style="background-color: darkgrey;padding:10px">/home/deren/miniconda3/bin/python
+</pre>
+
+<div class="alert alert-info">
+	Take note of this result. This is the path to the version of Python 
+	that we will be using extensively throughout this course. It is located
+	inside of your miniconda3/ directory, and then inside of a directory called
+	bin/. This latter subdirectory is where all binaries (executable callable
+	programs) installed by conda will be located.
+</div>
+
+<h3 id="using-conda">Using conda</h3>
+<p>The command line tool is called <code class="language-plaintext highlighter-rouge">conda</code>. This is a binary 
+(executable program) written in Python and installed in your
+miniconda directory. Because this directory is in your PATH the 
+<code class="language-plaintext highlighter-rouge">conda</code> binary is also in your PATH. This is why you can call it 
+from your terminal without needing to write the full path to the 
+location of the binary. Let’s try installing some other binaries
+using conda. The syntax for installing a program with conda is
+<code class="language-plaintext highlighter-rouge">conda {program_name} -c {channel_name}</code>. Try the example below:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda <span class="nb">install </span>cowpy <span class="nt">-c</span> conda-forge
+</code></pre></div></div>
+
+<p>This installed a goofy Python program called cowsay that can be
+used to make funny ASCII drawings in your terminal. Under the hood
+it installed a Python package, and also a binary command line tool
+that ships with this Python library. The Python library is installed
+into <code class="language-plaintext highlighter-rouge">miniconda3/pkgs/</code> and the binary is installed into <code class="language-plaintext highlighter-rouge">miniconda3/bin/</code>
+Let’s try out the cowpy binary by writing some text in the terminal 
+with <code class="language-plaintext highlighter-rouge">echo</code> and piping it to the <code class="language-plaintext highlighter-rouge">cowpy</code> program. For more details on the
+cowpy program you can <a href="https://github.com/jeffbuttars/cowpy">find it on GitHub</a></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"hello world"</span> | cowpy
+</code></pre></div></div>
+
+<h3 id="conda-channels">Conda channels</h3>
+<p>Different software packages are found on different channels on conda. 
+Channels are just big online folders where conda recipes are stored. 
+Most software is available on one of three channels:
+“default”, “conda-forge”, and “bioconda”. You can find out which channel
+a software package is available on by googling <code class="language-plaintext highlighter-rouge">conda {software_name}</code>. 
+The bioconda channel includes many bioinformatics specific tools. The
+conda-forge channel contains the cutting-edge versions of almost all 
+software, and is very actively community maintained. The default channel
+is maintained by the anaconda organization, and tends to be a little out
+of date, and has the least software. After years of using conda 
+I strongly recommnd setting the conda-forge channel as your default 
+channel. This means that it will always look here first for a requested
+package or any of its dependencies, and only look at other channels after
+first looking here. This is a good thing.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda config <span class="nt">--add</span> channels conda-forge
+</code></pre></div></div>
+
+<p>Here we are setting a configuration preference. So how do you think that 
+was done? That’s right, it wrote it to a dotfile. In this case it simply
+added the preferred conda channel order to a file called <code class="language-plaintext highlighter-rouge">~/.condarc</code>. 
+Let’s test this out by installing another package. Now we no longer 
+need to tell it <code class="language-plaintext highlighter-rouge">-c conda-forge</code> since it will look there by default.
+(Personally, I still usually write it anyways just out of habit, so 
+you may see it in future instructions).</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># install the Python 'requests' packages</span>
+conda <span class="nb">install </span>requests
+</code></pre></div></div>
+
+<h3 id="conda-environments">Conda environments</h3>
+<p>In this class we will work only using your ‘base’ conda environment. 
+Usually you will not need to use additional environments until you become
+a power user. You can read more about environments in the conda docs.</p>
+
+<h3 id="the-purposeful-impermanence-of-conda">The purposeful impermanence of conda</h3>
+<p>In Tibetan Buddhism there is a tradition involving the creation of 
+large complex mosaic <a href="https://en.wikipedia.org/wiki/Sand_mandala"><em>mandalas</em></a>
+carefully constructed from colored sand, often involving many weeks of work. 
+Upon completion of the artwork it is then destroyed. This meditative exercise 
+is intended to make one reflect on the impermanence of life, and to experience
+the act of letting go.</p>
+
+<p>The sand mandala tradition has a lot to teach us about our relationships
+with our conda software directory. You may feel that after working with 
+conda for several weeks that you have installed the perfect set of software
+tools that includes everything you will ever need. And you become very 
+attached to it. But, you should feel free to let it go.</p>
+
+<p>Software becomes outdated quickly, and updating many many software packages to new
+versions can sometimes conflict with other programs in your environment to cause problems.
+Usually conda can fix these problems and find the right versions that work
+together. But in some cases it can’t. It simply worked itself into a corner
+where it basically needs to uninstall and reinstall everything again. This is
+the point when you should consider destroying it.</p>
+
+<p>That is to say, you can easily remove your conda directory, and reinstall it.
+Remember we just installed it above, it takes a single command, it’s very fast.
+To remove the conda directory you can use the <code class="language-plaintext highlighter-rouge">rm</code> command along with the options
+<code class="language-plaintext highlighter-rouge">-r</code> and <code class="language-plaintext highlighter-rouge">-f</code>. The <code class="language-plaintext highlighter-rouge">-r</code> option tells it that the thing we want to remove is a 
+folder. The <code class="language-plaintext highlighter-rouge">-f</code> command means ‘force’. This is a slightly dangerous command 
+if you were to tell it to delete something that you shouldn’t. So take care that
+the file path after this command is the one that you actually want to remove
+and not something else (like your entire filesystem).</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># this command would remove your conda directory completely</span>
+<span class="c"># rm -rf ~/miniconda3</span>
+</code></pre></div></div>
+
+<h3 id="assessment">Assessment</h3>
+<p>None. You will need to have successfully installed conda to complete the next tutorial.</p>
+:ET

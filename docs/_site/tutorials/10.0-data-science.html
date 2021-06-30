@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+    
+<!-- how to read page -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<!-- icons -->
+<link rel="icon" href="/assets/images/favicon.ico">
+
+<!-- get title from page meta -->
+<title>data science &#8211; Fieldnotes-2021</title>
+
+
+<!-- store meta info on page -->
+
+
+
+
+
+<!-- Store full web url -->
+
+<link rel="canonical" href="
+	
+	
+		/tutorials/10.0-data-science.html
+	
+">
+
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/custom.css">
+<link rel="stylesheet" href="/assets/css/syntax.css">
+</head>
+
+
+<body id="default">
+
+    <header>
+	    
+
+<!-- NAVBAR (DARK) -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="">Fieldnotes-2021</a>
+
+    <!-- The toggle switch for collapsed navbar-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Make collapsable -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        <!-- The elements of the navbar -->
+        <ul class="navbar-nav">
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+                        <a class="nav-link" href=/>Home</a>
+                    
+                </li>
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Itinerary</a>
+                        
+                        <div class="dropdown-menu">
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-2.html">Day 2 (Shimian to Xinduqiao)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-3.html">Day 3 (Xinduqiao to Litang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-4.html">Day 4 (Litang to Litang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-5.html">Day 5 (Litang to Bamei)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 6 (Dawu to Luhuo)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 7 (Luhuo to Wengdaxiang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 8 (Wengdaxiang to Zamtang)</a>
+                            
+                        
+                        </div>
+
+                    <!-- open link in new window -->
+                    
+                </li>
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+                        <a class="nav-link" href=/pages/assignments.html>Methods</a>
+                    
+                </li>
+            
+            <!-- LINK TO HOME -->
+            <li class="nav-item mr-3">
+
+        </ul>
+    </div>
+</nav>
+  
+	    
+
+
+<!-- Splash header about the news -->
+<div class="jumbotron" style="background-image: url(/assets/images/hackers-1.jpg);">
+    <!-- <div class="mb-3 mt-0"><img src="/assets/images/E3B-logo.png"></div> -->
+    <!-- <h1 class="display-5 font-italic">data science</h1> -->
+    <!-- <p class="lead mt-3 mb-0"><i></i></p> -->
+</div>
+    </header>
+
+    <main role="main" class="container-md">
+    	<div class="col-sm-10 mx-auto">
+		    <style>
+h2 {
+    margin-top: 30px;
+}
+h3 {
+    margin-top: 30px;
+}
+pre {
+    line-height: 1.25em;
+}
+pre code {
+    font-size: 0.9em;
+}
+</style>
+
+<h2 id="python-data-science">Python Data Science</h2>
+
+<p><strong>Table of Contents:</strong></p>
+<ul id="markdown-toc">
+  <li><a href="#python-data-science" id="markdown-toc-python-data-science">Python Data Science</a>    <ul>
+      <li><a href="#numpy-and-pandas" id="markdown-toc-numpy-and-pandas">Numpy and Pandas</a></li>
+      <li><a href="#recap" id="markdown-toc-recap">Recap</a></li>
+      <li><a href="#challenge-add-data-science-to-your-mini-project" id="markdown-toc-challenge-add-data-science-to-your-mini-project">Challenge: Add data science to your mini-project</a></li>
+      <li><a href="#lets-focus-on-the-last-example-how-might-we-go-about-this" id="markdown-toc-lets-focus-on-the-last-example-how-might-we-go-about-this">Let’s focus on the last example, how might we go about this?</a></li>
+      <li><a href="#assignment" id="markdown-toc-assignment">Assignment</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="numpy-and-pandas">Numpy and Pandas</h3>
+<p>The <code class="language-plaintext highlighter-rouge">numpy</code> and <code class="language-plaintext highlighter-rouge">pandas</code> libraries are the core of data science in Python.
+The numpy <code class="language-plaintext highlighter-rouge">ndarray</code> and pandas <code class="language-plaintext highlighter-rouge">DataFrame</code> class objects are custom classes
+that can be used to store, visualize, and operate on structured data. 
+Here we will explore how you can use these custom classes within your own
+code, once again thinking about going beyond scripting – the type of 
+exercises you have been doing with these data structures in notebooks – 
+and how to use them inside of a program.</p>
+
+<h3 id="recap">Recap</h3>
+<p>Last session you began a mini-project in a repo called <code class="language-plaintext highlighter-rouge">hack-program</code>. The
+goal was to write a Python package containing a module with at least
+one function in it that takes one or more arguments. You then made a 
+<code class="language-plaintext highlighter-rouge">setup.py</code> script to make the package <i>installable</i>, and also created
+an <i>entry point</i> to your function so it could be called as an 
+executable program.</p>
+
+<h3 id="challenge-add-data-science-to-your-mini-project">Challenge: Add data science to your mini-project</h3>
+<p>Your challenge today is to return to your program and to add additional 
+features using either the numpy or pandas libraries, or both. Let’s consider
+the simple example of the darwinday program shared in class. This has two 
+functions, one that computed the number of days until Darwin’s birthday, and
+another that returned a random string. How could numpy or pandas be added
+to this package? Here are a few example ideas:</p>
+
+<ol>
+  <li>
+    <p>make a CSV file with hundreds of quotes in it, and load the file 
+using pandas <code class="language-plaintext highlighter-rouge">.read_csv()</code>, then randomly sample quotes from it using 
+pandas <code class="language-plaintext highlighter-rouge">.sample</code> function.</p>
+  </li>
+  <li>
+    <p>using numpy we could random sample a day (e.g., a number in 0-365) and
+return the distance from that day to Darwin day. Or we could randomly sample
+a date in time (any year) and report the age of Darwin.</p>
+  </li>
+  <li>
+    <p>You could find a CSV database of celebrity birthdates online 
+(or create one) and randomly sample N birthdays and compile the pandas
+DataFrame with their names and how much older or younger than Darwin they 
+are, and return the result as a nicely formatted DataFrame.</p>
+  </li>
+</ol>
+
+<h3 id="lets-focus-on-the-last-example-how-might-we-go-about-this">Let’s focus on the last example, how might we go about this?</h3>
+<p>For me, I would start by creating a class to organize my plan. Let’s do a 
+psuedo-code exercise to plan what this would look like:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># rough pseudo-code outline of our plan
+</span><span class="k">class</span> <span class="nc">DarwinDates</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">darwinday</span> <span class="o">=</span> <span class="s">'...'</span>    <span class="c1"># store datetime here
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="s">'...'</span>         <span class="c1"># read CSV DataFrame here
+</span>
+    <span class="k">def</span> <span class="nf">random_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="s">'...'</span>         <span class="c1"># subsample DataFrame to n rows here
+</span>
+    <span class="k">def</span> <span class="nf">calculate_age_comparision</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># iterate over dataframe comparing each date
+</span>        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">index</span><span class="p">:</span>
+
+            <span class="c1"># get birthday of a person
+</span>            <span class="k">pass</span>
+
+            <span class="c1"># compare to darwin's 
+</span>            <span class="k">pass</span>
+
+            <span class="c1"># store result as difference in number of day
+</span>            <span class="k">pass</span>
+</code></pre></div></div>
+
+<p>OK, now that we have a plan let’s fill this in with real code. I wrote the 
+following bit by bit, testing each function as I wrote it. Read through this
+code carefully. You can see that it defines three functions in addition to 
+the <code class="language-plaintext highlighter-rouge">__init__()</code> function. The last one <code class="language-plaintext highlighter-rouge">.run()</code> is used to call the two 
+functions in the middle. The example test that I run at the end shows that 
+you can implement this code by simply init’ing the instance and calling .run.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="c1"># URL path to a CSV of famous birth dates
+</span><span class="n">URL</span> <span class="o">=</span> <span class="s">"https://raw.githubusercontent.com/richard512/Little-Big-Data/master/famous-birthdates.csv"</span>
+
+<span class="k">class</span> <span class="nc">DarwinDates</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># store Darwin's birthday 
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">darwinday</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1859</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+
+        <span class="c1"># load the database of birthdates from a URL and split on " "
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">" "</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">random_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="s">"""
+        Randomly sample n famous dates. Overwrite .data attribute w/ new 
+        subsample. Also drop columns that are not relevant.
+        """</span>
+        <span class="c1"># drop any samples that have NaN for the date
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="o">~</span><span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">birthDate</span><span class="p">.</span><span class="n">isna</span><span class="p">()]</span>
+
+        <span class="c1"># random sample n rows, and set index back to starting from zero
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="p">).</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+        <span class="c1"># keep only these selected columns
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s">"firstname"</span><span class="p">,</span> <span class="s">"lastname"</span><span class="p">,</span> <span class="s">"birthDate"</span><span class="p">]]</span>
+
+    <span class="k">def</span> <span class="nf">calculate_age_comparison</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"""
+        Counts age difference in days between each person and Darwin
+        """</span>
+        <span class="c1"># create new column to store age results and set to 0
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="s">"Darwin_age_days"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># iterate over each row (index) in data
+</span>        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">index</span><span class="p">:</span>
+
+            <span class="c1"># get birthdate string
+</span>            <span class="n">bday</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">at</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="s">"birthDate"</span><span class="p">]</span>
+
+            <span class="c1"># split string to get data
+</span>            <span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span> <span class="o">=</span> <span class="n">bday</span><span class="p">.</span><span class="n">strip</span><span class="p">().</span><span class="n">split</span><span class="p">(</span><span class="s">"-"</span><span class="p">)</span>
+
+            <span class="c1"># get as datetime object
+</span>            <span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">year</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">month</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">day</span><span class="p">))</span>
+
+            <span class="c1"># get diff from darwin
+</span>            <span class="n">diff</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">darwinday</span> <span class="o">-</span> <span class="n">date</span>
+
+            <span class="c1"># store result in unit of days
+</span>            <span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="s">"Darwin_age_days"</span><span class="p">]</span> <span class="o">=</span> <span class="n">diff</span><span class="p">.</span><span class="n">days</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="s">"""
+        Put it all together into a single function call that returns 
+        a dataframe with your results
+        """</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">random_sample</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">calculate_age_comparision</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">data</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># test the code (e.g., in a notebook or using 'build')
+</span><span class="n">inst</span> <span class="o">=</span> <span class="n">DarwinDates</span><span class="p">()</span>
+<span class="n">inst</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>OK, I tested this code and it works well. We now have a simple class we
+can initialize an instance of, and then pass it a number for how many dates
+to sample and get a dataframe result using the function call <code class="language-plaintext highlighter-rouge">.run()</code>. 
+So, if we next want to create an executable script (entry point) to call 
+this code we should plan to write a function similar to the test above.
+The appropriate place to put this in our package is in <code class="language-plaintext highlighter-rouge">__main__.py</code>. Our
+goal then might be to create an executable that could work like this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>darwindates <span class="nt">--n</span> 10
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        firstname    lastname   birthDate  Darwin_age_days
+0       Necmettin     Erbakan  1926-10-29           <span class="nt">-24730</span>
+1            Hans   Tietmeyer  1931-08-18           <span class="nt">-26484</span>
+2  Manuel Antonio     Noriega  1934-02-11           <span class="nt">-27392</span>
+3            Suha      Arafat  1963-07-17           <span class="nt">-38140</span>
+4         Andreas  Papandreou  1919-02-05           <span class="nt">-21907</span>
+5          Carl C       Icahn  1936-02-16           <span class="nt">-28127</span>
+6       Mikhail M    Kasyanov  1957-12-08           <span class="nt">-36093</span>
+7           Maher        Arar  1970-01-01           <span class="nt">-40500</span>
+8            Raul     Mondesi  1971-03-12           <span class="nt">-40935</span>
+9           Larry        Bird  1956-12-07           <span class="nt">-35727</span>
+</code></pre></div></div>
+
+<h3 id="assignment">Assignment</h3>
+<div class="alert alert-success">
+    Your assignment is to update your hack-program package to use numpy and/or
+    pandas. The first time around we focused on getting the structure of the 
+    package correct, in terms of imports, setup.py, etc. Now we are turning 
+    our focus to the content of your package. Spend some time thinking up a
+    creative way to use numpy or pandas in your functions. Your module can
+    include multiple functions if needed. Try go expand beyond the simple
+    datetime example I have shared, and to create something new. If you are 
+    totally stuck feel free to visit the chatroom to crowdsource some ideas
+    and get feedback on your code.
+    <br /><br />
+    Commit and push updates to your repo before Monday. We will share the 
+    programs in breakout rooms during class.
+</div>
+
+		</div>
+	</main>
+
+	<footer>
+	    
+
+
+
+<div class="container text-center mt-5">
+	<p>Copyright &copy; 
+	 <script>document.write( new Date().getFullYear() );</script> 
+	 Deren Eaton
+	 </p>
+</div>
+
+
+	    
+
+
+
+
+<!-- JS: jQuery, Popper.js, and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	var BASE_URL = '';
+</script>
+
+
+	</footer>
+
+</body>
+</html>

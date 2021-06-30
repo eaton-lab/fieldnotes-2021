@@ -1,0 +1,136 @@
+I"ô<style>
+h3 {
+    margin-top: 30px
+}
+</style>
+
+<h3 id="getting-started-with-scripting-in-python">Getting started with scripting in Python</h3>
+
+<p><strong>Table of Contents:</strong></p>
+<ul id="markdown-toc">
+  <li><a href="#getting-started-with-scripting-in-python" id="markdown-toc-getting-started-with-scripting-in-python">Getting started with scripting in Python</a></li>
+  <li><a href="#learning-objectives" id="markdown-toc-learning-objectives">Learning objectives</a></li>
+  <li><a href="#when-to-use-notebooks-versus-scripts" id="markdown-toc-when-to-use-notebooks-versus-scripts">When to use notebooks versus scripts</a></li>
+  <li><a href="#what-is-a-script" id="markdown-toc-what-is-a-script">What is a script?</a></li>
+  <li><a href="#the-format-of-a-python-script" id="markdown-toc-the-format-of-a-python-script">The format of a Python script</a></li>
+  <li><a href="#running-a-python-script-as-an-executable" id="markdown-toc-running-a-python-script-as-an-executable">Running a Python script as an executable</a></li>
+</ul>
+
+<h3 id="learning-objectives">Learning objectives</h3>
+<p>By the end of this tutorial you should:</p>
+<ul>
+  <li>Understand when and why to use notebooks.</li>
+  <li>Understand when and why to write Python scripts or modules.</li>
+</ul>
+
+<h3 id="when-to-use-notebooks-versus-scripts">When to use notebooks versus scripts</h3>
+<p>Jupyter notebooks are a fantastic tool for sharing and demonstrating code, 
+but they are also often misused in ways that limits their effectiveness.
+As you begin to work on larger projects you will likely encounter this problem,
+where you eventually reach a stage at which your notebook becomes cluttered 
+with many cell blocks containing functions definitions, but very few cells 
+in the notebook are actually being used to call and explore those functions. 
+Thus, your notebook is serving more as a script than as an interactive document. 
+This is not the intended use for notebooks.</p>
+
+<p>Instead, notebooks are best used as either (1) a scratchpad in which to test code
+and write functions; or (2) an interactive document for sharing demonstrations
+of code. The former should be considered a sort of temporary document, something 
+that you use only until the functions have been well tested, at which point you
+often want to export them to scripts. The second usage is your end product:
+a publishable interactive tutorial. The best way to reconcile
+these two forms of usage is to move your polished code (e.g., your many <code class="language-plaintext highlighter-rouge">def</code> 
+functions) into a separate set of scripts (a module), which can then be imported
+into the jupyter notebook.</p>
+
+<p>This is a first step on the way to developing a full-fledged software package in Python.</p>
+
+<h3 id="what-is-a-script">What is a script?</h3>
+<p>A script is just a text file that contains computer code. The file can have any
+name, but will usually end with a suffix that corresponds to the type of code contained
+within it; for example, Python files should end with <code class="language-plaintext highlighter-rouge">.py</code>. Most languages also have a 
+number of additional conventions about how files should be organized into folders, and/or
+other content in the files that indicates the type of code that is inside of them. These
+are usually not mandatory, but are good practice.</p>
+
+<p>Python scripts are generally used in two ways: as an <i>executable</i>, meaning 
+that it is meant to be run from the command line; or as an <i>importable module</i>, 
+meaning that it contains code that is meant to be imported and used by another 
+file. A single script can actually serve both of these purposes.</p>
+
+<h3 id="the-format-of-a-python-script">The format of a Python script</h3>
+
+<p>Below is an example Python script. It includes the following:</p>
+
+<ol>
+  <li>
+    <p><i>shebang</i>: this is the text on the first line of the file. This
+tells your shell what language the script is written in. It is mostly
+an older convention, and will have no effect given the way we will write
+and execute modern Python code.</p>
+  </li>
+  <li>
+    <p>A module level docstring. This is a string at the top of the file
+that describes the content. This could list the classes or functions
+that are available to be imported and used from the module, or how to 
+use it as an executable.</p>
+  </li>
+  <li>
+    <p>import statements.</p>
+  </li>
+  <li>
+    <p>The code itself. Here you put class and function definitions.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">__main__</code>: This is a special section at the bottom of a script where you
+put executable code. It is optional, not all scripts are meant to be
+executable. You can put code here that will <em>only</em> be run when the script
+is called as an executable (see example below), but it will not be run 
+when the file is imported (when the class and functions are loaded by 
+another Python script).</p>
+  </li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python
+</span><span class="s">"""
+A description of what this script contains.
+"""</span>
+
+<span class="kn">import</span> <span class="nn">builtins</span>
+
+<span class="c1"># this is where the module-type code goes
+</span><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+    <span class="s">"This is where classes should go"</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">example_func</span><span class="p">():</span>
+    <span class="s">"This is where stand-alone functions should go"</span>
+    <span class="k">pass</span>
+
+<span class="c1"># this is where executable-type code goes, this code is not 
+# executed if this script is only imported.
+</span><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"this code is not run when this file is imported."</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="running-a-python-script-as-an-executable">Running a Python script as an executable</h3>
+<p>There are several ways to execute a Python script. The simplest is to 
+call the <code class="language-plaintext highlighter-rouge">python</code> program from your terminal with the script as the target.
+(Side note, your version of <code class="language-plaintext highlighter-rouge">python</code> will usually also have an alias called
+<code class="language-plaintext highlighter-rouge">python3</code> to make it clear that it is not the older <code class="language-plaintext highlighter-rouge">python2</code>). Copy the 
+code above into a script and call it <code class="language-plaintext highlighter-rouge">example_script.py</code>. Then execute
+it like below. You can see from this example that the code we wrote in
+the section called <code class="language-plaintext highlighter-rouge">__main__</code> printed text to stdout, as intended.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python example_script.py
+</code></pre></div></div>
+
+<p>Do not be intimidated by the double underscores in this final section. 
+In Python special variable are often named in this way, and are referred
+to as dunders. The naming convention is strange, but you get used to it.</p>
+
+<hr />
+
+<p>Continue to the next tutorial.</p>
+:ET

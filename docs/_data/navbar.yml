@@ -1,0 +1,23 @@
+
+- name: Home
+  link: /
+
+- name: Itinerary
+  dropdown:
+    - name: Day 2 (Shimian to Xinduqiao)
+      link: /pages/expedition-2.html
+    - name: Day 3 (Xinduqiao to Litang)
+      link: /pages/expedition-3.html
+    - name: Day 4 (Litang to Litang)
+      link: /pages/expedition-4.html
+    - name: Day 5 (Litang to Bamei)
+      link: /pages/expedition-5.html
+    - name: Day 6 (Dawu to Luhuo)
+      link: 
+    - name: Day 7 (Luhuo to Wengdaxiang)
+      link: 
+    - name: Day 8 (Wengdaxiang to Zamtang)
+      link: 
+
+- name: Methods
+  link: /pages/assignments.html

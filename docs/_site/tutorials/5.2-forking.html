@@ -1,0 +1,283 @@
+
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+    
+<!-- how to read page -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<!-- icons -->
+<link rel="icon" href="/assets/images/favicon.ico">
+
+<!-- get title from page meta -->
+<title>forking &#8211; Fieldnotes-2021</title>
+
+
+<!-- store meta info on page -->
+
+
+
+
+
+<!-- Store full web url -->
+
+<link rel="canonical" href="
+	
+	
+		/tutorials/5.2-forking.html
+	
+">
+
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/custom.css">
+<link rel="stylesheet" href="/assets/css/syntax.css">
+</head>
+
+
+<body id="default">
+
+    <header>
+	    
+
+<!-- NAVBAR (DARK) -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="">Fieldnotes-2021</a>
+
+    <!-- The toggle switch for collapsed navbar-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Make collapsable -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        <!-- The elements of the navbar -->
+        <ul class="navbar-nav">
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+                        <a class="nav-link" href=/>Home</a>
+                    
+                </li>
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Itinerary</a>
+                        
+                        <div class="dropdown-menu">
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-2.html">Day 2 (Shimian to Xinduqiao)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-3.html">Day 3 (Xinduqiao to Litang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-4.html">Day 4 (Litang to Litang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-5.html">Day 5 (Litang to Bamei)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 6 (Dawu to Luhuo)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 7 (Luhuo to Wengdaxiang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 8 (Wengdaxiang to Zamtang)</a>
+                            
+                        
+                        </div>
+
+                    <!-- open link in new window -->
+                    
+                </li>
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+                        <a class="nav-link" href=/pages/assignments.html>Methods</a>
+                    
+                </li>
+            
+            <!-- LINK TO HOME -->
+            <li class="nav-item mr-3">
+
+        </ul>
+    </div>
+</nav>
+  
+	    
+
+
+<!-- Splash header about the news -->
+<div class="jumbotron" style="background-image: url(/assets/images/hackers-panel.png);">
+    <!-- <div class="mb-3 mt-0"><img src="/assets/images/E3B-logo.png"></div> -->
+    <!-- <h1 class="display-5 font-italic">forking</h1> -->
+    <!-- <p class="lead mt-3 mb-0"><i></i></p> -->
+</div>
+    </header>
+
+    <main role="main" class="container-md">
+    	<div class="col-sm-10 mx-auto">
+		    <h2 id="python-assessment-and-github-forking">Python assessment and GitHub forking</h2>
+
+<p><strong>Table of Contents:</strong></p>
+<ul id="markdown-toc">
+  <li><a href="#python-assessment-and-github-forking" id="markdown-toc-python-assessment-and-github-forking">Python assessment and GitHub forking</a>    <ul>
+      <li><a href="#forking-on-github" id="markdown-toc-forking-on-github">Forking on GitHub</a></li>
+      <li><a href="#when-should-i-clone-versus-fork" id="markdown-toc-when-should-i-clone-versus-fork">When should I clone versus fork</a></li>
+      <li><a href="#how-we-will-use-forking-for-class" id="markdown-toc-how-we-will-use-forking-for-class">How we will use forking for class</a></li>
+      <li><a href="#a-test-push" id="markdown-toc-a-test-push">A test push</a></li>
+      <li><a href="#assessment" id="markdown-toc-assessment">Assessment</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="forking-on-github">Forking on GitHub</h3>
+<p>Go to the following GitHub URL <a href="https://github.com/hackers-test/hack-5-python.git">https://github.com/hackers-test/hack-5-python.git</a>
+and click on <kbd style="background-color: lightgrey; color:black">Fork</kbd> 
+button in the far upper right corner. 
+This will take a few seconds to create a copy and then a new repo will 
+be created under your profile that includes a clone of this repo.</p>
+
+<p>So what is a fork, and how is it different from a clone? Like cloning
+forking creates an identical copy of a repository, but the difference is 
+that the remote is located under your profile (your ownership permissions)
+rather than the person’s who you forked it from. This means that you will
+have permission to push changes to the remote without needing that users
+permission.</p>
+
+<h3 id="when-should-i-clone-versus-fork">When should I clone versus fork</h3>
+<p>If you do not plan on <strong>editing the code and contributing your changes 
+back to the remote</strong>, then you can simply clone a repo. This simply 
+downloads a copy of the source code onto your computer that you can use 
+or edit locally for testing. This is a common way to test out software
+that is on GitHub. But, if you want to make changes and propose these changes
+to the owner of the repo through a pull request, then you need to create
+a separate fork. Forking is a GitHub thing, having to do with permissions 
+for writing to a specific GitHub remote.</p>
+
+<h3 id="how-we-will-use-forking-for-class">How we will use forking for class</h3>
+<p>In this class I will occasionally ask you to fork a repo so that you 
+will have your own copy of it in your GitHub account. You will then be asked
+to edit the repo – for example, open the notebooks in the repo and complete them
+– and will be graded on the changes that you make and <em>push back to your
+remote repo on GitHub.</em></p>
+
+<h3 id="a-test-push">A test push</h3>
+<p>Before you move on to your assignment, let’s first do a test by pushing
+a change to your new forked repository. Let’s make a change to the README file, then 
+use the simple git workflow to push these changes to the remote.
+From your version of <em>hack-5-python</em> on GitHub click on the clone button
+to get the link and run the command below to clone the repo to your local
+computer.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># clone your fork of the hack-5-python repo into your hacks folder</span>
+<span class="nb">cd</span> ~/hacks/
+git clone <span class="o">{</span><span class="nb">paste </span>the repo URL here<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># add some text to the README file</span>
+<span class="nb">cd</span> ./hacks/hack-5-python
+<span class="nb">echo</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">This repo contains several jupyter notebooks"</span> <span class="o">&gt;</span> README.md
+git add README.md
+git commit <span class="nt">-m</span> <span class="s2">"added text to the readme"</span>
+git push origin main
+</code></pre></div></div>
+
+<p>You can now go look at your fork on GitHub and see that your changes have 
+appeared.</p>
+
+<h3 id="assessment">Assessment</h3>
+
+<div class="alert alert-success">
+	You will be graded based on completion of the instructions below, where
+	the final product will be found on your GitHub profile.
+</div>
+
+<ol>
+  <li>
+    <p>Fork the <em>hack-5-python</em> repo above (you already did this above).</p>
+  </li>
+  <li>
+    <p>Clone your copy of <em>hack-5-python</em> (you already did this above).</p>
+  </li>
+  <li>
+    <p>Start a jupyter notebook server from your home folder</p>
+  </li>
+  <li>
+    <p>Open your browser to localhost:8888 and look in the hacks/hack-5-python/notebooks
+directory. Here you will find several notebooks. Complete them in order by 
+following the instructions inside each notebook. Be sure to save the notebooks
+when you are done (it auto-saves also, BTW), by pressing the save button in the menu bar.</p>
+  </li>
+  <li>
+    <p>Stop your notebook server.</p>
+  </li>
+  <li>
+    <p>From your terminal sync the changes you’ve made to these notebook using the <code class="language-plaintext highlighter-rouge">git</code> 
+command line tool following the add, commit, push, workflow that you learned in the
+last session. Be sure to <code class="language-plaintext highlighter-rouge">cd</code> into the hack-5-python directory to do this.</p>
+  </li>
+</ol>
+
+		</div>
+	</main>
+
+	<footer>
+	    
+
+
+
+<div class="container text-center mt-5">
+	<p>Copyright &copy; 
+	 <script>document.write( new Date().getFullYear() );</script> 
+	 Deren Eaton
+	 </p>
+</div>
+
+
+	    
+
+
+
+
+<!-- JS: jQuery, Popper.js, and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	var BASE_URL = '';
+</script>
+
+
+	</footer>
+
+</body>
+</html>

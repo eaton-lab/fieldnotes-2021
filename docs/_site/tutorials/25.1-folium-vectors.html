@@ -1,0 +1,481 @@
+
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+    
+<!-- how to read page -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<!-- icons -->
+<link rel="icon" href="/assets/images/favicon.ico">
+
+<!-- get title from page meta -->
+<title>folium vectors &#8211; Fieldnotes-2021</title>
+
+
+<!-- store meta info on page -->
+
+
+
+
+
+<!-- Store full web url -->
+
+<link rel="canonical" href="
+	
+	
+		/tutorials/25.1-folium-vectors.html
+	
+">
+
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/custom.css">
+<link rel="stylesheet" href="/assets/css/syntax.css">
+</head>
+
+
+<body id="default">
+
+    <header>
+	    
+
+<!-- NAVBAR (DARK) -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="">Fieldnotes-2021</a>
+
+    <!-- The toggle switch for collapsed navbar-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Make collapsable -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        <!-- The elements of the navbar -->
+        <ul class="navbar-nav">
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+                        <a class="nav-link" href=/>Home</a>
+                    
+                </li>
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Itinerary</a>
+                        
+                        <div class="dropdown-menu">
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-2.html">Day 2 (Shimian to Xinduqiao)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-3.html">Day 3 (Xinduqiao to Litang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-4.html">Day 4 (Litang to Litang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="/pages/expedition-5.html">Day 5 (Litang to Bamei)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 6 (Dawu to Luhuo)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 7 (Luhuo to Wengdaxiang)</a>
+                            
+                        
+                            
+                                <a class="dropdown-item" href="">Day 8 (Wengdaxiang to Zamtang)</a>
+                            
+                        
+                        </div>
+
+                    <!-- open link in new window -->
+                    
+                </li>
+            
+
+                <li class="nav-item dropdown mr-3">
+
+                    <!-- if item has subitems -->
+                    
+                        <a class="nav-link" href=/pages/assignments.html>Methods</a>
+                    
+                </li>
+            
+            <!-- LINK TO HOME -->
+            <li class="nav-item mr-3">
+
+        </ul>
+    </div>
+</nav>
+  
+	    
+
+
+<!-- Splash header about the news -->
+<div class="jumbotron" style="background-image: url(/assets/images/hackers-1.jpg);">
+    <!-- <div class="mb-3 mt-0"><img src="/assets/images/E3B-logo.png"></div> -->
+    <!-- <h1 class="display-5 font-italic">folium vectors</h1> -->
+    <!-- <p class="lead mt-3 mb-0"><i></i></p> -->
+</div>
+    </header>
+
+    <main role="main" class="container-md">
+    	<div class="col-sm-10 mx-auto">
+		    <style>
+h2 {
+    margin-top: 30px;
+}
+h3 {
+    margin-top: 30px;
+}
+pre {
+    line-height: 1.25em;
+}
+pre code {
+    font-size: 0.9em;
+}
+div {
+  margin-bottom: 10px;
+}
+</style>
+
+<h2 id="geographical-vector-objects">Geographical vector objects</h2>
+
+<p>We learned previously that web-based images/plots are often composed of 
+either <code class="language-plaintext highlighter-rouge">vector (code)</code> or <code class="language-plaintext highlighter-rouge">raster (bitmap)</code> type components. It turns out 
+that maps like the leaflet/folium examples we created in the previous 
+tutorial are actually composed of both. The underlying colored image is a 
+raster, and the overlayed points, lines, and shapes are vectors.</p>
+
+<p>In this tutorial we will focus on how vector type data is created, used, and 
+stored. And how it can serve as <em>data</em> for conducting scientific analyses. 
+In the next tutorial we will examine how rasters can similarly be used as 
+data.</p>
+
+<h3 id="python-geographical-libraries">Python geographical libraries</h3>
+<p>In this tutorial we will explore the use of several scientific libraries for
+working with geospatial data in Python. Some of these provide similar functions,
+but each has specific benefits and so it is worth becoming familiar with most
+of these packages.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda <span class="nb">install </span>folium geopandas shapely pyproj geojson <span class="nt">-c</span> conda-forge
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">folium</span>
+<span class="kn">import</span> <span class="nn">geopandas</span>
+<span class="kn">import</span> <span class="nn">shapely</span>
+<span class="kn">import</span> <span class="nn">pyproj</span>
+<span class="kn">import</span> <span class="nn">geojson</span>
+</code></pre></div></div>
+
+<h3 id="geojson-format">GeoJSON format</h3>
+<p><a href="https://en.wikipedia.org/wiki/GeoJSON">GeoJson</a> is a <em>file format</em> used to 
+store ‘geometry’ type objects, such as points, polygons, etc, that can be used 
+to draw vectors markers/shapes onto a coordinate map. In other words, it is 
+used to store the vector information for a geographic dataset in JSON format. 
+Because JSON is very flexible it can be used by most modern geospatial 
+libraries, and thus works across languages and systems.</p>
+
+<p>GeoJson is composed of an array of <code class="language-plaintext highlighter-rouge">features</code> that can be grouped into 
+a <code class="language-plaintext highlighter-rouge">FeatureCollection</code>. We’ll demonstrate examples of creating, plotting, and 
+saving GeoJSON files here. Please read the link above for more details on the 
+GeoJSON format.</p>
+
+<h3 id="shapes-with-shapely">Shapes with shapely</h3>
+
+<p>Shapely is simple but powerful library for computing distances, overlaps, 
+areas, and other set or mathematical operations on points, lines, or shapes. 
+The documentation is quite good <a href="https://shapely.readthedocs.io/en/stable/manual.html">https://shapely.readthedocs.io/en/stable/manual.html</a>. The base class objects 
+here are very generalized and are used as dependencies in several other Python 
+libraries, such as <code class="language-plaintext highlighter-rouge">geopandas</code>.</p>
+
+<p>Shapely geometry class objects are created by providing a set of coordinates 
+in decimal latitude and longitude values to the class constructors. The 
+class instances show an SVG representation of the data, and the instances can 
+be used to access a suite of attributes and functions of geometry objects for 
+doing calculations on geometries. Supported geometry types include all of those
+in the GeoJSON spec, such as Points, Polygons, etc.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># create a Point instance
+</span><span class="n">shapely</span><span class="p">.</span><span class="n">geometry</span><span class="p">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">44.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">74.5</span><span class="p">)</span>
+
+<span class="c1"># create a Polygon instance
+</span><span class="n">shapely</span><span class="p">.</span><span class="n">geometry</span><span class="p">.</span><span class="n">Polygon</span><span class="p">([</span>
+    <span class="p">(</span><span class="mi">44</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">74</span><span class="p">),</span> <span class="p">(</span><span class="mf">45.0</span><span class="p">,</span> <span class="o">-</span><span class="mi">75</span><span class="p">),</span> <span class="p">(</span><span class="mf">45.0</span><span class="p">,</span> <span class="o">-</span><span class="mi">76</span><span class="p">),</span> <span class="p">(</span><span class="mf">43.0</span><span class="p">,</span> <span class="o">-</span><span class="mi">76</span><span class="p">),</span>
+<span class="p">])</span>
+</code></pre></div></div>
+
+<h3 id="calculations-with-geometries">Calculations with geometries</h3>
+<p>Simple calculations with geometries, such as the distance between them, or 
+the area they occupy, can be easy to compute. But keep in mind the units that 
+are being represented. Often you will need to take these results and translate
+them into a particular coordinate projection system. This topic can be 
+complicated, but there are nice libraries for doing it, such as the <code class="language-plaintext highlighter-rouge">pyproj</code> 
+example below.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># create two points
+</span><span class="n">point1</span> <span class="o">=</span> <span class="n">shapely</span><span class="p">.</span><span class="n">geometry</span><span class="p">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">44.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">74.5</span><span class="p">)</span>
+<span class="n">point2</span> <span class="o">=</span> <span class="n">shapely</span><span class="p">.</span><span class="n">geometry</span><span class="p">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">43.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">73.5</span><span class="p">)</span>
+
+<span class="c1"># get linear distance between points
+</span><span class="n">linear_dist</span> <span class="o">=</span> <span class="n">point1</span><span class="p">.</span><span class="n">distance</span><span class="p">(</span><span class="n">point2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"linear unit-less distance: </span><span class="si">{</span><span class="n">linear_dist</span><span class="p">:.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>linear unit-less distance: 1.41
+</code></pre></div></div>
+
+<p>Now we instead project these points to calculate the distance over the 
+curvature of the Earth:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># get geodetic (great circle) projection object
+</span><span class="n">geod</span> <span class="o">=</span> <span class="n">pyproj</span><span class="p">.</span><span class="n">Geod</span><span class="p">(</span><span class="n">ellps</span><span class="o">=</span><span class="s">'WGS84'</span><span class="p">)</span>
+
+<span class="c1"># get results of projecting points to new space
+</span><span class="n">angle1</span><span class="p">,</span> <span class="n">angle2</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="n">geod</span><span class="p">.</span><span class="n">inv</span><span class="p">(</span><span class="n">point1</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">point1</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">point2</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">point2</span><span class="p">.</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># print results (divide by 1000 to get in units of kms)
+</span><span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"WGS84 distance in Kilometers: </span><span class="si">{</span><span class="n">distance</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">:.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WGS84 distance in Kilometers: 115.77
+</code></pre></div></div>
+
+<h3 id="creating-geojson-files">Creating GeoJSON files</h3>
+<p>Shapely objects can be written to GeoJSON files, but there is another library
+that is specialized for this purpose which I prefer, called <code class="language-plaintext highlighter-rouge">geojson</code>. 
+Remember the format of GeoJSON includes three nested components: 
+FeatureCollection, Features, and Geometries. The Geometry type objects, such 
+as the Point in this example, can be <code class="language-plaintext highlighter-rouge">geojson</code> or <code class="language-plaintext highlighter-rouge">shapely.geometry</code> Point
+objects. The <code class="language-plaintext highlighter-rouge">Feature</code> object stores the geometry along with metadata
+(properties) that can be used later to fetch information to use for tooltips
+or popups on your maps. Finally, one or more features can be grouped together
+into a FeatureCollection.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># create an empty Feature Collection
+</span><span class="n">layer</span> <span class="o">=</span> <span class="n">geojson</span><span class="p">.</span><span class="n">FeatureCollection</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="p">[])</span>
+
+<span class="c1"># create a point
+</span><span class="n">point</span> <span class="o">=</span> <span class="n">geojson</span><span class="p">.</span><span class="n">Point</span><span class="p">((</span><span class="o">-</span><span class="mf">115.81</span><span class="p">,</span> <span class="mf">37.24</span><span class="p">))</span>
+
+<span class="c1"># create a Feature that combines the point geometry with meta-info
+</span><span class="n">feature</span> <span class="o">=</span> <span class="n">geojson</span><span class="p">.</span><span class="n">Feature</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="n">point</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="p">{</span><span class="s">"country"</span><span class="p">:</span> <span class="s">"Spain"</span><span class="p">})</span>
+
+<span class="c1"># add the feature to the FeatureCollection (layer)
+</span><span class="n">layer</span><span class="p">[</span><span class="s">'features'</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="n">feature</span><span class="p">)</span>
+
+<span class="c1"># add more features...
+# layer['features'].append(...)
+</span>
+<span class="c1"># show (dump) the JSON string
+</span><span class="k">print</span><span class="p">(</span><span class="n">geojson</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</code></pre></div></div>
+<p>The code above prints the following GeoJSON string. To create a JSON file
+we would simply print this string to a file.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.81,
+          37.24
+        ]
+      },
+      "properties": {
+        "country": "Spain"
+      }
+    }
+  ]
+}
+</code></pre></div></div>
+
+<h3 id="geopandas-working-efficiently-with-geometries-in-python">Geopandas: working efficiently with geometries in Python</h3>
+
+<p>You can find a lot of geographic data available online as GeoJson files. 
+I found this dataset with polygons for the outline shapes of countries and 
+state data with a google search.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">geopandas</code> library provides a convenient interface to storing and 
+accessing multiple features from a GeoJson file in Python. You just load 
+the json file and then interact with it as you would any dataframe, where
+the <code class="language-plaintext highlighter-rouge">geometry</code> column in this case contains <code class="language-plaintext highlighter-rouge">shapely</code> geometries.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># fetch feature data from a large GeoJson file from a URL
+</span><span class="n">geodata</span> <span class="o">=</span> <span class="n">geopandas</span><span class="p">.</span><span class="n">read_file</span><span class="p">(</span><span class="s">"https://datahub.io/core/geo-ne-admin1/r/0.geojson"</span><span class="p">)</span>
+
+<span class="c1"># show the shape of the dataframe
+</span><span class="k">print</span><span class="p">(</span><span class="n">geodata</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># show the header of the dataframe
+</span><span class="n">geodata</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="create-chloropleth-outlined-shapes-by-showing-polygons-on-map">Create chloropleth (outlined shapes) by showing polygons on map</h3>
+<p>Here we use <code class="language-plaintext highlighter-rouge">folium</code> much like we did previously, only we add Markers to the 
+map using a new folium object type, called <code class="language-plaintext highlighter-rouge">folium.GeoJson</code>. Here I use 
+pandas indexing to select only a subset of shapes from the file, and I use
+the <code class="language-plaintext highlighter-rouge">.get_bounds()</code> and <code class="language-plaintext highlighter-rouge">fit_bounds()</code> functions of the objects to get their
+outer size to center on the map the added vectors. Finally, I add a LayerControl
+object that allows for showing or hiding layers (see upper right toggle).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># init a map instance
+</span><span class="n">fmap</span> <span class="o">=</span> <span class="n">folium</span><span class="p">.</span><span class="n">Map</span><span class="p">()</span>
+
+<span class="c1"># create a layer to hold several features
+</span><span class="n">region</span> <span class="o">=</span> <span class="n">folium</span><span class="p">.</span><span class="n">FeatureGroup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"Afghanistan"</span><span class="p">)</span>
+
+<span class="c1"># iterate over rows of 
+</span><span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">geodata</span><span class="p">[</span><span class="n">geodata</span><span class="p">.</span><span class="n">country</span> <span class="o">==</span> <span class="s">"Afghanistan"</span><span class="p">].</span><span class="n">index</span><span class="p">:</span>
+    
+    <span class="c1"># init a GeoJson object from each geometry datum and add to afghan layer
+</span>    <span class="n">data</span> <span class="o">=</span> <span class="n">folium</span><span class="p">.</span><span class="n">GeoJson</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">geodata</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="s">"geometry"</span><span class="p">],</span>
+        <span class="n">tooltip</span><span class="o">=</span><span class="n">geodata</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="s">"name"</span><span class="p">],</span>
+    <span class="p">).</span><span class="n">add_to</span><span class="p">(</span><span class="n">region</span><span class="p">)</span>   
+    
+<span class="c1"># add layer to the map
+</span><span class="n">fmap</span><span class="p">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">region</span><span class="p">)</span>
+
+<span class="c1"># set bounds (location and zoom) on map to center on this region
+</span><span class="n">fmap</span><span class="p">.</span><span class="n">fit_bounds</span><span class="p">(</span><span class="n">region</span><span class="p">.</span><span class="n">get_bounds</span><span class="p">())</span>
+
+<span class="c1"># add layer toggle option
+</span><span class="n">fmap</span><span class="p">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">folium</span><span class="p">.</span><span class="n">LayerControl</span><span class="p">())</span>
+
+<span class="c1"># show map
+</span><span class="n">fmap</span>
+</code></pre></div></div>
+
+<div>
+<iframe style="display: block; margin: auto; width:100%; height:400px; margin-top:2%;" src="./images/folium-3.html">
+</iframe>
+</div>
+
+<h3 id="geojson-embed-vs-link">GeoJSON embed vs link</h3>
+<p>Because GeoJSON is in the web friendly JSON format, you can actually create
+maps that simply contains the URL to a GeoJSON file hosted on the internet
+somewhere, rather than having to embed the JSON data itself into your JS 
+Leaflet instructions. This can be useful when your dataset is composed of 
+many many thousands of points, by reducing the size of the file that you 
+need to host. Here is an example where I create a map using GeoJSON files
+that are hosted elsewhere on my personal website. I simply reference the URL
+of the dataset and include <code class="language-plaintext highlighter-rouge">embed=False</code>. The map looks the same, but the 
+underlying HTML object that I would save at the end would be much smaller.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># init a map instance
+</span><span class="n">fmap</span> <span class="o">=</span> <span class="n">folium</span><span class="p">.</span><span class="n">Map</span><span class="p">(</span><span class="n">tiles</span><span class="o">=</span><span class="s">"stamenterrain"</span><span class="p">)</span>
+
+<span class="c1"># add each species group to layer as JSON
+</span><span class="n">folium</span><span class="p">.</span><span class="n">GeoJson</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="s">"https://eaton-lab.org/data/lautum.json"</span><span class="p">,</span>
+    <span class="n">embed</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s">"lautum"</span><span class="p">,</span>
+<span class="p">).</span><span class="n">add_to</span><span class="p">(</span><span class="n">fmap</span><span class="p">)</span>
+
+<span class="n">folium</span><span class="p">.</span><span class="n">GeoJson</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="s">"https://eaton-lab.org/data/acutifolium.json"</span><span class="p">,</span>
+    <span class="n">embed</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s">"acutifolium"</span><span class="p">,</span>
+<span class="p">).</span><span class="n">add_to</span><span class="p">(</span><span class="n">fmap</span><span class="p">)</span>
+
+<span class="n">folium</span><span class="p">.</span><span class="n">GeoJson</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="s">"https://eaton-lab.org/data/caudatum.json"</span><span class="p">,</span>
+    <span class="n">embed</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s">"caudatum"</span>
+<span class="p">).</span><span class="n">add_to</span><span class="p">(</span><span class="n">fmap</span><span class="p">)</span>
+
+<span class="c1"># set bounds of grouped layer on map to center on this region
+</span><span class="n">fmap</span><span class="p">.</span><span class="n">fit_bounds</span><span class="p">(</span><span class="n">fmap</span><span class="p">.</span><span class="n">get_bounds</span><span class="p">())</span>
+
+<span class="c1"># add layer toggle option
+</span><span class="n">fmap</span><span class="p">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">folium</span><span class="p">.</span><span class="n">LayerControl</span><span class="p">())</span>
+
+<span class="c1"># show the map
+</span><span class="n">fmap</span>
+</code></pre></div></div>
+
+<div>
+<iframe style="display: block; margin: auto; width:100%; height:400px; margin-top:2%;" src="./images/folium-4.html">
+</iframe>
+</div>
+
+<h3 id="saving-maps-what-to-do-with-maps">Saving maps; what to do with maps?</h3>
+<p>You can save your map to HTML format:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fmap</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">"./my-map.html"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>But sharing this map can actually be a bit tricky. 
+The maps are meant to be viewed in the web,
+and so the best way to share them is to save the HTML file and host it on the 
+web somewhere and share the link. You can use GitHub for example. In the case
+of this website I have saved the HTML files and then I embed them in other
+pages like this one using an <code class="language-plaintext highlighter-rouge">iframe</code> HTML object. Another way is to take a 
+screenshot of the map and embed it as a PNG or JPG, but of course you then
+lose the interactivity features.</p>
+
+<p>As we’ll see in the next tutorial this becomes a more complex problem when 
+working with non-free tile sets. In that case you can’t easily just share your
+links around the web, because there are limits on how many times your tiles
+can be viewed/zoomed etc., and so for example Google requires users to be 
+signed in in order to view the tiles sets.</p>
+
+		</div>
+	</main>
+
+	<footer>
+	    
+
+
+
+<div class="container text-center mt-5">
+	<p>Copyright &copy; 
+	 <script>document.write( new Date().getFullYear() );</script> 
+	 Deren Eaton
+	 </p>
+</div>
+
+
+	    
+
+
+
+
+<!-- JS: jQuery, Popper.js, and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	var BASE_URL = '';
+</script>
+
+
+	</footer>
+
+</body>
+</html>

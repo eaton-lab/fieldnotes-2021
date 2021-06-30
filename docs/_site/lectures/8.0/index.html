@@ -1,0 +1,455 @@
+
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="author" content="Deren Eaton">
+  <meta name="description" content="Programming Course">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Lecture-8.0</title>
+
+  <!-- CSS styling -->
+  <link rel="stylesheet" href="../revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../revealjs/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../hack-the-planet.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./custom.css">
+</head>
+
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section class="present">
+        <div class="title_slide">
+          <h2 id="title">Programming and Data Science for Biology<br>(EEEB G4050)</h2>
+          <h4 id="subtitle">Dept. of Ecology, Evolution, and Environmental Biology<br>Columbia University</h4>
+        </div>
+      </section>
+
+      <section class="future">
+        <div class="standard10 text-center">
+          <h3 id="title">Lecture 8.0 Outline:</h3>
+          <ul class="bullets">
+            <li>Python review: subprocess, packages, classes</li>
+            <li>Pipelining with subprocess</li>
+            <li>Class skeletons</li>
+            <li>Python scripting</li>
+          </ul>
+        </div>
+      </section>
+
+
+      <section class="future">        
+        <div class="standard10">
+          <h3 id="title">Assessment: subprocess</h3>
+          <div class="mx-auto"><p>
+            A function to call: <code>conda list | cut -d ' ' -f 1 | grep 'py'</code>
+          </p></div>
+
+          <pre class="mx-sm-auto" style="font-size: 1.1rem"><code class="python" data-trim 
+          data-line-numbers="|3-6|7-11|12-16|17">
+            def get_conda_py_packages():
+                """several piped subprocess calls"""
+                proc1 = subprocess.run(
+                    ["conda", "list"], 
+                    stdout=subprocess.PIPE,
+                )
+                proc2 = subprocess.run(
+                    ["cut", "-d", " ", "-f", "1"],
+                    input=proc1.stdout,
+                    stdout=subprocess.PIPE,
+                )
+                proc3 = subprocess.run(
+                    ["grep", "py"],
+                    input=proc2.stdout,
+                    stdout=subprocess.PIPE,
+                )
+                return proc3.stdout.decode().split()
+          </code></pre>
+          <pre class="mx-sm-auto" style="font-size: 1.0rem"><code class="python" data-trim style="background-color:#004d66">
+            [&apos;absl-py&apos;, &apos;brotlipy&apos;, &apos;h5py&apos;, &apos;ipykernel&apos;, &apos;ipyparallel&apos;, &apos;ipyrad&apos;, &apos;ipython&apos;, &apos;ipython_genutils&apos;, &apos;ipywidgets&apos;, &apos;jupyter&apos;, &apos;jupyter_client&apos;, &apos;jupyter_console&apos;, &apos;jupyter_core&apos;, &apos;jupyter_server&apos;, &apos;jupyterlab&apos;, &apos;jupyterlab_pygments&apos;, &apos;jupyterlab_server&apos;, &apos;jupyterlab_widgets&apos;, &apos;mypy_extensions&apos;, &apos;numpy&apos;, &apos;pycparser&apos;, &apos;pygments&apos;, &apos;pygpu&apos;, &apos;pylint&apos;, &apos;pymc3&apos;, &apos;pyopenssl&apos;, &apos;pyparsing&apos;, &apos;pypng&apos;, &apos;pyqt&apos;, &apos;pyqt-impl&apos;, &apos;pyqt5-sip&apos;, &apos;pyqtchart&apos;, &apos;pyqtwebengine&apos;, &apos;pyrsistent&apos;, &apos;pysam&apos;, &apos;pysocks&apos;, &apos;python&apos;, &apos;python-dateutil&apos;, &apos;python_abi&apos;, &apos;pytz&apos;, &apos;pyzmq&apos;, &apos;qtpy&apos;, &apos;scipy&apos;]
+          </code></pre>
+        </div>
+      </section>
+
+      <section class="future">        
+        <div class="standard10">
+          <h3 id="title">Python class objects</h3>
+          <div class="mx-auto"><p>
+            An design feature for writing cleaner code.
+          </p></div>
+          <pre class="mx-sm-auto" style="font-size: 1rem"><code class="python" data-trim
+          data-line-numbers="|1-3,13-14|5-7,17-18|9-11,19|">
+              class Analysis:
+                  def __init__(self, data):
+                      self.data = data
+
+                  def subsampled_linear_regression(self, seed):
+                      ...
+                      return x, y
+
+                  def kmeans_clustering(self, column_name):
+                      ...
+                      return clusttable
+
+              # init an Analysis object once
+              analysis = Analysis("./data.csv")
+
+              # use object repeatedly; same data, but different arguments or functions.
+              res1 = analysis.subsampled_linear_regression(seed=123)
+              res2 = analysis.subsampled_linear_regression(seed=321)
+              res3 = analysis.kmeans_clustering("leaf_size")
+          </code></pre>
+        </div>
+      </section>
+
+      <section class="future">        
+        <div class="standard10">
+          <h3 id="title">Classes: start w/ a skeleton</h3>
+          <pre class="mx-sm-auto" style="font-size: 0.8rem"><code class="python" data-trim
+          data-line-numbers="|1-9|6,11-13|33-34|15-31,36-37|9,24,25,31,39-40|">
+              class Simulator:
+                  def __init__(self, arg1, arg2):
+                      # store input args and check they are valid
+                      self.arg1 = arg1
+                      self.arg2 = arg2
+                      self.check_args()
+
+                      # a dict to store results
+                      self.results = {}
+
+                  def check_args(self):
+                      "checks that args stored to self are valid."
+                      pass
+
+                  def setup_model():
+                      "organizes args into a list of strings for entering to subprocess"
+                      pass
+
+                  def run_simulation(self):
+                      "uses subprocess to call a simulator tool on model list args"
+                      pass
+
+                  def parse_and_format_results(self):
+                      "fills self.results with values from simulations"
+                      pass
+
+                  def run(self):
+                      "run complete simulation procedure"
+                      self.setup_model()
+                      self.run_simulation()
+                      self.parse_and_format_results()
+
+              # init an Simulator object with a set of arguments 
+              sim = Simulator(arg1=5, arg2=0.555)
+
+              # the run function here calls many other functions 
+              sim.run()
+
+              # access results
+              print(sim.results)
+          </code></pre>
+        </div>
+      </section>
+
+      <section class="future">        
+        <div class="standard10">
+          <h3 id="title">Class: skeleton expanded example</h3>
+          <pre class="mx-sm-auto" style="font-size: 0.8rem"><code class="python" data-trim
+          data-line-numbers="|1-16|8-9,18-20,22-25|10,25,27-29|37-44">
+              class Simulator:
+                  def __init__(self, arg1, arg2):
+                      # store input args and check they are valid
+                      self.arg1 = arg1
+                      self.arg2 = arg2
+                      self.check_args()
+
+                      # storage objects with values filled during .run()
+                      self.model = []
+                      self.out = ""
+                      self.results = {}
+
+                  def check_args(self):
+                      "checks that args stored to self are valid."
+                      if self.arg1 > 10:
+                          raise ValueError("arg1 cannot be > 10")
+
+                  def setup_model():
+                      "organizes args into a list of strings for entering to subprocess"
+                      self.model = ["simulator", "-c", str(self.arg1), "-k", str(self.arg2)]
+
+                  def run_simulation(self):
+                      "uses subprocess to call a simulator tool"
+                      proc = subprocess.run(self.model, stdout=subprocess.PIPE, check=True)
+                      self.out = proc.stdout.decode()
+
+                  def parse_and_format_results(self):
+                      "fills self.results with values from simulations"
+                      self.results['mean'] = float(self.out.split()[0])
+
+                  def run(self):
+                      "run complete simulation procedure"
+                      self.setup_model()
+                      self.run_simulation()
+                      self.parse_and_format_results()
+
+              # init an Simulator object with a set of arguments 
+              sim = Simulator(arg1=5, arg2=0.555)
+
+              # the run function here calls many other functions 
+              sim.run()
+
+              # access results
+              print(sim.results)
+
+          </code></pre>
+        </div>
+      </section>
+
+      <section class="future">        
+        <div class="standard10">
+          <h3 id="title">Python scripting</h3>
+          <div class="mx-auto"><p>
+            Writing modules: objects can be imported, or __main__ can be executed.
+          </p></div>
+          <pre class="mx-sm-auto" style="font-size: 0.8rem"><code class="python" data-trim
+          data-line-numbers="|1|2|4-10|12-16">
+            #!/usr/bin/env python
+            """A simple Python script to process data"""
+
+            class DataProcessor:
+                def __init__(self, data):
+                    self.data = data
+
+                def process_data(self):
+                    ...
+                    return processed_data
+
+            if __name__ == "__main__":
+                # example dataset
+                DATA = "/home/deren/example-data.csv"
+                result = DataProcessor(DATA).process_data()
+                print(result)
+          </code></pre>
+
+          <pre class="mx-sm-auto" style="font-size: 0.8rem"><code class="bash" data-trim
+          data-line-numbers="">
+          # from your terminal
+          python data_processor.py
+          </code></pre>
+        </div>
+      </section>
+
+      <section class="future">        
+        <div class="standard10">
+          <h3 id="title">Python packages</h3>
+          <div class="mx-auto"><p>
+            Organizing code for imports/testing/sharing
+          </p></div>
+          <pre class="mx-sm-auto"><code class="bash" data-trim>
+              # shell program tree shows a file hierarchy
+              cd ~/hacks/hack-7-python/
+              tree .
+          </code></pre>
+          <pre class="mx-sm-auto"><code class="bash" data-trim>
+              .                                         # <-- this is your git repo folder.
+              ├── mypackage                             # <-- package: a folder of Python modules
+              │   ├── __init__.py                       # <-- optional: for organizing module imports
+              │   ├── mymodule.py                       # <-- Python code
+              │   └── __pycache__                       # <-- ignore this folder: created when you call a local import
+              │       └── mymodule.cpython-38.pyc
+              ├── notebooks                             # <-- use notebooks to test your codex
+              │   ├── nb-7.0-subprocess.ipynb
+              │   └── Untitled.ipynb
+              └── README.md                             # <-- use the README to describe your code
+          </code></pre>
+        </div>
+      </section>
+
+
+      <section class="future">        
+        <div class="standard10">
+          <h3 id="title">Python style</h3>
+          <div class="mx-auto"><p>
+            Zen of Python: preferred design principles
+          </p></div>
+          <pre class="mx-sm-auto"><code class="bash" data-trim>
+              import this
+          </code></pre>
+          <pre class="mx-sm-auto"><code class="plaintext" data-trim>
+              Beautiful is better than ugly.
+              Explicit is better than implicit.
+              Simple is better than complex.
+              Complex is better than complicated.
+              Flat is better than nested.
+              Sparse is better than dense.
+              Readability counts.
+              Special cases aren't special enough to break the rules.
+              Although practicality beats purity.
+              Errors should never pass silently.
+              Unless explicitly silenced.
+              In the face of ambiguity, refuse the temptation to guess.
+              There should be one-- and preferably only one --obvious way to do it.
+              Although that way may not be obvious at first unless you're Dutch.
+              Now is better than never.
+              Although never is often better than *right* now.
+              If the implementation is hard to explain, it's a bad idea.
+              If the implementation is easy to explain, it may be a good idea.
+              Namespaces are one honking great idea -- let's do more of those!  
+          </code></pre>
+        </div>
+      </section>
+
+
+      <section class="future">        
+        <div class="standard10">
+          <h3 id="title">Python style</h3>
+          <div class="mx-auto"><p>
+            PEP8: style guide
+          </p></div>
+          <pre class="mx-sm-auto"><code class="python" data-trim>
+              # Correct:
+
+              # Aligned with opening delimiter.
+              foo = long_function_name(var_one, var_two,
+                                       var_three, var_four)
+
+              # Add 4 spaces (an extra level of indentation) to distinguish arguments from the rest.
+              def long_function_name(
+                      var_one, var_two, var_three,
+                      var_four):
+                  print(var_one)
+
+              # Hanging indents should add a level.
+              foo = long_function_name(
+                  var_one, var_two,
+                  var_three, var_four) 
+          </code></pre>
+        </div>
+      </section>
+
+
+      <section class="future">        
+        <div class="standard10">
+          <h3 id="title">Python automated style checkers (linters)</h3>
+          <div class="mx-auto"><p>
+               pylint, pyflakes, flake8, pycodestyle, etc. (from conda)
+          </p></div>
+          <pre class="mx-sm-auto"><code class="bash" data-trim>
+              # from shell
+              pylint mypackage/mymodule.py
+          </code></pre>
+          <pre class="mx-sm-auto"><code class="plaintext" data-trim>
+            ************* Module mypackage.mymodule
+            mypackage/mymodule.py:10:0: C0305: Trailing newlines (trailing-newlines)
+            -----------------------------------
+            Your code has been rated at 6.67/10
+          </code></pre>
+
+          <div class="mx-auto"><p>
+               After fixing it and running again:
+          </p></div>
+          
+          <pre class="mx-sm-auto"><code class="plaintext" data-trim>          
+            -------------------------------------------------------------------
+            Your code has been rated at 10.00/10 (previous run: 6.67/10, +3.33)
+          </code></pre>
+
+        </div>
+      </section>
+
+
+
+
+      <section class="future">        
+        <div class="standard10">
+          <h3 id="title">Python style</h3>
+          <div class="mx-auto"><p>
+            Linters integrated into coding editors (sublime, vscode) help you to <br>
+            learn coding style by highlighting bugs <i>as you write them</i>.
+          </p></div>
+          <pre class="mx-sm-auto"><code class="python" data-trim>
+              # pycodestyle will highlight style errors, but not bugs (fast)
+              mytuple = (1,2,3)   # highlight: should have spaces between commas
+              mytuple[1] = 2      # ignored
+
+              # pyflake will only highlight bugs
+              mytuple = (1,2,3)   # ignored 
+              mytuple[1] = 2      # highlight: cannot assign to immutable type
+
+              # pylint will highlight style error and most bugs (litte slower)
+              mytuple = (1,2,3)   # highlight: should have spaces between commas
+              mytuple[1] = 2      # highlight: cannot assign to immutable type
+          </code></pre>
+        </div>
+      </section>      
+
+
+      <section class="future">        
+        <div class="standard10">
+          <h3 id="title">Python style (<b>strict</b>)</h3>
+          <div class="mx-auto"><p>
+            The <b>black</b> linter will not only highlight, but automatically reformat<br>
+            your code. No options. Good for groups, enforces uniformity.
+          </p></div>
+          <pre class="mx-sm-auto"><code class="bash" data-trim>
+              black --diff mypackage/mymodule.py
+          </code></pre>
+          <pre class="mx-sm-auto"><code class="plaintext" data-trim>
+
+          --- mypackage/mymodule.py 2021-02-03 16:27:21.170586 +0000
+          +++ mypackage/mymodule.py 2021-02-03 16:42:58.815787 +0000
+          @@ -2,8 +2,9 @@
+           
+           "an example script"
+           
+           import random
+           
+          +
+           def test_function():
+               "returns a random number"
+               return random.randint(0, 10)
+          would reformat mypackage/mymodule.py
+          All done! ✨ 🍰 ✨
+          1 file would be reformatted.
+        </div>
+      </section>      
+
+
+
+
+
+    <!-- SLIDES CLASS ENDING -->
+    </div>
+
+  <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="../revealjs/dist/reveal.js"></script>        
+  <script src="../revealjs/plugin/markdown/markdown.js"></script>  
+  <script src="../revealjs/plugin/highlight/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      plugins: [ RevealMarkdown, RevealHighlight ],
+      minScale:0.1,
+      maxScale:5,
+      width:1600,
+      height:900,
+      controls:true, 
+      progress:true,
+      hash:true,
+      loop:false, 
+      center:false,
+      transition: 'none',
+      // transition: 'none',      
+    });
+  </script>
+</body>
+</html>

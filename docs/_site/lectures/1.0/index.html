@@ -1,0 +1,290 @@
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Programming Course">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lecture-1</title>
+
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../hack-the-planet.css">
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">    
+    <link rel="stylesheet" href="./custom.css">
+
+    <!-- support printing in chrome -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <section data-background-color="#262626" class="present" data-transition="none">
+                <div style="margin-left: auto; margin-top: 15%">
+                    <h2 class="title" style="color:#5ab4ac;line-height: 1.25">
+                    Programming and Data Science for Biology<br>(EEEB G4050)</h2>
+
+                    <h4 style="color:grey; font-weight: 400; line-height: 1.5"> 
+                    <i>Dept. of Ecology, Evolution, and Environmental Biology<br>
+                    Columbia University</i></h4>
+                </div>
+            </section>
+
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                    <h3 class="title" style="color:#5ab4ac; margin-top:12%; line-height:1.2">
+                    What is programming?</h3>
+                    <div class="textbox"><p style='text-align:center; color:white'>
+                    In the strict sense, it is a logical sequence of arguments to a 
+                    computer so that it can perform a desired task. 
+                    <br><br>
+                    In this class, however,
+                    we will focus on a broader definition of a <i>program</i>: This includes 
+                    (1) human-readable source code (text) of the program instructions; 
+                    (2) an open-access online repository to share and receive
+                    feedback on the source code from a community of users; 
+                    (3) a design and set of installation instructions to make the 
+                    program broadly accessible; and 
+                    (4) detailed documentation.
+                    </div>
+            </section>
+
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                    <h3 class="title" style="color:#5ab4ac; margin-top:12%; line-height:1.2">
+                    What are programming languages?</h3>
+                    <div class="textbox"><p style='text-align:center; color:white'>
+                        A dialect we can use to provide instructions to the computer.
+                        Programming languages change over time, diverge from each other,
+                        or adopt from each other, just like spoken languages. The popularity
+                        of different languages has varied through time and among
+                        different communities of users.
+                        <br><br>
+                        In this class you will be introduced to several languages, including
+                        bash, HTML, Markdown, SVG, JavaScript, and Python; with greatest emphasis on bash and Python.
+                    </div>
+            </section>            
+
+
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                    <h3 class="title" style="color:#5ab4ac; margin-top:15%; line-height:1.2">
+                    Our goals in this class</h3>
+                    <div class="textbox"><p style='text-align:center; color:white'>
+                        (1) To learn to design, code, and publish a software tool that can 
+                        accomplish a useful task in biology; and (2) To learn technical and
+                        social skills to contribute to the biological data science community.
+                    </div>
+            </section>            
+
+
+
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                    <h3 class="title" style="color:#d8b365; margin-top:12%; line-height:1.2">
+                    How is this class geared towards biologists?</h3>
+                    <div class="textbox"><p style='text-align:center; color:white'>
+                        <i>Through our interactions and discussions.</i><br> 
+                        When biological information
+                        is encoded as data, it becomes no different from any other type of data
+                        -- it is just text. The skills that we will focus on here will generally
+                        apply to any type of data. But, through our discussions in this class, 
+                        among a community of people developing software projects to solve 
+                        biological problems, you will be exposed to numerous computational approaches
+                        for solving biological problems.
+                    </div>
+                </div>
+            </section>
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+
+                <section data-background-color="#262626" data-transition="none" class="future">
+                    <div class="standard">
+                        <h3 class="title" style="color:#5ab4ac; margin-top:6%; line-height:1.2">
+                        Do I have the right kind of computer for this class?</h3>
+                        <div class="textbox"><p style='text-align:center; color:white'>
+                            Short answer: <i>yes</i>.<br> 
+                            Scientific computing is overwhelmingly done on operating systems
+                            based on the Unix architecture (e.g., Linux, MacOSX), 
+                            sometimes termed *nix systems. As research computing continues to 
+                            move into the cloud, these systems which are more scalable for 
+                            multi-user and multi-tasking are likely to remain and even grow
+                            in popularity. Because of this, Windows has historically been 
+                            very difficult to use in research computing.<br><br>
+
+                            Fortunately, this has recently changed. As Microsoft has gained
+                            interest in cloud computing they have embraced Linux -- which for
+                            decades they had previously attacked as a competitor -- and Linux
+                            can now be installed and run on Windows10 as a completely contained
+                            additional operating system (Windows Subsystem for Linux 2).
+                        </p>
+                        </div>
+                    </div>
+                </section>                
+
+
+                <section data-background-color="#262626" data-transition="none" class="future">
+                    <div class="standard">
+                        <h3 class="title" style="color:#d8b365; margin-top:5%; line-height:1.2">
+                            So, if you are on Windows you will be learning Linux. </h3>
+                        <img src="../../assets/images/xkcd-linux.png" style="width:60%">
+                    </div>
+                </section>            
+
+                <section data-background-color="#262626" data-transition="none" class="future">
+                    <div class="standard">
+                        <h3 class="title" style="color:#d8b365; margin-top:6%; line-height:1.2">
+                        No shame, though, Linux has many of its own drawbacks.</h3>
+                        <img src="../../assets/images/xkcd-linux-2.png" style="width:30%">
+                    </div>
+                </section>
+
+            </section>
+
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                    <h3 class="title" style="color:#d8b365; margin-top:5%; line-height:1.2">
+                    Our inspiration</h3>
+                    <div class="textbox"><p style='text-align:center; color:white'>
+                        Course website: 
+                        <a href=https://eaton-lab.org/hack-the-planet style="color:#5ab4ac">https://eaton-lab.org/hack-the-planet</a>
+                        <br>
+                    <img src="../../assets/images/hackers-panel.png" style="width:100%">
+                    The 1995 hit movie 
+                    <a href=https://en.wikipedia.org/wiki/Hackers_(film) style="color:#5ab4ac">Hackers.</a> about a group of rough-around-the-edges youth that apply their hacking skills
+                    to take down a global financial conspiracy that was being blamed on one them
+                    after a harmless hacking prank. Although we will not learn "hacking" in the strict
+                    sense in this class, the ethos behind hackers -- in the sense of a community of
+                    coders working together to solve problems -- stands as the inspiration for this
+                    class.
+                    </p>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="present" data-transition="none">
+                <div style="margin-left: auto; margin-top: 2%">    
+                    <h2><i>Unix programs from the shell/terminal</i></h2>
+                    <p>A common syntax to call shell programs</p>
+                </div>
+                <pre style="width:60%"><code class="python" style="max-height: 550px; font-size: 22px; line-height:1.35;"> 
+# the full syntax, but some arguments can be left empty
+> [program-name] -[options...] [target]
+
+# no options or targets: shows files in the current dir
+> ls
+
+# option -l means to format the output with one file per line
+> ls -l
+
+# target is a filepath (show that dir instead of current dir)
+> ls /home/
+
+# options and target can be provided together
+> ls -la /home/deren
+                </code></pre>
+            </section>
+
+
+
+            <section class="present" data-transition="none">
+                <div style="margin-left: auto; margin-top: 2%">    
+                    <h2><i>Filepaths</i></h2>
+                    <p>In a terminal you should always know: where am I? where are my files?<br>
+                    There are unix programs to tell you these answers.
+                    </p>
+                </div>
+                <pre style="width:60%"><code class="python" style="max-height: 550px; font-size: 22px; line-height:1.35;">
+# print working directory (current location)
+> pwd
+
+# change directory (move yourself to another target location)
+> cd /home/deren
+
+# list the files in this directory
+> ls 
+
+# show the filepath to the program `ls`
+> which ls
+                </code></pre>
+            </section>
+
+
+            <section class="future" data-transition="none">
+                <div class="standard">
+                    <h2>The Unix filesystem</h2>
+                    <div class="textbox"><p>
+                        It is <i>essential</i> to understand the hierarchical structure
+                        of the filesystem on your computer. Directories (folders) are 
+                        nested within directories, starting from the <i>root</i> (/).
+                        <br>
+                        Your first assignment will focus on learning the file hierarchy, 
+                        and many or most of the errors you will encounter while learning
+                        to code will involve errors in writing filepaths. Learning to 
+                        traverse the filesystem efficiently, in a terminal, will 
+                        superpower your efficiency in programming.
+                    </p></div>
+                    <img src="../../assets/images/unix-filesystem.png" style="width:40%">
+                </div>
+            </section>
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="../reveal/lib/js/head.min.js" type="text/javascript"></script>        
+    <script src="../reveal/js/reveal.js" type="text/javascript"></script>
+    <script src="../reveal/plugin/highlight/highlight.js" type="text/javascript"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: false,
+            // slideNumber: "h/v",
+            dependencies: [
+            { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            ]
+        });
+    </script>
+</body>
+</html>

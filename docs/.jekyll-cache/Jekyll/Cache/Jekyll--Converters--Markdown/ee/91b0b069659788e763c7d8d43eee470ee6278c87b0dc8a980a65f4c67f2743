@@ -1,0 +1,244 @@
+I"�F<h3 id="path-and-programs">PATH and programs</h3>
+
+<p><strong>Table of Contents:</strong></p>
+<ul id="markdown-toc">
+  <li><a href="#path-and-programs" id="markdown-toc-path-and-programs">PATH and programs</a></li>
+  <li><a href="#where-are-programs-stored-on-my-computer" id="markdown-toc-where-are-programs-stored-on-my-computer">Where are programs stored on my computer?</a></li>
+  <li><a href="#variables-in-bash" id="markdown-toc-variables-in-bash">Variables in bash</a></li>
+  <li><a href="#default-shell-variables" id="markdown-toc-default-shell-variables">Default shell variables</a></li>
+  <li><a href="#the-path-variable" id="markdown-toc-the-path-variable">The <code class="language-plaintext highlighter-rouge">PATH</code> variable</a></li>
+  <li><a href="#the-order-of-path" id="markdown-toc-the-order-of-path">The order of <code class="language-plaintext highlighter-rouge">PATH</code></a></li>
+  <li><a href="#the-dotfiles" id="markdown-toc-the-dotfiles">The dotfiles</a></li>
+  <li><a href="#using-a-text-editor" id="markdown-toc-using-a-text-editor">Using a text-editor</a></li>
+  <li><a href="#editing-your-dotfile" id="markdown-toc-editing-your-dotfile">Editing your dotfile</a></li>
+  <li><a href="#optional-further-customize-your-terminal" id="markdown-toc-optional-further-customize-your-terminal">Optional: further customize your terminal</a></li>
+  <li><a href="#assessment" id="markdown-toc-assessment">Assessment</a></li>
+</ul>
+
+<h3 id="where-are-programs-stored-on-my-computer">Where are programs stored on my computer?</h3>
+<p>When you purchase a new computer it comes to you pre-loaded with tons
+of software programs. This includes the things you are already familiar
+with, like programs for email and games, but also a huge collection of 
+programs that are used by your operating system to perform its work. 
+This includes the unix programs that we’ve begun to learn about. 
+These are stored in a location in your filesystem that is relatively
+‘deep’ – near the root (/) – such as in <code class="language-plaintext highlighter-rouge">/bin</code> or <code class="language-plaintext highlighter-rouge">/usr/bin</code>. 
+These folders are protected by your system such that they can only
+be edited by users with administrative privileges. Which makes sense, 
+you don’t want to make changes to these programs and break them, or 
+your system would be caput. The set of programs that will be available
+differs among different operating systems and versions, but is generally
+similar.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># see all the program names in /bin</span>
+<span class="nb">ls</span> <span class="nt">-l</span> /bin
+</code></pre></div></div>
+
+<p>You can see that among the list of program names from the command above, 
+it includes a file named <code class="language-plaintext highlighter-rouge">ls</code>. That’s right, that file is the <code class="language-plaintext highlighter-rouge">ls</code> program 
+itself. We can actually call the <code class="language-plaintext highlighter-rouge">ls</code> program by writing the full path
+to that <i>executable</i> file, and it will have the same result as above.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># see all the program names in /bin</span>
+/bin/ls <span class="nt">-l</span> /bin
+</code></pre></div></div>
+
+<p>A relevant question, then, is how does the terminal know which programs 
+are available, and allow us to type in only their names to call them? 
+<i>Where does the terminal look for software?</i></p>
+
+<h3 id="variables-in-bash">Variables in bash</h3>
+<p>To answer this, we will need to take a digression to explain variables. 
+Almost every computer language uses variables as a way of <i>assigning</i>
+an object to a name that can be used to reference it over and over again. 
+Usually the <code class="language-plaintext highlighter-rouge">=</code> operator is used to create variables (e.g., <code class="language-plaintext highlighter-rouge">x = 3</code>, 
+but even this differs among languages (e.g., you may be familiar 
+with the syntax of <code class="language-plaintext highlighter-rouge">x &lt;- 3</code> in R). Variables are also used in the shell 
+programming languages, like bash. Here we use the <code class="language-plaintext highlighter-rouge">=</code> operator without
+any spaces between it and the values (e.g., <code class="language-plaintext highlighter-rouge">x=3</code>).</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># create a variable</span>
+<span class="nv">x</span><span class="o">=</span>3
+
+<span class="c"># retrieve that variable's value using $</span>
+<span class="nb">echo</span> <span class="nv">$x</span>
+</code></pre></div></div>
+
+<h3 id="default-shell-variables">Default shell variables</h3>
+<p>As we learned in lecture, your shell stores a lot of information as 
+variables behind the scenes. This includes variables that tell it how
+to display colors and text in the terminal, how to keep track of its
+own history, how to generally behave, and <i>importantly</i>, 
+where to look for software or files that can be used for tab auto-completion.</p>
+
+<h3 id="the-path-variable">The <code class="language-plaintext highlighter-rouge">PATH</code> variable</h3>
+<p>The <code class="language-plaintext highlighter-rouge">PATH</code> variable is a colon-separated list of filepaths showing the order
+in which your shell searches directories for executable binaries – programs
+that can be called by name from the command line. This is referred to as a 
+variable because it is a value that is temporarily stored to the name <code class="language-plaintext highlighter-rouge">PATH</code> 
+when you open a terminal. Use <code class="language-plaintext highlighter-rouge">echo</code> in your shell to print the value of
+your $PATH variable. A simple one might look like the example below:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># show the $PATH variable where software is searched</span>
+<span class="nb">echo</span> <span class="nv">$PATH</span>
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/bin:/usr/bin:/usr/sbin:/sbin
+</code></pre></div></div>
+
+<p>The example above includes only the locations of system-wide software – 
+all of the paths are pointing to filepaths that not in a user space, 
+i.e., descended from <code class="language-plaintext highlighter-rouge">/home/username</code> on linux or <code class="language-plaintext highlighter-rouge">/Users/username</code> on 
+OSX. By contrast, and as we’ll learn more about in the coming weeks, 
+we will often wish to install ‘local’ software within our own user
+spaces. This is software that will be completely isolated from the
+system softare that we definitely do not want to mess up. You can 
+see in my PATH below that I have additional filepaths including 
+<code class="language-plaintext highlighter-rouge">~/miniconda3/bin</code> and <code class="language-plaintext highlighter-rouge">~/gems/bin</code> (notice I’m using <code class="language-plaintext highlighter-rouge">~</code> as an alias
+to reference my <code class="language-plaintext highlighter-rouge">/home/deren</code> prefix) that point to directories located
+inside my home directory where additional programs are stored.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/home/deren/gems/bin:/home/deren/miniconda3/bin:/home/deren/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+</code></pre></div></div>
+
+<h3 id="the-order-of-path">The order of <code class="language-plaintext highlighter-rouge">PATH</code></h3>
+<p>Your PATH variable can be modified and this can be very useful for 
+specifying a particular version of a program when multiple versions are 
+available. A key example of this is the program <code class="language-plaintext highlighter-rouge">python</code>. You can call
+<code class="language-plaintext highlighter-rouge">python</code> from the command line to execute Python scripts. Your system
+comes pre-installed with a version of Python that is used to run system-wide
+software. <i>We generally do not want to use this version of Python for 
+scientific programming</i>. This is because we cannot easily update or change
+that version without affecting our entire operating system. So, instead, 
+we will install a separate version of Python on our computers within our 
+userspace (somewhere within your home directory) and we will tell the PATH
+variable to use this one instead of the system-wide version. Do not try to
+do this just yet, we will go through the process of installing Python later.
+For now, let’s focus on how we know which version is being used.</p>
+
+<p>You can find the filepath to a program that is located in your PATH by using 
+the <code class="language-plaintext highlighter-rouge">which</code> or <code class="language-plaintext highlighter-rouge">whereis</code> commands. This will help to make clear how the PATH
+variable works. It is <i>ordered</i>. The first directory in the path is searched
+first, and then the next one, and then the next one. If python occurs in the first
+directory, then this version will supercede any programs with the name <code class="language-plaintext highlighter-rouge">python</code> 
+occurring in directories that are listed later in the PATH variable. The 
+<code class="language-plaintext highlighter-rouge">which</code> command will show you which precise program is at the top of your PATH,
+where as the <code class="language-plaintext highlighter-rouge">whereis</code> command will list all programs that contain the target in their
+name and are present in your PATH. I will show the results from my laptop, 
+since I have multiple versions of <code class="language-plaintext highlighter-rouge">python</code> installed.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>which python
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># example 'which' output</span>
+/home/deren/miniconda3/bin/python
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>whereis python
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># example 'whereis' output</span>
+python: /usr/bin/python3.8 /usr/lib/python3.8 /usr/lib/python3.9 /usr/lib/python2.7 /etc/python3.8 /usr/local/lib/python3.8 /usr/include/python3.8 /home/deren/miniconda3/bin/python3.8-config /home/deren/miniconda3/bin/python3.8 /home/deren/miniconda3/bin/python
+</code></pre></div></div>
+
+<h3 id="the-dotfiles">The dotfiles</h3>
+<p>Dotfiles are <i>hidden files</i>, generally located in your home directory 
+(e.g., <code class="language-plaintext highlighter-rouge">/home/deren</code> or <code class="language-plaintext highlighter-rouge">/Users/deren</code>), and which start with a dot (.) as
+the first character in their filenames. By default, your shell and operating
+system typically hide these files from your view, since you don’t need to 
+interact with them unless you are a hacker.</p>
+
+<p>Hacking these dotfiles can be really useful, especially for creating a more
+pleasurable experience when interacting with your terminal. Here we will
+edit one or more dotfiles to add some basic customization to your terminal. 
+You are welcome to do further customizations on your own. 
+Your shell uses these dotfiles by reading and loading the variables in them
+prior to starting. By editing the variables in the files we customize the 
+behavior of the shell.</p>
+
+<p>First, it is important to be sure which type of shell you have, since this 
+will determine which dotfile name we need to ecdit. This can be found 
+by looking at the SHELL variable, like below. This will return either
+<code class="language-plaintext highlighter-rouge">/bin/zsh</code> or <code class="language-plaintext highlighter-rouge">/bin/bash</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="nv">$SHELL</span>
+</code></pre></div></div>
+
+<p>Be careful when editing this file, since a bad configuration <i>can</i> prevent
+your terminal from opening properly. If this happens, do not worry, it can
+be easily fixed by opening the dotfile with a text editor and changing it back
+to its default settings. For this reason, let’s start by creating a backup 
+copy of our dotfile by using the <code class="language-plaintext highlighter-rouge">cp</code> command (be sure to specify the appropriate
+dotfile for your system – you can ensure this by typing only the beginning of the 
+filename and pressing tab to complete the filepath automatically. If the name does
+not autocomplete then you have started to write the path incorrectly. Take note 
+of where you are located (e.g., <code class="language-plaintext highlighter-rouge">pwd</code>) and remember that the dotfiles are located
+in your user home directory.)</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ensure I am in my HOME, and then create backup of my .bash_rc or .bash_profile, etc.</span>
+<span class="nb">cd</span> /home/deren
+<span class="nb">cp</span> .bashrc .bashrc_backup
+</code></pre></div></div>
+
+<h3 id="using-a-text-editor">Using a text-editor</h3>
+<p>You can use any text editor to edit the dotfiles. We will eventually learn a lot
+more about powerful coding text editors, but they are not necessary just yet.
+If you want, you can start to learn about one simple text-editor that you can use from
+within your terminal called <code class="language-plaintext highlighter-rouge">nano</code> by watching a quick video <a href="https://www.youtube.com/watch?v=Jf0ZJZJ8jlI">here</a>.</p>
+
+<h3 id="editing-your-dotfile">Editing your dotfile</h3>
+<div class="alert alert-block alert-success">
+	<b>Complete the tasks in this section to earn points for the assignment.</b> 
+</div>
+<p>For this assessment you must create one edit to your shell’s dotfile. We will 
+add an alias, which is simply a new named variable that we will create that will
+serve as a shortcut to call a command that is more tedious to type. One that 
+I find indispensible is the alias <code class="language-plaintext highlighter-rouge">ll</code> (the lowercase letter L twice). We can 
+create an alias in your dotfile by editing the file to add the following line
+to it:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">alias </span><span class="nv">ll</span><span class="o">=</span><span class="s1">'ls -l'</span>
+</code></pre></div></div>
+
+<p>After you have made the edit, you must then re-load the dotfile, which can 
+be done by either closing and re-opening the terminal, or by calling</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># again, the dotfile name must be correct for you system (use tab-completion)</span>
+<span class="nb">source</span> ~/.bash_rc
+</code></pre></div></div>
+
+<p>Now that the alias is created and loaded when you type <code class="language-plaintext highlighter-rouge">ll</code> you should see 
+the result that we expect to see when typing <code class="language-plaintext highlighter-rouge">ls -l</code>, which is to list the 
+items in a directory with one item per line.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># call our new alias </span>
+ll
+</code></pre></div></div>
+
+<p>If you get stuck in this section, try watching the videos below for step
+by step instructions on customizing terminals.</p>
+
+<h3 id="optional-further-customize-your-terminal">Optional: further customize your terminal</h3>
+<p>You do not need to follow all of the instructions in these videos, make
+any changes that you find useful, and feel free to search for other tutorials
+or videos for tips. Just take note that you must follow instructions for the 
+appropriate shell type that you have (e.g., bash versus zsh). If you got stuck
+on the section above, these videos might prove helpful to you.</p>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=vDOVEDl2z84">A video on customizing an OSX bash terminal</a></li>
+  <li><a href="https://www.youtube.com/watch?v=MSPu-lYF-A8">A video on customizing an OSX zsh terminal</a> or</li>
+  <li><a href="https://www.youtube.com/watch?v=kY4Ns260i2k">A video on customizing a Windows-subsystem-for-Linux-2 terminal</a></li>
+</ul>
+
+<h3 id="assessment">Assessment</h3>
+<div class="alert alert-block alert-success">
+	<b>Complete the tasks in this section to earn points for the assignment.</b> 
+</div>
+
+<p>You should have already created a GitHub account in the previous tutorial. 
+If not, please complete that assignment before proceeding. To get full points
+for this assignment you must <b>upload</b> your shell’s dotfile (<code class="language-plaintext highlighter-rouge">.bash_rc</code>, <code class="language-plaintext highlighter-rouge">.bash_profile</code>, or 
+<code class="language-plaintext highlighter-rouge">.zshrc</code>) to your GitHub repository called hack-2-shell. You can do this by opening
+your home folder, showing hidden files (those that start with a dot), and dragging
+your dotfile to the GitHub repo to upload. Your dotfile must contain at least the
+<code class="language-plaintext highlighter-rouge">ll</code> alias described above, any further changes are optional.</p>
+
+:ET

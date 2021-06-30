@@ -1,0 +1,12 @@
+I"^<h2>…</h2>
+
+<p>GitHub authentication using SSH</p>
+
+<p>https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh</p>
+
+<ul>
+  <li>https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent</li>
+</ul>
+
+<p>ssh-keygen -t ed25519 -C “your_email@example.com”</p>
+:ET

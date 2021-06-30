@@ -1,0 +1,106 @@
+I"�<style>
+h3 {
+	margin-top: 25px
+}
+</style>
+
+<h3 id="learning-to-think-functionally">Learning to think functionally</h3>
+
+<p><strong>Table of Contents:</strong></p>
+<ul id="markdown-toc">
+  <li><a href="#learning-to-think-functionally" id="markdown-toc-learning-to-think-functionally">Learning to think functionally</a></li>
+  <li><a href="#kludge" id="markdown-toc-kludge">Kludge</a></li>
+  <li><a href="#copying-code" id="markdown-toc-copying-code">Copying code</a></li>
+  <li><a href="#thinking-atomically" id="markdown-toc-thinking-atomically">Thinking atomically</a></li>
+  <li><a href="#thinking-functionally" id="markdown-toc-thinking-functionally">Thinking functionally</a></li>
+</ul>
+
+<p>As with any language, there are often many possible ways in which to 
+communicate the same information by using different words, or modifying 
+their order, and one way is not necessarily better than another. 
+In programming, our goal is provide a set of logical statements 
+to accomplish a defined task. This can usually be done with different 
+types of objects or routines in your code. We could evaluate different 
+approaches based on their speed, reliability, and readability, but in 
+the end we are usually most interested in the question of whether or not
+it works.</p>
+
+<p>Now that you have learned the basic building blocks of the Python 
+programming language you can begin to write useful functions for 
+accomplishing tasks. But how does one learn how to <i>think functionally?</i>
+In other words, how do you train your brain to think in terms of 
+how to solve problems by writing Python functions?</p>
+
+<h3 id="kludge">Kludge</h3>
+<p>The term <a href="https://en.wikipedia.org/wiki/Kludge">kludge</a> refers to 
+an assemblage of parts that together are sufficient to accomplish a task, 
+even if the solution is far from perfect. Kludging your way through computing
+problems is a common way to learn to code. Step 1 is to get a working 
+solution, and step 2 is to find ways to improve it. While this approach
+will eventually help you to improve, it is not necessarily the fastest way
+to learn. Instead, you can now take advantage of the tremendous resources
+that are available to you through the internet to find and learn from 
+existing examples of code. In the context of learning to speak a language, 
+you are now ready to study abroad; to learn through practice and observation
+of how others use the language.</p>
+
+<h3 id="copying-code">Copying code</h3>
+<p>So how do we learn to improve code? Use your social network. Copy code from 
+examples on the internet. The best places to find solutions are usually 
+either stackoverflow or GitHub. The former is a discussion board where people post
+questions and others respond and vote on the best answers. Reading these posts
+is a great way to learn <em>why</em> some coding examples are better than others.</p>
+
+<p>To find solutions in this way try googling terms such as 
+<i>“{my question} Python stack overflow”.</i> For example, 
+<a href="https://stackoverflow.com/questions/3025162/statistics-combinations-in-python/3027128&quot;">here is a page</a>
+I found by searching <i>“n choose k Python stack overflow”</i>. One user asks
+what is the fastest way to find the number of ways to sample n combinations from 
+a list of k items. The responses include custom code, standard library functions, 
+and 3rd party libraries (e.g., scipy). You can choose among these ideas for the one
+that works best for your purposes.</p>
+
+<p>GitHub is not quite as easily searchable in terms of finding code snippets
+that will be accompanied by an explanation, but it is a great place to find
+examples of code being used in practice. Find a library that you really enjoy
+using and explore its repository on GitHub. Try to understand how it is organized,
+and how the main classes and functions work. We will go through some examples
+for this in class in the following weeks.</p>
+
+<h3 id="thinking-atomically">Thinking atomically</h3>
+<p>As we’ve discussed several times, it is a better practice to break up 
+operations in your code into many small functions, rather than one
+large function. This will allow you to more easily debug your code when
+it contains errors, and it to write cleaner and more readable code.
+Writing functions in this way can also help you to conceptualize problems,
+by breaking them into many smaller parts for which you can write simpler 
+solutions.</p>
+
+<h3 id="thinking-functionally">Thinking functionally</h3>
+<p>As an example, let’s imagine our coding task is to search a database
+of biomedical publications in PDF format and to count all mentions 
+or references of any gene names that exist in a Human Genome database. 
+Before you even begin this task you should start by creating an outline of 
+the atomized tasks involved. For example, we could break this problem into 
+a number of functions where each accomplishes one of the following tasks:</p>
+
+<ul>
+  <li>extract gene names from a biomedical database into a dict object mapping names to integer 0.</li>
+  <li>check for special formatting of gene names and attempt to standardize (e.g., make all uppercase).</li>
+  <li>extract text from PDFs into a dictionary mapping article name to contents.</li>
+  <li>parse article text into list of words and format to match gene names (e.g., all uppercase).</li>
+  <li>iterate over articles counting occurrence of all gene names among word lists in each.</li>
+  <li>format the count results dictionary into a table and print to a file or stdout.</li>
+</ul>
+
+<p>Now that we have identified the main tasks involved, you can begin to 
+develop these in order, testing each one individually to identify that
+it is working properly, and then testing them in combination where the
+output of one can serve as input to another. As you will learn in 
+tutorial 7.4, the object-oriented design of Python, and in particular, 
+the use of <code class="language-plaintext highlighter-rouge">Class</code> objects, can help with developing code in this style.</p>
+
+<hr />
+
+<p>Proceed to the next tutorial.</p>
+:ET

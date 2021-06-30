@@ -1,0 +1,350 @@
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="author" content="Deren Eaton">
+    <meta name="description" content="Programming Course">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lecture-5.0</title>
+
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="../reveal/css/reveal.css">
+    <link rel="stylesheet" href="../hack-the-planet.css">
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">    
+    <link rel="stylesheet" href="./custom.css">
+
+    <!-- support printing in chrome -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>    
+</head>
+
+
+<!-- Not sure yet of this transition effect -->
+<body style="transition: transform 0.8s ease 0s;"> 
+
+    <!-- set reveal defaults ... -->
+    <div class="reveal linear" data-transition-speed="default" data-background-transition="default">
+
+        <!-- By giving slides a dimension we can use pixels or % -->
+        <div class="slides" style="width:1600px; height:900px;">
+
+            <section data-background-color="#262626" class="present" data-transition="none">
+                <div style="margin-left: auto; margin-top: 15%">
+                    <h2 class="title" style="color:#5ab4ac;line-height: 1.25">
+                    Programming and Data Science for Biology<br>(EEEB G4050)</h2>
+
+                    <h4 style="color:grey; font-weight: 400; line-height: 1.5"> 
+                    <i>Dept. of Ecology, Evolution, and Environmental Biology<br>
+                    Columbia University</i></h4>
+                </div>
+            </section>
+
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                    <h3 class="title" style="color:#5ab4ac; margin-top:10%; line-height:1.2">
+                    Lecture 5.0 Outline:</h3>
+                    <div class="textbox"><p style='text-align:center; color:white'>
+                    <ul style="color:white; line-height: 1.5; font-size: 1.25em">
+                        <li>Discussion of git, GitHub, and GitHub-pages</li>
+                        <li>conda</li>
+                        <li>jupyter</li>                        
+                        <li>Introduction to Python</li>                        
+                    </ul>
+                    </div>
+            </section>
+
+
+
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                    <h3 class="title" style="color:#5ab4ac; margin-top:5%; line-height:1.2">
+                    git and GitHub</h3>
+                    <div class="textbox"><p style='text-align:center; color:white'>
+                        You learned simple and more complex workflows
+                    </p></div>
+                <pre style="width:60%"><code class="bash" style="max-height: 650px; font-size: 18px; line-height:1.35;"> 
+# simple 
+git clone ...
+echo "hello world" > README.md
+git add README.md
+git commit -m "edited readme"
+git push
+                </code></pre>                
+
+                <pre style="width:60%"><code class="bash" style="max-height: 650px; font-size: 18px; line-height:1.35;"> 
+# more complex
+git clone ...
+git checkout -b newbranch
+echo "hello world" > README.md
+git add README.md
+git commit -m "edited readme"
+git checkout main
+git merge newbranch
+git push
+                </code></pre>                
+
+                </div>
+            </section>
+
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                    <h3 class="title" style="color:#5ab4ac; margin-top:5%; line-height:1.2">
+                    GitHub pages</h3>
+                    <div class="textbox"><p style='text-align:center; color:white'>
+                        You create a webpage on GitHub simply by enabling the github-pages
+                        option. This tells GitHub to act as a *server* to make the contents
+                        of your repo publicly available at a given web address. By creating
+                        a repo as <span style="color:pink">username.github.io</span>
+                        this address becomes active as a website.
+                        We can enable other repos as websites and they will be served at
+                        <span style="color:pink">username.github.io/repo_name</span>
+                        <br><br>
+                        The contents of your README file serve as the index.html (main page)
+                        of your site. Additional files and folders in the folder are similarly
+                        served as content. You can build a fully functioning website like this
+                        for free!
+                    </p></div>
+                </div>
+            </section>
+
+
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                    <h3 class="title" style="color:#5ab4ac; margin-top:5%; line-height:1.2">
+                    conda software manager</h3>
+                    <div class="textbox"><p style='text-align:center; color:white'>
+                        In your assignment this week you will learn to instal and use the
+                        conda software package manager. This is a popular and powerful tool
+                        for scientific programming. It allows you to automate the process of
+                        finding and installing software, and dealing with dependencies.
+                    </p></div>
+
+                <pre style="width:60%"><code class="bash" style="max-height: 650px; font-size: 18px; line-height:1.35;"> 
+# install a Python package with conda
+conda install numpy 
+
+# install a binary program with conda from a specific channel
+conda install samtools -c bioconda
+                </code></pre>   
+
+                    <div class="textbox"><p style='text-align:center; color:white'>                
+                        Later we will also learn how to write conda recipes so that you can make
+                        the software tools that you develop available on conda.
+                    </p></div>
+                </div>
+            </section>
+
+
+
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                    <h3 class="title" style="color:#5ab4ac; margin-top:5%; line-height:1.2">
+                    Installing local software</h3>
+                    <div class="textbox"><p style='text-align:center; color:white'>
+                        In your assignment this week we will also explore how conda works.
+                        Where does it install software, why does it use this location, 
+                        how do we add or remove this location from our PATH?
+                    </p></div>
+                <pre style="width:60%"><code class="bash" style="max-height: 650px; font-size: 18px; line-height:1.35;"> 
+# show the PATH variable
+echo $PATH
+                </code></pre>     
+                <pre style="width:60%"><code class="bash" style="max-height: 650px; font-size: 18px; line-height:1.35;"> 
+/home/deren/gems/bin:/home/deren/miniconda3/bin:/home/deren/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+                </code></pre>     
+
+                </div>
+            </section>      
+
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                    <h3 class="title" style="color:#5ab4ac; margin-top:5%; line-height:1.2">
+                    jupyter notebooks</h3>
+                    <div class="textbox"><p style='text-align:center; color:white'>
+                        You have already used jupyter notebooks remotely through the 
+                        cloud-based service Binder. In your assignments this week you will
+                        learn to install and run a jupyter server on your own computer to 
+                        create and edit notebooks. You will then save your notebooks to 
+                        GitHub to share you results.
+                    </p></div>
+                <pre style="width:60%"><code class="bash" style="max-height: 650px; font-size: 18px; line-height:1.35;"> 
+# install jupyter
+conda install jupyter
+
+# start a jupyter server
+jupyter-notebook
+                </code></pre>     
+
+                </div>
+            </section>
+
+
+            <section data-background-color="#262626" data-transition="none" class="future">                
+            <div class="standard">
+                <h3 class="title" style="color:#5ab4ac; margin-top:5%; line-height:1.2">
+                Learning Python: Why Python?</h3>
+                <div class="textbox"><p style='text-align:center; color:white'>
+                    <ul style="color:white; line-height: 1.5; font-size: 1.0em">
+                        <li>Python is easy to read and easy to learn</li>
+                        <li>Python has very active open source development community</li>
+                        <li>Python has the most rapidly growing Data Science community</li>
+                        <li>Python is a general purpose language (not domain specific)</li>
+                        <li>Python is object-oriented with well developed style guides</li>
+                        <li>But, Python is relatively slow (compared to C, C++, Fortran, etc)</li>
+                    </ul>
+                </p></div>
+                <img src="rocket.jpg" style="width:35%">
+            </div>
+            </section>
+
+
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                    <h3 class="title" style="color:#5ab4ac; margin-top:5%; line-height:1.2">
+                    Python introduction (objects)</h3>
+                    <div class="textbox"><p style='text-align:center; color:white'>
+                        Everything in Python is an *object*. This is inherent in the design 
+                        of the language, and something that we will learn to explore 
+                        further as we become more advanced. An integer is an object, a function
+                        is an object, and a Class is an object. 
+
+                        <br><br>
+                        At its base, Python includes a small number of basic *object types*. 
+                        Once these basic types were defined, it turns out that you can create
+                        almost anything by using them in creative ways. In this way, most 
+                        of the Python programming language is actually written in Python.
+                        These basic types include integers, floats, strings, dictionaries, lists, etc.
+                        You will learn about these types this week.
+                    </p></div>
+                </div>
+            </section>
+
+
+            <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                    <h3 class="title" style="color:#5ab4ac; margin-top:5%; line-height:1.2">
+                    Python introduction (string types)</h3>
+                    <div class="textbox"><p style='text-align:center; color:white'>
+                        String type objects are used to represent one or more characters. 
+                        Strings are created by using either single or double quotes.
+                        You can perform operations on strings, such as combining them or 
+                        reformatting them to accomplish very complex tasks.
+                        <br><br>
+                        To start, we need to create a string type object. We do this by 
+                        storing the value of a string to a variable name. String objects
+                        have more than just their value attached to them. In addition, we 
+                        can access other attributes and functions from
+                        the string object by using a dot after the object.
+                    </p></div>
+                <pre style="width:60%"><code class="bash" style="max-height: 650px; font-size: 18px; line-height:1.35;"> 
+# create a string variable called x
+x = "a string of text"
+
+# call the .upper() function of the string object
+print(x.upper())
+                </code></pre>
+
+                <pre style="width:60%"><code class="bash" style="max-height: 650px; font-size: 18px; line-height:1.35;"> 
+A STRING OF TEXT
+                </code></pre>
+                </div>                
+            </section>
+
+
+
+           <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                    <h3 class="title" style="color:#5ab4ac; margin-top:5%; line-height:1.2">
+                    Object oriented programming</h3>
+                    <div class="textbox"><p style='text-align:center; color:white'>
+                        Object oriented programming is a style of programming design 
+                        where that functions that are meant to be called on a given type
+                        of object are *attached* to that object. This makes it easy to find
+                        all of the available options given some object, and ensures you call
+                        the right type of function on the right type of object.
+                        <br><br>
+                        Coding development tools like jupyter or a good coding editor like vscode
+                        makes it easier to write Python code by taking advantage of this design.
+                        When writing Python code you can use tab-completion to see all options
+                        from your current object.
+                    </p></div>
+                <pre style="width:60%"><code class="bash" style="max-height: 650px; font-size: 18px; line-height:1.35;"> 
+# create a string variable called x
+x = "a string of text"
+
+# press tab to see options
+x.[press tab]
+                </code></pre>                    
+                </div>                
+            </section>
+
+
+
+
+           <section data-background-color="#262626" data-transition="none" class="future">
+                <div class="standard">
+                    <h3 class="title" style="color:#5ab4ac; margin-top:5%; line-height:1.2">
+                    This week's types</h3>
+                    <div class="textbox"><p style='text-align:center; color:white'>
+                        This week you will learn about strings, numbers, and lists. 
+                        These are some of the basic type object types in Python. You also
+                        have a short reading to introduce these topics. By the end of the 
+                        week we will learn all of the additional basic types, including
+                        dictionaries, sets, and tuples.
+                    </p></div>
+                </div>                
+            </section>
+
+
+        <!-- SLIDES CLASS ENDING -->
+        </div>
+
+    <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="../reveal/lib/js/head.min.js" type="text/javascript"></script>        
+    <script src="../reveal/js/reveal.js" type="text/javascript"></script>
+    <script src="../reveal/plugin/highlight/highlight.js" type="text/javascript"></script>
+    <script>
+        Reveal.initialize({
+            controls:true, 
+            progress:false, 
+            loop:false, 
+            history:true,
+            center:false,
+            fragmentInURL:true,
+            margin:.05,
+            minScale:0.1,
+            maxScale:5,
+            width:1600,
+            height:900,
+            theme:Reveal.getQueryHash().theme,
+            transition:Reveal.getQueryHash().transition||"linear",
+            slideNumber: false,
+            // slideNumber: "h/v",
+            dependencies: [
+            { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            ]
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+I"(d<style>
+h3 {
+    margin-top: 30px
+}
+</style>
+
+<h3 id="understanding-imports-and-modules">Understanding imports and modules</h3>
+
+<p><strong>Table of Contents:</strong></p>
+<ul id="markdown-toc">
+  <li><a href="#understanding-imports-and-modules" id="markdown-toc-understanding-imports-and-modules">Understanding imports and modules</a></li>
+  <li><a href="#learning-objectives" id="markdown-toc-learning-objectives">Learning objectives</a></li>
+  <li><a href="#the-import-statement" id="markdown-toc-the-import-statement">The <code class="language-plaintext highlighter-rouge">import</code> statement</a></li>
+  <li><a href="#organizing-a-package" id="markdown-toc-organizing-a-package">Organizing a package</a></li>
+  <li><a href="#file-trees" id="markdown-toc-file-trees">File trees</a></li>
+  <li><a href="#tldr-a-video-demonstration" id="markdown-toc-tldr-a-video-demonstration">TLDR; a video demonstration</a></li>
+  <li><a href="#write-a-python-module" id="markdown-toc-write-a-python-module">Write a Python module</a></li>
+  <li><a href="#importing-design" id="markdown-toc-importing-design">Importing design</a></li>
+  <li><a href="#packages-and-modules" id="markdown-toc-packages-and-modules">Packages and modules</a></li>
+  <li><a href="#why-does-this-make-mypackage-importable" id="markdown-toc-why-does-this-make-mypackage-importable">Why does this make <code class="language-plaintext highlighter-rouge">mypackage</code> importable?</a></li>
+  <li><a href="#the-__init__py-script" id="markdown-toc-the-__init__py-script">The <code class="language-plaintext highlighter-rouge">__init__.py</code> script</a></li>
+  <li><a href="#summary" id="markdown-toc-summary">Summary</a></li>
+  <li><a href="#assessment" id="markdown-toc-assessment">Assessment</a></li>
+</ul>
+
+<h3 id="learning-objectives">Learning objectives</h3>
+<p>By the end of this tutorial you should:</p>
+<ul>
+  <li>Understand that Python packages are just folders full of Python scripts.</li>
+  <li>Understand that <code class="language-plaintext highlighter-rouge">sys.path</code> lists the locations of importable packages.</li>
+  <li>Be able to import custom Python packages.</li>
+  <li>Be familiar with how to organize Python scripts into a package.</li>
+</ul>
+
+<h3 id="the-import-statement">The <code class="language-plaintext highlighter-rouge">import</code> statement</h3>
+<p>The <code class="language-plaintext highlighter-rouge">import</code> statement is one of the first things located in 
+any Python script. It is used to load Python code from other 
+files located on your system. But what is it actually importing? 
+What do those files and folders look like?</p>
+
+<p>In your last tutorial you learned how to write a single 
+Python script that contains code that can be imported. This 
+is often referred to as a module. Here we will learn about writing 
+a collection of modules together in a folder, which is called a 
+package. Both modules and packages are very similar in the 
+way that <code class="language-plaintext highlighter-rouge">import</code> statements are used to access code from 
+Python files to make it accessible in other places.</p>
+
+<h3 id="organizing-a-package">Organizing a package</h3>
+<p>Python packages are only useful when they are organized in a way 
+that makes it easy to understand how they should be used. Because 
+GitHub has become a standard place to store code, we will discuss 
+the organization of our code more broadly in terms of how it should
+be organized in a git repository. It is useful to follow a similar
+set of conventions whether the repo is intended as a Python software
+package, or if it is simply an archive of a research project.</p>
+
+<p>In either case, we will usually have the following:</p>
+<ul>
+  <li>a README file in the top level directory describing the project.</li>
+  <li>a code directory (that can take different names) containing Python code.</li>
+  <li>a notebooks directory containing demonstrations/analyses of the code.</li>
+  <li>a data directory containing example data to be analyzed in the notebooks.</li>
+</ul>
+
+<p>Here we will focus on the structure of your code directory. 
+You have already cloned the repo <code class="language-plaintext highlighter-rouge">hack-7-python</code> which currently contains
+only a README file and notebooks directory. Let’s create an additional folder
+to contain our scripts, called <code class="language-plaintext highlighter-rouge">mypackage</code>, and add an empty file 
+to this folder called <code class="language-plaintext highlighter-rouge">mymodule.py</code>. You can do this from your terminal
+by following the code block below.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># make sure we are located in the repo dir</span>
+<span class="nb">cd</span> ~/hacks/hack-7-python
+
+<span class="c"># make a new subdirectory </span>
+<span class="nb">mkdir</span> <span class="nt">-p</span> mypackage/
+
+<span class="c"># make an empty file </span>
+<span class="nb">touch</span> ./mypackage/mymodule.py
+</code></pre></div></div>
+
+<h3 id="file-trees">File trees</h3>
+<p>As an aside, let’s install and use an interesting tool for visualizing the 
+filestructure of our repository. This will make it easier to keep track of 
+and understand how our files are organized, especially as we continue to 
+make more complex modules with many files. Use conda from your terminal
+to install the program <code class="language-plaintext highlighter-rouge">tree</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda <span class="nb">install </span>tree <span class="nt">-c</span> conda-forge
+</code></pre></div></div>
+
+<p>We can now use the <code class="language-plaintext highlighter-rouge">tree</code> command from within our repo to view the 
+file structure in a nicely formatted “file tree” design. In the 
+next sections our goal will be to put Python code into the mymodule.py
+file located in the mypackage folder, and to be able to import that
+code into a notebook located in the notebooks directory.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tree <span class="nb">.</span>
+</code></pre></div></div>
+
+<pre style="background-color: lightgrey; padding:10px"><font color="#729FCF"><b>.</b></font>
+├── <font color="#729FCF"><b>mypackage</b></font>
+│   └── mymodule.py
+├── <font color="#729FCF"><b>notebooks</b></font>
+│   └── nb-7.0-subprocess.ipynb
+└── README.md
+
+2 directories, 7 files
+</pre>
+
+<h3 id="tldr-a-video-demonstration">TLDR; a video demonstration</h3>
+<div class="alert alert-info">
+Watch the video below for a visual demonstration of what we plan to accomplish, 
+and then follow along with the rest of the tutorial for a slower paced 
+explanation. Click to make video larger.
+</div>
+<div class="embed-responsive embed-responsive-16by9">
+    <video controls="">
+        <source src="./videos/py-import.webm" type="video/webm" />
+        Sorry, your browser doesn't support embedded videos.
+    </video>
+</div>
+
+<h3 id="write-a-python-module">Write a Python module</h3>
+<p>Let’s add a simple function to the mymodule.py file. In the video example 
+above I wrote a short py script. Here you can just copy the code
+below and paste it into the file using <code class="language-plaintext highlighter-rouge">nano</code> or another text editor.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># open the myscript.py file in the nano text editor</span>
+nano ./mypackage/mymodule.py
+</code></pre></div></div>
+<p>Copy and paste the code below into the myscript.py file and save and close it.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python
+</span><span class="s">"magic eight ball function to tell your future."</span>
+
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">magic_eight_ball</span><span class="p">():</span>
+    <span class="s">"""
+    Returns a random statement from a magic eight ball containing
+    a 10 sided die (I was too lazy to write all 20 typical answers)
+    https://en.wikipedia.org/wiki/Magic_8-Ball
+    """</span>
+    <span class="n">RESPONSES</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="mi">0</span><span class="p">:</span> <span class="s">"It is certain."</span><span class="p">,</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="s">"It is decidedly so."</span><span class="p">,</span>
+        <span class="mi">2</span><span class="p">:</span> <span class="s">"Without a doubt."</span><span class="p">,</span>
+        <span class="mi">3</span><span class="p">:</span> <span class="s">"Yes – definitely."</span><span class="p">,</span>
+        <span class="mi">4</span><span class="p">:</span> <span class="s">"You may rely on it."</span><span class="p">,</span>
+        <span class="mi">5</span><span class="p">:</span> <span class="s">"Reply hazy, try again."</span><span class="p">,</span>
+        <span class="mi">6</span><span class="p">:</span> <span class="s">"Better not tell you now."</span><span class="p">,</span>
+        <span class="mi">7</span><span class="p">:</span> <span class="s">"Cannot predict now."</span><span class="p">,</span>
+        <span class="mi">8</span><span class="p">:</span> <span class="s">"My reply is no"</span><span class="p">,</span>
+        <span class="mi">9</span><span class="p">:</span> <span class="s">"Outlook not so good"</span><span class="p">,</span>
+        <span class="mi">10</span><span class="p">:</span> <span class="s">"Very doubtful"</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">RESPONSES</span><span class="p">[</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))]</span>
+</code></pre></div></div>
+
+<h3 id="importing-design">Importing design</h3>
+<p>So far you have learned how to use the <code class="language-plaintext highlighter-rouge">import</code> statement to import code
+from Python packages and/or modules that are part of the standard library. 
+These are a collection of Python scripts organized into folders,
+similar to what you will be creating here. As an example, we learned about
+the <code class="language-plaintext highlighter-rouge">os.path</code> module in an earlier tutorial, which is used to format file
+path strings. This module is part of the <code class="language-plaintext highlighter-rouge">os</code> package. The functions located
+in the <code class="language-plaintext highlighter-rouge">path</code> module can be accessed in several ways from the <code class="language-plaintext highlighter-rouge">os</code> package:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">join</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="n">path</span><span class="p">.</span><span class="n">join</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">path</span><span class="p">.</span><span class="n">join</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span>
+<span class="n">join</span>
+</code></pre></div></div>
+
+<p>Our goal here will be to design our package in the same way, so that you
+can import the function <code class="language-plaintext highlighter-rouge">magic_eight_ball()</code> from <code class="language-plaintext highlighter-rouge">mypackage.mymodule</code> 
+in all of these same ways.</p>
+
+<h3 id="packages-and-modules">Packages and modules</h3>
+<p>A module is a script that can be imported. A package is a folder full
+of modules. The dot format in the example above, where the file or 
+function names are nested within another name, is meant to recapitulate
+the file structure in which these files or functions are written.</p>
+
+<p>So far we have a folder (package) and a file (module) and within it
+a function. Does this mean that we can now import this code from
+any other Python file? No. We need to do a few more steps to make it
+possible for Python to know that this package can be imported.
+For this, we need to learn about <code class="language-plaintext highlighter-rouge">sys.path</code>: the location where
+Python looks for modules. This is simply a list of filepaths 
+represented as strings.</p>
+
+<div class="alert alert-info">
+<code>import</code> can only import packages or modules from folders 
+listed in <code>sys.path</code>. By default this will include only the
+location of standard library packages in
+<code>~/miniconda3/python3.8/</code>,
+of other installed packages (e.g., by conda or pip) in
+<code>~/miniconda3/python3.8/site-packages</code>,
+as well as your current directory 
+(<code>./</code>). 
+	Here we will learn how to add additional paths to the 
+<code>sys.path</code> variable so that we an import any code.
+This is particularly useful (1) during code development; or (2)
+for importing a small number of scripts that do not compose a 
+full library. 
+	Later we will learn to design packages that
+are installable, meaning that they will be copied into the 
+(<code>~/miniconda3/python3.8/site-packages</code>) dir
+where other packages are located.
+</div>
+
+<p>Open a new notebook <em>from in the notebooks dir</em> and rename it <code class="language-plaintext highlighter-rouge">import-test</code> 
+and follow along. From inside the notebook import the <code class="language-plaintext highlighter-rouge">sys</code> package from 
+the standard library and examine the <code class="language-plaintext highlighter-rouge">sys.path</code> variable. (see the video
+tutorial above to make sure you are following as intended.)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># import sys from the standard lib
+</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">path</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>To add new locations for Python to find packages you can append a new string
+to the <code class="language-plaintext highlighter-rouge">sys.path</code> list. This new string should point to the <strong>parent directory</strong> of 
+your package (the directory containing the package directory). The path can be written
+as either a full path or relative path. Because we are currently located within
+a notebook in the <code class="language-plaintext highlighter-rouge">notebooks/</code> dir, the <code class="language-plaintext highlighter-rouge">mypackage</code> dir is located up one directory
+(in the parent directory of our current dir). See the <code class="language-plaintext highlighter-rouge">tree</code> output above to 
+confirm this. Therefore we can add our current parent dir to the <code class="language-plaintext highlighter-rouge">sys.path</code> 
+to make the <code class="language-plaintext highlighter-rouge">mypackage/</code> folder importable. (Using a relative path as opposed
+to a full path here is actually preferred, since if someone else cloned our repo and
+ran the code in this notebook, it would be able to find and import the code from
+the parent dir (<code class="language-plaintext highlighter-rouge">..</code>) without requiring them to change the path, which they otherwise
+would need to do if writing a fullpath.)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># append your current parent dir to the sys.path list
+</span><span class="n">sys</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">"../"</span><span class="p">)</span>
+
+<span class="c1"># show the updated sys.path 
+</span><span class="k">print</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">path</span><span class="p">)</span>
+</code></pre></div></div>
+
+<pre style="background-color: lightgrey; padding:10px">[&apos;/home/deren/miniconda3/envs/dev/bin&apos;,
+ &apos;/home/deren/miniconda3/envs/dev/lib/python38.zip&apos;,
+ &apos;/home/deren/miniconda3/envs/dev/lib/python3.8&apos;,
+ &apos;/home/deren/miniconda3/envs/dev/lib/python3.8/lib-dynload&apos;,
+ &apos;/home/deren/miniconda3/envs/dev/lib/python3.8/site-packages&apos;,
+ &apos;/home/deren/miniconda3/envs/dev/lib/python3.8/site-packages/IPython/extensions&apos;,
+ &apos;/home/deren/.ipython&apos;,
+ &apos;..&apos;]
+</pre>
+
+<h3 id="why-does-this-make-mypackage-importable">Why does this make <code class="language-plaintext highlighter-rouge">mypackage</code> importable?</h3>
+<p>Any folder that is located inside of one of the folders listed above can
+be imported. The <code class="language-plaintext highlighter-rouge">mypackage</code> folder is located in the filepath that we 
+appended to the end of the list (<code class="language-plaintext highlighter-rouge">../</code>). This will make the following
+<code class="language-plaintext highlighter-rouge">import</code> statements available to us that will allow us to access the 
+<code class="language-plaintext highlighter-rouge">magic_eight_ball()</code> function in the <code class="language-plaintext highlighter-rouge">mymodule</code> script. You can test this
+from your notebook, and you can also explore what is accessible to import
+from each object by using tab-completion.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">mypackage.mymodule</span>
+<span class="n">mypackage</span><span class="p">.</span><span class="n">mymodule</span><span class="p">.</span><span class="n">magic_eight_ball</span><span class="p">()</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">mypackage</span> <span class="kn">import</span> <span class="n">mymodule</span>
+<span class="n">mymodule</span><span class="p">.</span><span class="n">magic_eight_ball</span><span class="p">()</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">mypackage.mymodule</span> <span class="kn">import</span> <span class="n">magic_eight_ball</span>
+<span class="n">magic_eight_ball</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>The only method that is not yet supported is to be able to import the 
+package name alone and access all objects nested within it. This is slightly 
+different from the first example above, and would look like this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># this workflow is not yet supported
+</span><span class="kn">import</span> <span class="nn">mypackage</span>
+<span class="n">mypackage</span><span class="p">.</span><span class="n">mymodule</span><span class="p">.</span><span class="n">magic_eight_ball</span><span class="p">()</span>
+</code></pre></div></div>
+<p>This last method is particularly convenient, since it allows the user to 
+explore the entire package themselves to find any objects that might be 
+useful. So how do we support this last method?</p>
+
+<h3 id="the-__init__py-script">The <code class="language-plaintext highlighter-rouge">__init__.py</code> script</h3>
+<p>To support this last mode for <code class="language-plaintext highlighter-rouge">import</code> we need to learn about a special
+file called <code class="language-plaintext highlighter-rouge">__init__.py</code>. You can tell it is special because
+it uses the dunder naming convention. An init file is a file that is 
+automatically run when a package is imported. It is placed inside of 
+a folder and used to <code class="language-plaintext highlighter-rouge">import</code> other files or folders that are nested
+within this folder. By using an <code class="language-plaintext highlighter-rouge">__init__.py</code> file to only select <em>some</em>
+of the subfolders or files in a folder you can limit or expand 
+the scope of what the user will see when using tab-completion to search 
+for possible importable modules. This is a useful design feature that 
+can be used to organize your code so that all of the most useful class
+and function objects are accessible from the top level package name, or
+from particular modules. Let’s create an init file and edit its contents:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># add an __init__.py file to the mypackage dir</span>
+<span class="nb">cd</span> ~/hacks/hack-7-python/
+<span class="nb">touch </span>mypackage/__init__.py
+nano mypackage/__init__.py
+</code></pre></div></div>
+
+<p>In the <code class="language-plaintext highlighter-rouge">__init__.py</code> file we will add a shebang and docstring,
+and then add an import statement. In this case the import is making
+it so that the package will automatically import the module. In other
+words, <code class="language-plaintext highlighter-rouge">mypackage.mymodule</code> will be automatically imported. Here we
+use the convention <code class="language-plaintext highlighter-rouge">from .</code> to tell it where to the mymodule module
+is located, where <code class="language-plaintext highlighter-rouge">.</code> means the current directory.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python
+</span><span class="s">"""
+The mypackage package is used to learn about package filestructure.
+"""</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">mymodule</span>
+</code></pre></div></div>
+
+<p>Now if we restart the notebook and update our <code class="language-plaintext highlighter-rouge">sys.path</code> variable as
+before, we should be able to access all contents of the mypackage 
+folder from the top level name. In addition, we can view a docstring 
+for the package which we defined in the init file.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># add our local package scope to sys.path
+</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">".."</span><span class="p">)</span>
+
+<span class="c1"># access our module function from the package-level import
+</span><span class="kn">import</span> <span class="nn">mypackage</span>
+<span class="n">mypackage</span><span class="p">.</span><span class="n">mymodule</span><span class="p">.</span><span class="n">magic_eight_ball</span><span class="p">()</span>
+
+<span class="c1"># show the package-level docstring
+</span><span class="n">mypackage</span><span class="err">?</span>
+</code></pre></div></div>
+
+<h3 id="summary">Summary</h3>
+
+<ul>
+  <li><i>modules</i> are Python scripts located inside folders.</li>
+  <li><i>packages</i> are folders containing one or more modules.</li>
+  <li>Both of these things can be imported, allowing you to access folders, files,
+or code objects within them.</li>
+  <li>An <code class="language-plaintext highlighter-rouge">__init__.py</code> file can be used to make objects nested within a package
+(modules or their contents) accessible from the higher-level imported 
+object (package).</li>
+  <li>Packages or modules can be imported if they are in your <code class="language-plaintext highlighter-rouge">sys.path</code> variable.</li>
+  <li>You can edit <code class="language-plaintext highlighter-rouge">sys.path</code> to add new paths to it to make your code importable.</li>
+  <li>We will learn later how to make packages ‘installable’, such that they will 
+automatically be added to your <code class="language-plaintext highlighter-rouge">sys.path</code>.</li>
+</ul>
+
+<h3 id="assessment">Assessment</h3>
+
+<div class="alert alert-success">
+Ensure that your code is working and can successfully import and run
+the code in the block above. If it is working then save and close your
+notebook. Use git to add, commit, and push your mypackage/ dir and 
+your test notebook to your forked git repo for grading.
+</div>
+:ET

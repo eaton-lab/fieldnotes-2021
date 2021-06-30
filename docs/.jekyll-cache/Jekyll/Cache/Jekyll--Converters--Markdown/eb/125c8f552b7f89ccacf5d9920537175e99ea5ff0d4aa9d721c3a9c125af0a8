@@ -1,0 +1,163 @@
+I"$'<style>
+h2 {
+    margin-top: 30px;
+}
+h3 {
+    margin-top: 30px;
+}
+pre {
+    line-height: 1.25em;
+}
+pre code {
+    font-size: 0.9em;
+}
+iframe {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+</style>
+
+<h2 id="markup-languages">Markup languages</h2>
+<p>We have previously learned to write <em>Markdown</em>, a language for rendering
+styled text in web browsers (or in jupyter notebooks). This is a sort of 
+minimal language that provides a shortcut to writing its more complex and
+verbose parent language, which is HTML (hyperlink text <strong>markup</strong> langauage).</p>
+
+<p>Markup languages follow the syntax of nested structures described within
+tags defined by chevrons and text. An example in HTML is a <code class="language-plaintext highlighter-rouge">div</code> element,
+which can represent any general block of content on a page. This is 
+described by an opening tag, then some content, and finally a closing
+tag: <code class="language-plaintext highlighter-rouge">&lt;div&gt;...&lt;/div&gt;</code>. These elements often have others nested within them, 
+and they themseleves are nested in a broader HTML webpage.</p>
+
+<h3 id="follow-along">Follow along</h3>
+<p>Throughout this tutorial you can follow along by typing the markup code
+into the HTML section of <a href="https://jsfiddle.net/">https://jsfiddle.net/</a>. 
+Press the <kbd>run</kbd> button in the upper left to run the code and 
+render the page. This is really useful resource for learning HTML, CSS,
+and JS interactively. I will use it here to embed examples as well.</p>
+
+<h3 id="html-css-and-javascript">HTML, CSS, and JavaScript</h3>
+
+<p>Let’s take a look at a basic webpage layout. This includes the outermost 
+<code class="language-plaintext highlighter-rouge">&lt;html&gt;</code> tags, a body tag, and inside of the body, the content of the 
+page. This page has a single h1 header that say’s “Hello World”. It is best
+to think of markup tags as containers. The 
+html tags are the outer container of the entire page, and the body is 
+a container for the content of the page.</p>
+
+<iframe width="100%" height="175" src="//jsfiddle.net/dereneaton/w49r08nj/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe>
+
+<p>Most webpages will additionally include a <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> tag section at the top of
+the document. This section includes a bunch of meta-data that helps the browser
+to know what the page is about, and it also includes links to any css 
+stylesheets and javascript libraries. You can think of this as analogous 
+to the <code class="language-plaintext highlighter-rouge">import</code> statements in a Python script.</p>
+
+<p>In the jsfiddle examples you will notice that there are separate windows 
+for entering CSS and JS, these are automatically linked to the HTML window
+in this tool. Take not that you would usually create a separate 
+file to hold this content and link to that file from the header.</p>
+
+<p>In this example you can see that I added a div container around the 
+‘hello world’ h1 element, and I assigned it an attribute <code class="language-plaintext highlighter-rouge">id=welcome</code>. 
+You can assign any id to any element, and this allows you to add style
+to it specifically from your CSS stylesheet. Click on the CSS tab below
+to see how two styles were described, setting color on the <code class="language-plaintext highlighter-rouge">div</code> and <code class="language-plaintext highlighter-rouge">h1</code>
+elements, respectively.</p>
+
+<iframe width="100%" height="325" src="//jsfiddle.net/dereneaton/b4a8f9uv/4/embedded/html,css,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe>
+
+<p>Let’s not look at an example of adding JavaScript. Here, as with CSS,
+you can write javascript in a separate file and link to it from the HTML
+document. Because this example is simple, though, I will write the 
+JS directly into the HTML. When this is done it usually goes at the 
+end of the <code class="language-plaintext highlighter-rouge">body</code> element, inside of a tag called <code class="language-plaintext highlighter-rouge">script</code>. You can 
+use javascript to change HTML content or attributes, to change CSS
+styles, and to show or hide HTML elements. This simple example creates
+the content for the second <code class="language-plaintext highlighter-rouge">h1</code> element in javascript.</p>
+
+<iframe width="100%" height="405" src="//jsfiddle.net/dereneaton/jxdgta1r/6/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe>
+
+<h3 id="summary">Summary</h3>
+<p>So, webpages are composed of HTML, CSS, and JavaScript. These simple
+examples show the barebones of an example, but of course real web pages, 
+and web-based data visualizations, can be much more complex. However, 
+even very complex examples are composed simply of extensions of these
+building blocks.</p>
+
+<h3 id="svg-markup">SVG markup</h3>
+<p>How does this all relate to plotting again? Oh yeah, vector graphics.
+So it turns out that vector graphics can be tightly integrated into this
+framework to allow you to embed, position, style, and interact with shapes
+the same way you do with html tags in a webpage. By doing so you can create
+really powerful interactive graphics. This is the basis for many of the 
+cool interactive data visualizations that you find in the New York Times, 
+and is the basis for how libraries like <code class="language-plaintext highlighter-rouge">altair</code> create plots.</p>
+
+<p>SVG stands for scalable vector graphics, and is a markup language similar
+to HTML (actually its more similar to a flavor called XML). It is composed
+of tags that describe distinct primitives (shapes) and how they should be 
+arranged in space. Let’s try a simple example. Here we create an <code class="language-plaintext highlighter-rouge">svg</code> tag
+as the outermost element and set the dimensions of the element. Inside, 
+we describe two primitives, a circle and a polygon, both of which have a 
+number of attributes that are required to describe their size, position, 
+and shape. As you can see in the CSS tab, we can add style to these 
+elements, and even change or update it interactively, after the 
+image content has already been described.</p>
+
+<iframe width="100%" height="300" src="//jsfiddle.net/dereneaton/mcq18563/7/embedded/html,css,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe>
+
+<h3 id="vector-based-drawings">Vector-based drawings</h3>
+<p>So how do vector-based drawings work? Let’s consider the case of creating
+a scatterplot. Your code will describe the size of the canvas by providing
+attributes to the <code class="language-plaintext highlighter-rouge">svg</code> element, and it will describe the size and position of 
+points by listing many <code class="language-plaintext highlighter-rouge">circle</code> elements with attributes describing their 
+position (cx, cy) and radius size (r). It will also create axes and axes 
+labels using svg elements for lines and text. Finally, it can apply styles
+to those elements either directly to the elements, or by wrapping the 
+SVG element inside of HTML and using CSS or JavaScript. This latter style
+is sometimes taken to the extreme, where the entire contents of the figure, 
+including all svg elements, are described in the javascript <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> section
+of the document.</p>
+
+<p>Let’s look at a very simple example like this:</p>
+
+<!-- <iframe width="100%" height="600" src="//jsfiddle.net/dereneaton/qy9ns3L5/11/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+ -->
+
+<iframe width="100%" height="600" src="//jsfiddle.net/dereneaton/qy9ns3L5/65/embedded/html,css,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe>
+
+<p>And then a more complex example where the circle points are created
+only by JavaScript code (don’t worry if this one seems complex).</p>
+
+<iframe width="100%" height="600" src="//jsfiddle.net/dereneaton/qy9ns3L5/74/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe>
+
+<p>Finally, let’s look at an example of a barplot created by <code class="language-plaintext highlighter-rouge">altair</code>.
+You can see in this case that <em>all</em> of the work is off-loaded to javascript,
+and the HTML simply contains a single element called <code class="language-plaintext highlighter-rouge">&lt;div id="vis"&gt;&lt;/div&gt;</code>.
+The content of this element with id=’vis’ is created by the javascript.</p>
+
+<iframe width="100%" height="300" src="//jsfiddle.net/dereneaton/wb8fnpc9/3/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe>
+
+<h3 id="summary-1">Summary</h3>
+<p>Hopefully this has helped to begin to demystify data visualization and how
+plotting libraries work. Next session we will explore this framework further
+to understand how modern web-based mapping libraries work, which combine 
+raster and vector graphics in a creative and powerful way. This is the basis
+for how google maps works, and is just an extension of the methods you just
+learned here.</p>
+
+<h2 id="resources">Resources</h2>
+<p>My favorite resource for learning about HTML, CSS, and JavaScript is the 
+mozilla developer documentation. They have really nice tutorials that are
+great for beginners. If you are interested in these topics I highly recommend
+reading through the following four intro tutorials:</p>
+
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG">SVG</a></li>
+</ul>
+:ET

@@ -1,0 +1,706 @@
+
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="author" content="Deren Eaton">
+  <meta name="description" content="Programming Course">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Lecture-12.0</title>
+
+  <!-- CSS styling -->
+  <link rel="stylesheet" href="../revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../revealjs/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../hack-the-planet.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./custom.css">
+</head>
+
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section class="present">
+        <div class="title_slide">
+          <h2 id="title">Programming and Data Science for Biology<br>(EEEB G4050)</h2>
+          <h4 id="subtitle">Dept. of Ecology, Evolution, and Environmental Biology<br>Columbia University</h4>
+        </div>
+      </section>
+
+
+      <!-- OUTLINE -->
+      <section class="future">
+        <div class="standard10 text-center">
+          <h3 id="title">Lecture 12.0 Outline:</h3>
+          <ul class="bullets">
+            <li>Data formats and practices</li>
+            <li>Using a REST API</li>
+            <li>Creating a REST API</li>
+            <li>Python for the web</li>
+          </ul>
+        </div>
+      </section>
+
+
+      <!-- SECTION ON CSV and JSON -->
+      <section class="future">
+
+        <section class="future">
+          <div class="standard10">
+            <h3 id="title">Data structures and formats</h3>
+              <div class="mx-auto"><p>
+                As a scientist you have likely spent time recording data in a spreadsheet.<br>
+                Tabular data (e.g., CSV or TSV) is a common standard in data science, <br>
+                but a few other formats, like XML or JSON, are also popular.
+              </p></div>
+          </div>
+        </section>
+
+
+        <section class="future">
+          <div class="standard10">
+            <h3 id="title">CSV data</h3>
+              <div class="mx-auto"><p>
+                CSV (comma-separated values) is a flat data format. You only need to know<br>
+                the row and columns indices to find a value. Typically, each row is an obervation<br>
+                and common factors (e.g., setosa) are highly repeated.
+              </p></div>
+              <pre class="mx-sm-auto" style="font-size: 0.8rem"><code class="python" data-trim>              
+                pd.read_csv("https://eaton-lab.org/data/iris-data-dirty.csv", header=None).head(10)
+              </code></pre>
+              <pre class="mx-sm-auto" style="font-size: 0.8rem"><code class="python" data-trim>
+                   0    1    2    3            4
+              0  5.1  3.5  1.4  0.2  Iris-setosa
+              1  4.9  3.0  1.4  0.2  Iris-setosa
+              2  4.7  3.2  1.3  0.2  Iris-setosa
+              3  4.6  3.1  1.5  0.2  Iris-setosa
+              4  5.0  3.6  1.4  0.2  Iris-setosa
+              5  5.4  3.9  1.7  0.4  Iris-setosa
+              6  4.6  3.4  1.4  0.3  Iris-setosa
+              7  5.0  3.4  1.5  0.2  Iris-setosa
+              8  4.4  2.9  1.4  0.2  Iris-setosa
+              9  4.9  3.1  1.5  0.1  Iris-setosa
+              </code></pre>
+          </div>
+        </section>
+
+
+        <section class="future">
+          <div class="standard10">
+            <h3 id="title">CSV data: best practices</h3>
+              <div class="mx-auto"><p>
+                - record data in tabular form (repetitive columns and all).<br>
+                - begin data analysis with a cleaning step (e.g., filter missing, relabel typos).</br>
+                - document the cleaning step (keep the raw data file and cleaning script/nb).<br>
+                - perform analyses on clean data and archive both data files (e.g., on GitHub/Zenodo).<br>
+              </p></div>
+              <pre class="mx-sm-auto" style="font-size: 0.8rem"><code class="python" data-trim>              
+                # load tabular data
+                df = pd.read_csv(
+                    "https://eaton-lab.org/data/iris-data-dirty.csv", 
+                    names=["trait1", "trait2", "trait3", "species"],
+                )
+
+                # analyses reveal inconsistencies (mislabeled spp names)
+                df.groupby("species").mean()
+              </code></pre>
+              <pre class="mx-sm-auto" style="font-size: 0.8rem"><code class="python" data-trim>
+                                    trait1    trait2    trait3
+                species                                       
+                Iris-setosa       3.418367  1.461224  0.244898
+                Iris-setsa        3.400000  1.600000  0.200000
+                Iris-versicolor   2.761702  4.251020  1.324490
+                Iris-versicolour  3.200000  4.700000  1.400000
+                Iris-virginica    2.974000  5.552000  2.026000
+              </code></pre>
+          </div>
+        </section>
+
+        <section class="future">
+          <div class="standard10">
+            <h3 id="title">JSON data: best practices</h3>
+              <div class="mx-auto"><p>
+                - java-script object notation (in Python, think of it as a <i>dictionary</i>).<br>
+                - a <i>hierarchical</i> data format (nested key:values pairs)<br>
+                - commonly used on the web.
+              </p></div>
+              <pre class="mx-sm-auto" style="font-size: 0.8rem"><code class="python" data-trim>              
+                # example
+                {
+                    "id": 0,
+                    "data": {
+                        "first": "deren",
+                        "last": "eaton",
+                        "dog": "phylo",
+                    },
+                    "id": 1,
+                    "data": {
+                        "first": "john",
+                        "last": "smith",
+                        "dog": "fido",
+                    },
+                }
+              </code></pre>
+          </div>
+        </section>        
+
+
+
+        <section class="future">
+          <div class="standard10">
+            <h3 id="title">JSON data: best practices</h3>
+              <div class="mx-auto"><p>
+                - pandas can be used to convert between JSON and CSV.<br>
+              </p></div>
+              <pre class="mx-sm-auto" style="font-size: 0.8rem"><code class="python" data-trim>              
+                # convert dataframe to a json string
+                sjson = df.to_json(orient="index")
+
+                # load as a dict
+                import json
+                print(json.loads(sjson))
+              </code></pre>
+              <pre class="mx-sm-auto" style="font-size: 0.8rem"><code class="python" data-trim>
+                {'0': {
+                  'trait0': 5.1,
+                  'trait1': 3.5,
+                  'trait2': 1.4,
+                  'trait3': 0.2,
+                  'species': 'Iris-setosa'
+                  },
+                 '1': {
+                  'trait0': 4.9,
+                  'trait1': 3.0,
+                  'trait2': 1.4,
+                  'trait3': 0.2,
+                  'species': 'Iris-setosa'
+                  },
+                  ...
+              </code></pre>
+          </div>
+        </section>        
+
+
+        <section class="future">        
+          <div class="standard10">
+            <h3 id="title">JSON data: best practices</h3>
+            <div class="mx-auto"><p>
+            </p></div>            
+            <pre class="mx-sm-auto" style="font-size: 0.8rem"><code class="python" data-trim>
+                # a semi-structured JSON (dict w/ some missing values)
+                data = [
+                    {'id': 1,
+                     'name': "Cole Volk",
+                     'fitness': {'height': 130, 'weight': 60},
+                    },
+                    {
+                     'name': "Mose Reg",
+                     'fitness': {'height': 130, 'weight': 60},
+                    },
+                    {'id': 2, 
+                     'name': 'Faye Raker',
+                     'fitness': {'height': 130, 'weight': 60},
+                    },
+                ]
+                # pandas can load it
+                pd.json_normalize(data, max_level=1)
+            </code></pre>
+            <pre class="mx-sm-auto" style="font-size: 0.8rem"><code class="python" data-trim>
+                  id        name  fitness.height  fitness.weight
+              0  1.0   Cole Volk             130              60
+              1  NaN    Mose Reg             130              60
+              2  2.0  Faye Raker             130              60
+            </code></pre>
+          </div>
+        </section>
+      </section>
+
+
+      <!-- SECTION ON REST API -->
+      <section class="future">
+
+        <section class="future">        
+          <div class="standard10">
+            <h3 id="title">Why care about JSON? REST APIs</h3>
+            <div class="mx-auto"><p>  
+              "Representational State Transfer" (REST) is a set of rules for <br>
+              transferring data over the web using specific URL paths.<br>
+              These paths naturally describe a <i>hierarchical</i> (JSON-like) structure.
+            </p></div>
+          </div>
+        </section>
+
+        <section class="future">        
+          <div class="standard">
+            <h3 id="title">REST API terminology</h3>
+            <div class="mx-auto"><p>
+              A URL represents a <code>request</code>, and the data sent back to you is called a <code>response</code>.<br>
+              The URL is called an <code>endpoint</code>, and is composed of a <code>root</code> and <code>path</code>.
+            </p></div>
+            <pre class="mx-sm-auto" style="font-size: 1rem"><code class="python" data-trim>
+                # root for GBIF REST API
+                URL = https://api.gbif.org/v1/
+
+                # path for a specific request 
+                PATH = /species/suggest
+
+                # endpoint
+                https://api.gbif.org/v1/species/suggest/
+            </code></pre>
+
+            <p>Visit the endpoint:
+            <a style="color:teal" href="https://api.gbif.org/v1/species/search/">https://api.gbif.org/v1/species/search/</a>
+            </p>
+          </div>
+        </section>
+
+
+        <section class="future">        
+          <div class="standard">
+            <h3 id="title">REST API terminology</h3>
+            <div class="mx-auto"><p>
+              The API request returns a JSON response that (most) browsers will display.<br>
+              Here we can see there are >30M results (count), but only 20 are shown (limit)<br>
+              These 20 results are available in the "results" key.
+            </p></div>
+            <pre class="mx-sm-auto" style="font-size: 1rem; max-height: 500px"><code class="python" data-trim>
+              {
+                "offset": 0,
+                "limit": 20,
+                "endOfRecords": false,
+                "count": 30009607,
+                "results": [
+                  {
+                    "key": 0,
+                    "datasetKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                    "constituentKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                    "kingdom": "incertae sedis",
+                    "kingdomKey": 0,
+                    "scientificName": "incertae sedis",
+                    "canonicalName": "incertae sedis",
+                    "authorship": "",
+                    "nameType": "PLACEHOLDER",
+                    "taxonomicStatus": "DOUBTFUL",
+                    "rank": "KINGDOM",
+                    "origin": "SOURCE",
+                    "numDescendants": 9403,
+                    "numOccurrences": 0,
+                    "habitats": [],
+                    "nomenclaturalStatus": [],
+                    "threatStatuses": [],
+                    "descriptions": [],
+                    "vernacularNames": [],
+                    "higherClassificationMap": {},
+                    "synonym": false
+                  },
+                  {
+                    "key": 1,
+                    "datasetKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                    "constituentKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                    "kingdom": "Animalia",
+                    "kingdomKey": 1,
+                    ...
+            </code></pre>
+            </p>
+          </div>
+        </section>
+
+
+        <section class="future">        
+          <div class="standard">
+            <h3 id="title">REST API rules</h3>
+            <div class="mx-auto"><p>
+              Some API endpoints can take <i>parameters</i> to return results matching a query.<br>
+              Each API may be designed differently, so you have to read their documentation. See:<br>
+              <code>https://api.gbif.org/v1/species/search/?q="Pedicularis rex"</code><br>
+              returns only 13K hits.
+            </p></div>
+            <pre class="mx-sm-auto" style="font-size: 1rem; max-height: 500px"><code class="python" data-trim>
+              {
+                "offset": 0,
+                "limit": 20,
+                "endOfRecords": false,
+                "count": 13678,
+                "results": [
+                  {
+                    "key": 103267516,
+                    "datasetKey": "fab88965-e69d-4491-a04d-e3198b626e52",
+                    "parentKey": 103266166,
+                    "parent": "Pedicularis",
+                    "kingdom": "Viridiplantae",
+                    "phylum": "Streptophyta",
+                    "order": "Lamiales",
+                    "family": "Orobanchaceae",
+                    "genus": "Pedicularis",
+                    "species": "Pedicularis rex",
+                    "kingdomKey": 102974832,
+                    "phylumKey": 102986054,
+                    "classKey": 103019693,
+                    "orderKey": 103232288,
+                    "familyKey": 103264192,
+                    "genusKey": 103266166,
+                    "speciesKey": 103267516,
+                    "scientificName": "Pedicularis rex",
+                    "canonicalName": "Pedicularis rex",
+                    "nameType": "SCIENTIFIC",
+                    "taxonomicStatus": "ACCEPTED",
+                    "rank": "SPECIES",
+                    "origin": "SOURCE",
+                    "numDescendants": 0,
+                    "numOccurrences": 0,
+                    ...
+            </code></pre>
+            </p>
+          </div>
+        </section>
+
+
+
+        <section class="future">        
+          <div class="standard10">
+            <h3 id="title">REST APIs</h3>
+            <div class="mx-auto"><p>
+              There are MANY free and publicly available REST APIs, and there are also<br>
+              many that require registration, or even payment to use. We will learn about<br>
+              some of these in the assignments. Use google to search, you may be surprised.
+            </p></div>
+          <ul class="bullets" style="font-size: 0.8em">
+            <li>Twitter</li>
+            <li>Reddit</li>
+            <li>GitHub</li>            
+            <li>GBIF</li>
+            <li>ProPublica</li>            
+            <li>CityBikes</li>            
+            <li>USDA soil data</li>
+            <li>NCBI taxonomy</li>            
+            <li>Pubmed publications</li>
+          </ul>
+          </div>
+        </section>
+
+
+        <section class="future">        
+          <div class="standard10">
+            <h3 id="title">Query REST APIs in Python</h3>
+            <div class="mx-auto"><p>
+              It would be cumbersome to type the URL into your browser for every search,<br>
+              instead we can automate API requests in Python. This is best done with the<br>
+              <code>requests</code> library (third-party package).
+            </p></div>
+            <pre class="mx-sm-auto" style="font-size: 1rem"><code class="python" data-trim>
+                import requests
+
+                # search with the simple gbif search parameter q=
+                response = requests.get(
+                    url="https://api.gbif.org/v1/species/search",
+                    params={"q": "Pedicularis rex"},
+                )
+
+                print(response.url)
+            </code></pre>
+            <pre class="mx-sm-auto" style="font-size: 1rem"><code class="python" data-trim>
+                https://api.gbif.org/v1/species/search?q=Pedicularis+rex
+            </code></pre>            
+          </div>
+        </section>
+
+
+
+        <section class="future">        
+          <div class="standard10">
+            <h3 id="title">Query REST APIs in Python</h3>
+            <div class="mx-auto"><p>
+              It would be cumbersome to type the URL into your browser for every search,<br>
+              instead we can automate API requests in Python. This is best done with the<br>
+              <code>requests</code> library (third-party package).
+            </p></div>
+            <pre class="mx-sm-auto" style="font-size: 1rem"><code class="python" data-trim>
+                # search with the simple gbif search parameter q=
+                response = requests.get(
+                    url="https://api.gbif.org/v1/species/search",
+                    params={"q": "Pedicularis rex"},
+                )
+
+                # was request successful?
+                print(response.status_code())
+
+                # get data as text or json
+                print(response.text)
+                print(resonse.json())
+            </code></pre>
+          </div>
+        </section>
+
+        <section class="future">        
+          <div class="standard10">
+            <h3 id="title">Query REST APIs in Python</h3>
+            <pre class="mx-sm-auto" style="font-size: 1rem"><code class="python" data-trim>
+                # search the occurrence database for specific species
+                response = requests.get(
+                    url="https://api.gbif.org/v1/occurrence/search",
+                    params={"Scientific Name": "Pedicularis anas"},
+                )
+                spdict = response.json()
+
+                # convert JSON back into a dataframe for easy viewing
+                df = pd.json_normalize(spdict['results'])
+
+                # show specific columns
+                df.loc[:, ['species', 'decimalLongitude','decimalLatitude', 'datasetName']]
+            </code></pre>
+            <pre class="mx-sm-auto" style="font-size: 0.9rem; max-height: 300px"><code class="python" data-trim>
+                             species  decimalLongitude  decimalLatitude                               datasetName
+                0   Pedicularis anas        102.606667        32.234167  Harvard University Herbaria: All Records
+                1   Pedicularis anas               NaN              NaN  Harvard University Herbaria: All Records
+                2   Pedicularis anas               NaN              NaN  Harvard University Herbaria: All Records
+                3   Pedicularis anas               NaN              NaN  Harvard University Herbaria: All Records
+                4   Pedicularis anas               NaN              NaN  Harvard University Herbaria: All Records
+                5   Pedicularis anas               NaN              NaN                                       NaN
+                6   Pedicularis anas               NaN              NaN  Harvard University Herbaria: All Records
+                7   Pedicularis anas               NaN              NaN                                       NaN
+                8   Pedicularis anas        102.550600        33.413600                                 Ree China
+                9   Pedicularis anas        102.313900        31.706100                                 Ree China
+                10  Pedicularis anas        101.480600        33.246400                                 Ree China
+                11  Pedicularis anas        100.764700        32.488300                                 Ree China
+                12  Pedicularis anas        101.916100        32.896400                                 Ree China
+                13  Pedicularis anas               NaN              NaN                                 Ree China
+                14  Pedicularis anas        102.572800        34.148100                                 Ree China
+                15  Pedicularis anas        101.194200        32.256400                                 Ree China
+                16  Pedicularis anas        102.316400        32.045800                                 Ree China
+                17  Pedicularis anas        102.109200        32.724200                                 Ree China
+                18  Pedicularis anas        102.366700        32.468600                                 Ree China
+                19  Pedicularis anas        102.602500        32.233300                                 Ree China
+            </code></pre>            
+          </div>
+        </section>
+      </section>
+
+
+      <!-- SECTION ON FLASK -->
+      <section class="future">
+
+        <section class="future">
+          <div class="standard10">
+            <h3 id="title">Python as a web server</h3>
+            <div class="mx-auto"><p>
+              Although Python has recently exploded in popularity as a data science language<br>
+              it has historically served a very popular role for running web servers. <br>
+              The ability to <b style='color:magenta'>return outputs from Python functions to a web address</b><br>
+              rather than to stdout of a terminal, opens the possibilities for many new applications.
+            </p></div>
+          </div>
+        </section>
+
+
+        <section class="future">
+          <div class="standard10">
+            <h3 id="title">Python as a web server</h3>
+            <div class="mx-auto"><p>
+              Two popular server libraries in Python are <code>flask</code> and <code>django</code>.<br>
+              Here we will learn about a newer one similar to flask called <code>fastAPI</code>.<br>
+            </p></div>
+            <pre class="mx-sm-auto" style="font-size: 1rem"><code class="python" data-trim>            
+              # contents saved to a file called main.py
+              from fastapi import FastAPI
+
+              # create a class instance (the app)
+              app = FastAPI()
+
+              # use a decorator to associate function to an 'endpoint'
+              @app.get("/")
+              def func():
+                  return {"message": "Hello World"}
+            </code></pre>
+            <pre class="mx-sm-auto" style="font-size: 1rem"><code class="bash" data-trim>
+              # call the app entry point from a server application
+              uvicorn main:app
+            </code></pre>
+            <pre class="mx-sm-auto" style="font-size: 1rem"><code class="bash" data-trim>
+              INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+              ...
+            </code></pre>
+          </div>
+        </section>
+
+
+
+        <section class="future">
+          <div class="standard10">
+            <h3 id="title">Python as a web server</h3>
+            <div class="mx-auto"><p>
+              This simple example can be expanded, your function can perform any task<br>
+              and return any result. Your hack-program scripts could be running on this app and<br>
+              returning their results to localhost:8000 instead of to STDOUT.
+            </p></div>
+            <pre class="mx-sm-auto" style="font-size: 1rem"><code class="python" data-trim>            
+              # contents saved to a file called main.py
+              from fastapi import FastAPI
+              import darwindday
+
+              # create a class instance (the app)
+              app = FastAPI()
+
+              # use a decorator to associate function to an 'endpoint'
+              @app.get("/")
+              def func():
+                  ndays = darwinday.birthday()
+                  return {"days until Darwin Day": ndays} 
+            </code></pre>
+          </div>
+        </section>
+
+
+        <section class="future">
+          <div class="standard10">
+            <h3 id="title">Python as a web server</h3>
+            <div class="mx-auto"><p>
+              Different functions can return to different endpoints.<br>
+              These endpoints <i>could</i> be assigned to public URLs<br>
+              like https://api.eaton-lab.org/darwinday
+            </p></div>
+            <pre class="mx-sm-auto" style="font-size: 1rem"><code class="python" data-trim>            
+              # contents saved to a file called main.py
+              from fastapi import FastAPI
+              import darwindday
+
+              # create a class instance (the app)
+              app = FastAPI()
+
+              @app.get("/darwinday")
+              def func1():
+                  ndays = darwinday.birthday()
+                  return {"days until Darwin Day": ndays} 
+
+              @app.get("/hello")
+              def fund2():
+                  return {"message": "hello world"}
+            </code></pre>
+          </div>
+        </section>
+
+
+
+        <section class="future">
+          <div class="standard10">
+            <h3 id="title">Python as a web server</h3>
+            <div class="mx-auto"><p>
+              Create a <i>query-able</i> API by requiring arguments to the functions<br>
+              Visit <code>localhost:8000/search?species=Iris-versicolor</code>
+            </p></div>
+            <pre class="mx-sm-auto" style="font-size: 1rem"><code class="python" data-trim>            
+                from fastapi import FastAPI
+                import pandas as pd
+                import json
+
+                app = FastAPI()
+                data = pd.read_csv(
+                    "https://eaton-lab.org/data/iris-data-dirty.csv",
+                    names=["t0", "t1", "t2", "t3", "spp"]
+                )
+
+                @app.get("/")
+                def root():
+                    "returns all of the Iris data in JSON"
+                    return json.loads(data.to_json(orient="index"))
+
+                @app.get("/search")
+                def species(species):
+                    "returns matched Iris data in JSON"
+                    jdata = data[data.spp == species].to_json(orient="index")
+                    return json.loads(jdata)
+            </code></pre>
+          </div>
+        </section>
+
+
+        <section class="future">
+          <div class="standard10">
+            <h3 id="title">Why use a webserver?</h3>
+            <div class="mx-auto"><p>
+              You can create websites, web apps, and even mobile apps. Many major websites<br>
+              use a Python <i>backend</i>, including instagram, dropbox, netflix, uber...<br>
+              The <i>front-end</i> is simply HTML+JavaScript making <b>requests</b> when you<br>
+              push buttons which are processed the Python API backend to send a <b>response</b>.
+            </p></div>
+            <pre class="mx-sm-auto" style="font-size: 1rem"><code class="python" data-trim>
+                # example web app 
+                from fastapi import FastAPI
+
+                app = FastAPI()
+
+                @app.get("/{user}/feed/")
+                def get_instagram_feed(user, start=0, limit=20):
+                    "loads the first 20 photos on the feed"
+                    # python code to load images from database
+                    ...
+
+                    # some HTML and CSS to display photos nicely
+                    ...
+                    return html
+            </code></pre>
+          </div>
+        </section>
+
+
+        <section class="future">
+          <div class="standard10">
+            <h3 id="title">Why use a webserver?</h3>
+            <div class="mx-auto"><p>
+              Web apps are increasingly popular in data science as well. Examples include<br>
+              interactive dashboards for viewing data or running functions with user toggles<br>
+              such as RShiny apps, or several Python equivalents using Bokeh, Plotly, Dash, or<br>
+              streamlit. It's an easy way to <i>share your code with no installation necessary</i>.
+            </p></div>
+
+            <div class="mx-auto"><p>
+              Secondly, a web server can be a useful way to track progress of many working <br>
+              parts in a complex and long running analysis. For this reason web apps are <br>
+              frequently built into machine learning packages like tensorflow and keras.
+            </p></div>
+
+            <div class="mx-auto"><p>
+              For your assignments this week you will learn to use and create REST APIs 
+              in Python.
+            </p></div>            
+
+          </div>
+        </section>
+
+
+      </section>
+
+
+
+    <!-- SLIDES CLASS ENDING -->
+    </div>
+
+  <!-- REVEAL LINEAR CENTER CLASS ENDING -->
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="../revealjs/dist/reveal.js"></script>        
+  <script src="../revealjs/plugin/markdown/markdown.js"></script>  
+  <script src="../revealjs/plugin/highlight/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      plugins: [ RevealMarkdown, RevealHighlight ],
+      minScale:0.1,
+      maxScale:5,
+      width:1600,
+      height:900,
+      controls:true, 
+      progress:true,
+      hash:true,
+      loop:false, 
+      center:false,
+      transition: 'none',
+      // transition: 'none',      
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+
+
+/* from BLACK theme */
+.reveal-viewport {
+  background: #262626;
+  background-color: #262626; 
+}
+
+.reveal .controls {
+  color: #5ab4ac; 
+}
+
+.reveal .progress {
+  /*background: rgba(0, 0, 0, 0.2);*/
+  color: #5ab4ac; 
+}
+/* END BLACK theme*/
+
+
+.reveal .title_slide {
+  margin-top: 15%;
+}
+
+#title {
+  color:#5ab4ac;
+  font-weight: 500; 
+  margin-bottom: 2%;
+}
+
+
+#subtitle {
+  color:grey; 
+  font-weight: 400; 
+  line-height: 1.5;
+  margin-top: 3%;
+  font-style: italic;
+}
+
+
+.reveal .standard10 {
+  margin: 7.5% 10% 10% 10%;
+}
+
+
+.bullets {
+  color:white; 
+  line-height: 1.5; 
+  font-size: 1.25em;
+  display: inline-block;
+  vertical-align: middle;
+  list-style-position: inside;
+}
+
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 80%;
+  margin: 20px auto;
+  text-align: left;
+  font-family: monospace;
+  line-height: 1.4;
+  word-wrap: break-word;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); }
+
+
+.reveal code {
+  font-family: monospace;
+  text-transform: none; 
+}
+
+.reveal pre code {
+  padding: 3% 2.5%;
+  overflow: auto;
+  max-height: 650px;
+  word-wrap: normal; 
+  font-size: 0.9rem;
+}
+
+.reveal p {
+  /*margin: 20px 0;*/
+  font-size: 1.0em;
+  line-height: 1.5em; 
+  color: white;
+}
+
+.reveal li {
+  font-size: 1.1em;
+}
+
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em; }

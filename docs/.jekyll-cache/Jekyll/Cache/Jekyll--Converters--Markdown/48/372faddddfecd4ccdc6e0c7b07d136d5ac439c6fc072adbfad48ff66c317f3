@@ -1,0 +1,68 @@
+I"<h2 id="coding-text-editors">Coding Text editors</h2>
+
+<p><strong>Table of Contents:</strong></p>
+<ul id="markdown-toc">
+  <li><a href="#coding-text-editors" id="markdown-toc-coding-text-editors">Coding Text editors</a></li>
+  <li><a href="#why-use-a-text-editor" id="markdown-toc-why-use-a-text-editor">Why use a text editor</a></li>
+  <li><a href="#which-code-editor-should-i-use" id="markdown-toc-which-code-editor-should-i-use">Which code editor should I use?</a></li>
+  <li><a href="#install-vscode" id="markdown-toc-install-vscode">Install vscode</a></li>
+</ul>
+
+<p>Code editors are an essential tool for any programmer/developer. 
+They are designed to provide support that makes writing and 
+testing large complex code easier. Every developer has their 
+favorite code editor, with popular examples being vim, emacs, 
+atom, sublimetext, and vscode.</p>
+
+<p>Most biologists first learn to code by typing directly into a shell, 
+for example by starting an R or Python session in the terminal.
+Interactive coding environments are also hugely popular, such 
+as RStudio or Jupyter, which provide a code-editor-like experience,
+where you can view or embed figures, see your variables, 
+and even access useful features like tab-completion.</p>
+
+<h2 id="why-use-a-text-editor">Why use a text editor</h2>
+<p>Code editors provide many more features than interactive coding 
+environments, and/or make them available in a much faster and more
+responsive way. This includes <strong>syntax highlighting</strong> 
+(colorizing different components of code); <strong>linting</strong> (checking code
+for style or syntax errors before you run it); <strong>tab-completion</strong> (and 
+related documentation searching);
+<strong>building/executing</strong> (allows you to test the code with single command);
+<strong>filetree organization</strong> (easier to see all files in folders); 
+and perhaps most important of all, <strong>keybindings</strong>.</p>
+
+<p>I emphasize keybindings because I think this is an essential skill
+to learn and master. Keybindings are keyboard shortcuts for 
+performing common tasks in a text editor. This 
+includes mundane things like moving your cursor up one line, or to the 
+end of a line, or highlighting and replacing all instances of the word
+‘foo’ with ‘bar’. Such common tasks are the bread and butter of 
+programming. By learning to enter a set of keystrokes to perform these 
+activities, rather than using the mouse to select items on the 
+screen, your efficiency will improve 10X. In fact, once your learn a set
+of keybindings well, you will become so comfortable and dependent on them
+that you will find it exhausting to type text into other programs, such 
+as MS Word, that do not support the same richness of key strokes.</p>
+
+<h2 id="which-code-editor-should-i-use">Which code editor should I use?</h2>
+<p>Our goal in this session is to get you started on using a modern 
+text editor. For this class, we will focus on vscode. After this 
+exercise, you can choose any other text editor you like, but I want
+all of us to go through the motions of setting up and customizing 
+at least one text editor together.</p>
+
+<p>You can choose whichevery you like, but if you are on WSL2, then you
+should definitely choose vscode, since it has a lot of built-in 
+functionality for interacting between your windows and linux systems. SublimeText is similar to vscode, but a bit more minimalist.
+It is my preferred editor, so you will see me using it throughout the 
+course, but I will use vscode as well to demonstrate its functionality.</p>
+
+<h2 id="install-vscode">Install vscode</h2>
+
+<p><a href="https://code.visualstudio.com/docs/getstarted/tips-and-tricks">read the vscode get-started guide</a></p>
+
+<p>Watch intro videos 1-5:
+<a href="https://code.visualstudio.com/docs/getstarted/introvideos">intros also available as videos</a></p>
+
+:ET

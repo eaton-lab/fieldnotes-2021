@@ -1,0 +1,131 @@
+I"9"<h3 id="getting-started-with-github">Getting started with Github</h3>
+
+<p><strong>Table of Contents:</strong></p>
+<ul id="markdown-toc">
+  <li><a href="#getting-started-with-github" id="markdown-toc-getting-started-with-github">Getting started with Github</a></li>
+  <li><a href="#what-are-git-and-github" id="markdown-toc-what-are-git-and-github">What are git and GitHub?</a>    <ul>
+      <li><a href="#git" id="markdown-toc-git">Git</a></li>
+      <li><a href="#github" id="markdown-toc-github">GitHub</a></li>
+    </ul>
+  </li>
+  <li><a href="#how-we-will-use-github" id="markdown-toc-how-we-will-use-github">How we will use GitHub</a></li>
+  <li><a href="#assessment" id="markdown-toc-assessment">Assessment</a>    <ul>
+      <li><a href="#1-complete-the-hello-world-exercise-from-the-github-guide" id="markdown-toc-1-complete-the-hello-world-exercise-from-the-github-guide">1. Complete the hello-world exercise from the github guide</a></li>
+      <li><a href="#2-create-a-new-repository-named-hack-2-shell" id="markdown-toc-2-create-a-new-repository-named-hack-2-shell">2. Create a new repository named ‘hack-2-shell’</a></li>
+      <li><a href="#3-how-we-will-use-github-for-grading" id="markdown-toc-3-how-we-will-use-github-for-grading">3. How we will use GitHub for grading</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="what-are-git-and-github">What are git and GitHub?</h3>
+<p>Github (github.com) is a website, whereas <code class="language-plaintext highlighter-rouge">git</code> is a computer program.
+Today we will mostly be learning about GitHub, and saving the more complicated 
+topic of <code class="language-plaintext highlighter-rouge">git</code> for next week. But to understand why Github is useful 
+you will need to understand a little about its relationship to <code class="language-plaintext highlighter-rouge">git</code>,
+and what <code class="language-plaintext highlighter-rouge">git</code> is used for.</p>
+
+<h4 id="git">Git</h4>
+<p>In its most simple form, <code class="language-plaintext highlighter-rouge">git</code> is a program for tracking changes 
+that are made to files over time. This is useful not only as a type
+of time-machine – allowing you to go back to previously saved versions
+of files – but also as a mechanism for syncing files between multiple 
+locations (e.g., multiple different computers) and/or among multiple 
+potential users. The true power of <code class="language-plaintext highlighter-rouge">git</code> comes from its methods for 
+resolving conflicts when multiple users make changes to the same files.
+It is a collaboration software which helps a user to resolve conflicts
+and to store one or more versions of files at the same time.</p>
+
+<p>Any folder on your computer can be made into a <code class="language-plaintext highlighter-rouge">git repository</code> 
+by activating the <code class="language-plaintext highlighter-rouge">git</code> program inside of that folder. This allows
+you to tell <code class="language-plaintext highlighter-rouge">git</code> which files should or should not be tracked for
+changes. The entire folder full of files and/or subfolders can then
+be synced between machines. Because computer programs often involve
+many files and folders that must be maintained in a specific structure,
+<code class="language-plaintext highlighter-rouge">git</code> provides a useful framework for syncing changes to these files
+(the repository) across machines.</p>
+
+<p>Is <code class="language-plaintext highlighter-rouge">git</code> installed on your machine? Probably. If you are on Linux 
+(or using Windows Subsystem for Linux 2) then you will have <code class="language-plaintext highlighter-rouge">git</code>
+installed by default. If you are on OSX then it may be installed.
+Open a terminal and try the command below; if git is not installed 
+your terminal will prompt you to install the Xcode command line tools,
+which includes git as well as several other tools you will want.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># is git installed on my machine? to check, type 'git -h'</span>
+git <span class="nt">--version</span>
+</code></pre></div></div>
+
+<h4 id="github">GitHub</h4>
+<p>In the sense that <code class="language-plaintext highlighter-rouge">git</code> is used to sync a repository across machines,
+you can think of GitHub as hosting a machine that exists in the cloud.
+It is of course useful to keep a cloud-based copy of your repository
+since cloud servers are generally a reliable backup that will never
+be lost – as opposed to your own laptop which could 
+<a href="../../assets/images/hackers-4.jpg">crash and burn</a> 
+(hackers reference) at any time. Another advantage of keeping your 
+repository backed up in the cloud is that if multiple users intend
+to access it, the cloud-based version will always be accessible – 
+if by contrast it was stored on your local computer, you may at some
+point disconnect your computer. So in summary, GitHub provides a 
+cloud-based storage location for <code class="language-plaintext highlighter-rouge">git</code> repositories.</p>
+
+<p>But GitHub actually does much more than this as well. It acts as a 
+social network for developers, by making the contents of <code class="language-plaintext highlighter-rouge">git</code> 
+repositories openly readable (unless purposefully kept private)
+and shared with all users. There are several websites that serve
+similar functions to GitHub (such gitlab, bitbucket, sourceforge)
+but the community has <i>mostly</i> coalesced around GitHub. Its
+a bit like a Facebook versus Friendster battle, you <i>can</i> use one
+of the alternatives, but nobody is likely to see your content.</p>
+
+<h3 id="how-we-will-use-github">How we will use GitHub</h3>
+<p>You will need to have a GitHub account for this course. To signup you only
+need an email address. The service is completely free and is a highly 
+trusted source that will not overrun you with spam, so feel free to use 
+your school email address if you like. If you already have a GitHub account
+feel free to use it for this course, or to create a new one using a separate
+email address. You will be required to create several git repositories
+throughout this course. Choose your GitHub username wisely. This is 
+your public profile as a developer. It is how many people will become
+familiar with your work, and it can even help you to land a job in 
+the tech industry. As an example, I use “dereneaton” and “eaton-lab” 
+as the usernames for my two accounts. To create a new account:</p>
+
+<ul>
+  <li>Go to <a href="https://github.com">https://github.com</a> and find the 
+<kbd>Sign-up</kbd> button near the top.</li>
+  <li>Create a username and enter your email address.</li>
+  <li>Follow instructions to create a free account.</li>
+</ul>
+
+<h3 id="assessment">Assessment</h3>
+<div class="alert alert-block alert-success">
+	<b>Complete the tasks in this section to earn points for the assignment.</b> 
+</div>
+
+<h4 id="1-complete-the-hello-world-exercise-from-the-github-guide">1. Complete the hello-world exercise from the github guide</h4>
+<p>When you finish creating your account you may be prompted to complete
+the GitHub starting guide. Complete all steps of this guide to create your 
+first github repository (<a href="https://guides.github.com/activities/hello-world/">https://guides.github.com/activities/hello-world/</a>). To complete this tutorial all you need is a GitHub.com account 
+and Internet access. You don’t need to use the command line, or have git 
+installed locally, it is completely based on the GitHub website. You will
+be graded on completing the creation of the ‘hello-world’ repository.</p>
+
+<h4 id="2-create-a-new-repository-named-hack-2-shell">2. Create a new repository named ‘hack-2-shell’</h4>
+<p>Just like in the GitHub Starting Guide, start by creating a new repository
+and name it hack-2-shell. Initialize the repository with a README file. 
+That’s it. See the other tutorials for this session for further instructions
+to add content to this repository.</p>
+
+<h4 id="3-how-we-will-use-github-for-grading">3. How we will use GitHub for grading</h4>
+<p>We will look at your public GitHub profile to find the repositories
+for grading. Thus it is important that you name the repos using the 
+names that we instruct you to use. Changes are marked by time-stamps, 
+and grading will take into account changes made after the deadline.
+Assignments are due before the beginning of the next class, unless
+stated otherwise.</p>
+
+<ul>
+  <li>Submit your github profile name <a href="https://docs.google.com/forms/d/e/1FAIpQLSepZ_DQJTL7jLUOQcaqjO2G4fvpuWyz3-UozHpWB4JxzAaIHw/viewform?usp=sf_link">at this link</a></li>
+</ul>
+
+:ET
