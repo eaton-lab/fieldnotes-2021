@@ -35,10 +35,10 @@ finish morphometrics in the morning if you cannot finish all this evening.
 below the road, and kansuensis, davidii and brevilabris are on roadside.
 - Take some photos, but try to collect quickly, this is a very busy day.
 
-- [P. kansuensis (pink) (DE507)](/assets/flowers/DE507-kansuensis-pink.jpg): Morphology always.
-- [P. brevilabris (DE508)](/assets/flowers/DE508-brevilabris.jpg): Morphology and <b>transcriptome RNAs</b> (sample failed last time). 
-- [P. davidii (DE509)](/assets/flowers/DE509-davidii.jpg): Morphology and <b>genome sample</b> (DNA, RNA, pollen, and leaf silica for 10 individuals).
-- [P. rex (red) (DE510)](/assets/flowers/DE510-rex-red.jpg): Morphology.
+- [P. kansuensis (pink) (DE507)](../assets/flowers/DE507-kansuensis-pink.jpg): Morphology always.
+- [P. brevilabris (DE508)](../assets/flowers/DE508-brevilabris.jpg): Morphology and <b>transcriptome RNAs</b> (sample failed last time). 
+- [P. davidii (DE509)](../assets/flowers/DE509-davidii.jpg): Morphology and <b>genome sample</b> (DNA, RNA, pollen, and leaf silica for 10 individuals).
+- [P. rex (red) (DE510)](../assets/flowers/DE510-rex-red.jpg): Morphology.
 
 
 
@@ -51,8 +51,8 @@ below the road, and kansuensis, davidii and brevilabris are on roadside.
 bags, label them, and move on.
 
 - P. brevilabris (DE511): Morphology and transcriptome both only if not collected at site 106.
-- [P. rhinanthoides (DE512)](/assets/flowers/DE512-rhinanthoides.jpg): Morphology always.
-- [P. kansuensis (DE513)](/assets/flowers/DE513-kansuensis.jpg): Morphology always.
+- [P. rhinanthoides (DE512)](../assets/flowers/DE512-rhinanthoides.jpg): Morphology always.
+- [P. kansuensis (DE513)](../assets/flowers/DE513-kansuensis.jpg): Morphology always.
 
 
 <h3 class="mt-5"> Site 108 </h3>
@@ -64,9 +64,9 @@ bags, label them, and move on.
 for it. This would be the best place to get delavayi, but its available elsewhere
 if hard to find.
 
-- [P. kansuensis (DE514)](/assets/flowers/DE514-kansuensis.jpg): Morphology always.
-- [P. rhynchodonta (DE515)](/assets/flowers/DE543-rhynchodonta.jpg): Morphology optional. Species is common. The image linked is not from this exact location.
-- [P. delavayi (DE516)](/assets/flowers/DE516-delavayi.jpg): Morphology and <b>transriptome RNAs</b>. 
+- [P. kansuensis (DE514)](../assets/flowers/DE514-kansuensis.jpg): Morphology always.
+- [P. rhynchodonta (DE515)](../assets/flowers/DE543-rhynchodonta.jpg): Morphology optional. Species is common. The image linked is not from this exact location.
+- [P. delavayi (DE516)](../assets/flowers/DE516-delavayi.jpg): Morphology and <b>transriptome RNAs</b>. 
 
 
 <h3 class="mt-5"> Site 109 </h3>
@@ -77,9 +77,9 @@ if hard to find.
 - You can find these plants easily on the walking path.
 - get lunch afterwards.
 
-- [P. kansuensis (DE517)](/assets/flowers/DE517-kansuensis.jpg): Morphology always.
-- [P. cranolopha (DE518)](/assets/flowers/DE518-cranolopha.jpg): Morphology always.
-- [P. macrosiphon (DE519)](/assets/flowers/DE519-macrosiphon.jpg): Morphology.
+- [P. kansuensis (DE517)](../assets/flowers/DE517-kansuensis.jpg): Morphology always.
+- [P. cranolopha (DE518)](../assets/flowers/DE518-cranolopha.jpg): Morphology always.
+- [P. macrosiphon (DE519)](../assets/flowers/DE519-macrosiphon.jpg): Morphology.
 
 
 <h3 class="mt-5"> Site 110 </h3>
@@ -89,10 +89,10 @@ if hard to find.
 - At Mucho Lake, scenic spot of the Kanding Love Song.
 - <i>You can skip this site if you are running low on time, since it is out of the way.</i>
 
-- [P. lachnoglossa (DE520)](/assets/flowers/DE520-lachnoglossa.jpg): Morphology always.
-- [P. lineata (DE521)](/assets/flowers/DE521-lineata.jpg): Morphology
-- [P. rhinanthoides (DE522)](/assets/flowers/DE522-rhinanthoides.jpg): Morphology always.
-- [P. fetisowii (DE523)](/assets/flowers/DE523-fetisowii.jpg): Morphology
+- [P. lachnoglossa (DE520)](../assets/flowers/DE520-lachnoglossa.jpg): Morphology always.
+- [P. lineata (DE521)](../assets/flowers/DE521-lineata.jpg): Morphology
+- [P. rhinanthoides (DE522)](../assets/flowers/DE522-rhinanthoides.jpg): Morphology always.
+- [P. fetisowii (DE523)](../assets/flowers/DE523-fetisowii.jpg): Morphology
 
 
 <h3 class="mt-5"> Site 113 </h3>
@@ -104,12 +104,12 @@ if hard to find.
 morphology for them from many locations. Try to collect quickly especially
 if it is getting late.
 
-- [P. kansuensis pink (DE527)](/assets/flowers/DE527-kansuensis-pink.jpg): Morphology always. 
-- [P. kansuensis white (DE528)](/assets/flowers/DE528-kansuensis-white.jpg): Morphology always.
+- [P. kansuensis pink (DE527)](../assets/flowers/DE527-kansuensis-pink.jpg): Morphology always. 
+- [P. kansuensis white (DE528)](../assets/flowers/DE528-kansuensis-white.jpg): Morphology always.
 - P. rhinanthoides (DE529): Morphology always.
-- [P. siphonantha (DE530)](/assets/flowers/DE530-siphonantha.jpg): Morphology always.
-- [P. longiflora (DE531)](/assets/flowers/DE531-longiflora.jpg): Morphology always.
-- [P. dolichoglossa (DE532)](/assets/flowers/DE532-dolichoglossa.jpg): Morphology and 
+- [P. siphonantha (DE530)](../assets/flowers/DE530-siphonantha.jpg): Morphology always.
+- [P. longiflora (DE531)](../assets/flowers/DE531-longiflora.jpg): Morphology always.
+- [P. dolichoglossa (DE532)](../assets/flowers/DE532-dolichoglossa.jpg): Morphology and 
 <b>transcriptome RNAs</b>.
 
 
@@ -119,15 +119,15 @@ if it is getting late.
 - 3776m
 - On G318 from Kanding to Xinduqiao. Rocky meadow near a stream.
 
-- [P. urceolata (DE533)](/assets/flowers/DE533-urceolata.jpg): Morphology.
-- [P. rhodotricha (DE534)](/assets/flowers/DE534-rhodotricha.jpg): Morphology.
+- [P. urceolata (DE533)](../assets/flowers/DE533-urceolata.jpg): Morphology.
+- [P. rhodotricha (DE534)](../assets/flowers/DE534-rhodotricha.jpg): Morphology.
 - P. rhinanthoides (DE535): Morphology always.
-- [P. lachnoglossa (DE536)](/assets/flowers/DE536-lachnoglossa.jpg): Morphology always.
-- [P. integrifolia (DE537)](/assets/flowers/DE537-integrifolia.jpg): Morphology always.
-- [P. kansuensis (DE538)](/assets/flowers/DE538-kansuensis.jpg): Morphology always.
+- [P. lachnoglossa (DE536)](../assets/flowers/DE536-lachnoglossa.jpg): Morphology always.
+- [P. integrifolia (DE537)](../assets/flowers/DE537-integrifolia.jpg): Morphology always.
+- [P. kansuensis (DE538)](../assets/flowers/DE538-kansuensis.jpg): Morphology always.
 - P. brevilabris (DE539): Morphology optional.
-- [P. szetschuanica (DE540)](/assets/flowers/DE540-szetschuanica.jpg): Morphology optional.
-- [P. siphonantha (DE541)](/assets/flowers/DE541-siphonantha.jpg): Morphology always and <b>transcriptome RNAs</b>.
+- [P. szetschuanica (DE540)](../assets/flowers/DE540-szetschuanica.jpg): Morphology optional.
+- [P. siphonantha (DE541)](../assets/flowers/DE541-siphonantha.jpg): Morphology always and <b>transcriptome RNAs</b>.
 
 
 <h3 class="mt-5"> Site 115 </h3>
@@ -138,13 +138,13 @@ if it is getting late.
 
 
 - P. cinerascens (DE542): Morphology.
-- [P. rhynchodonta (DE543)](/assets/flowers/DE543-rhynchodonta.jpg): Morphology optional.
-- [P. cheilanthifolia (DE544)](/assets/flowers/DE544-cheilanthifolia.jpg): Morphology (important).
-- [P. delavayi (DE545)](/assets/flowers/DE545-delavayi.jpg): Morphology (and transcriptome if not found previously).
-- [P. urceolata (DE546)](/assets/flowers/DE546-urceolata.jpg): Morphology optional.
-- [P. verticillata (DE547)](/assets/flowers/DE547-verticillata.jpg): Morphology always.
+- [P. rhynchodonta (DE543)](../assets/flowers/DE543-rhynchodonta.jpg): Morphology optional.
+- [P. cheilanthifolia (DE544)](../assets/flowers/DE544-cheilanthifolia.jpg): Morphology (important).
+- [P. delavayi (DE545)](../assets/flowers/DE545-delavayi.jpg): Morphology (and transcriptome if not found previously).
+- [P. urceolata (DE546)](../assets/flowers/DE546-urceolata.jpg): Morphology optional.
+- [P. verticillata (DE547)](../assets/flowers/DE547-verticillata.jpg): Morphology always.
 - P. rhodotricha DE548: Morphology.
-- [P. souliei (DE549)](/assets/flowers/DE549-souliei.jpg): Morphology.
-- [P. mussotii (DE550)](/assets/flowers/DE550-mussotii.jpg): Morphology.
+- [P. souliei (DE549)](../assets/flowers/DE549-souliei.jpg): Morphology.
+- [P. mussotii (DE550)](../assets/flowers/DE550-mussotii.jpg): Morphology.
 
 
