@@ -16,14 +16,17 @@ again at the end of the day, since it is not that far of a distance.
 The Bamei snowland hotel has good food, is very friendly, and they offer
 laundry service.
 
+The next day is not very busy, so if you do not finish all of these sites
+during day 6 it is no problem, you can visit some on day 7.
+
 - Morphometrics for samples from previous collection sites:
 	- Approximately N samples.
 
 - Genomes (DNA, RNA, pollen, and 10 individuals)
-	- ...
+	- P. decorissima (site 35)
 
 - RNA for comparative transcriptomes:
-	- ...
+	- P. lutescens
 
 - Sites: 30, 31, 33, 34, 35, 36, 37
 
@@ -81,7 +84,7 @@ already.
 - [P. longiflora (DE141)](../assets/flowers/DE141-longiflora.jpg): Morphology always. Important.
 - [P. kansuensis (DE142) (white)](../assets/flowers/DE142-kansuensis.jpg): Morphology.
 - [P. integrifolia (DE143)](../assets/flowers/DE143-integrifolia.jpg): Morphology always.
-- [P. lutescens (DE144)](../assets/flowers/DE144-lutescens.jpg): Morphology and transcriptome RNAs if not collected already.
+- [P. lutescens (DE144)](../assets/flowers/DE144-lutescens.jpg): Morphology optional, transcriptome RNAs if not collected already.
 - [P. densispica (DE145)](../assets/flowers/DE145-densispica.jpg): Morphology optional.
 
 
@@ -94,7 +97,7 @@ already.
 
 - P. lachnoglossa (DE147): Morphology always.
 - [P. kansuensis (DE148) (white)](../assets/flowers/DE148-kansuensis.jpg): Morphology always.
-- [P. lutescens (DE149)](../assets/flowers/DE149-lutescens.jpg): Morphology always.
+- [P. lutescens (DE149)](../assets/flowers/DE149-lutescens.jpg): Morphology optional.
 - P. brevilabris: Morphology optional.
 - [P. cranolopha (DE151)](../assets/flowers/DE151-cranolopha.jpg): Morphology always. Important.
 - [P. integrifolia (DE152)](../assets/flowers/DE152-integrifolia.jpg): Morphology always.
@@ -108,7 +111,6 @@ already.
 - 3761m
 - Meadow with stream and scattered shrubs.
 
-
 - P. integrifolia (DE155): Morphology always.
 - [P. longiflora (DE156)](../assets/flowers/DE156-longiflora.jpg): Morphology always. Important.
 - [P. szetschuanica (DE157)](../assets/flowers/DE157-szetschuanica.jpg): Morphology.
@@ -118,7 +120,7 @@ already.
 - P. lachnoglossa (DE161): Morphology always.
 - [P. kansuensis (DE162)](../assets/flowers/DE162-kansuensis.jpg) (pale yellow): Morphology always.
 - P. kansuensis (DE163) (light purple): Morphology always.
-- [P. decorissima (DE164)](../assets/flowers/DE164-decorissima.jpg): Morphology and <b>RNA transcriptome</b>.
+- [P. decorissima (DE164)](../assets/flowers/DE164-decorissima.jpg): Morphology and <b>Genome plant (DNA, RNA, pollen, 10 individuals).</b>
 - P. longiflora (DE165): Morphology always.
 - P. macrosiphon (DE166): Morphology.
 
@@ -130,7 +132,7 @@ already.
 - 3845m
 - Hilly area, Kobresia meadow at bottom and shrubby on slopes.
 
-- [P. cranlopha (DE167)](../assets/flowers/DE167-cranolopha.jpg): Morphology always.
+- [P. cranolopha (DE167)](../assets/flowers/DE167-cranolopha.jpg): Morphology always.
 - [P. cheilanthifolia (DE168)](../assets/flowers/DE168-cheilanthifolia): Morphology.
 
 

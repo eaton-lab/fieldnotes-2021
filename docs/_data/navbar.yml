@@ -14,13 +14,18 @@
       link: /pages/expedition-5.html
     - name: Day 6 (Bamei to Dawu)
       link: /pages/expedition-6.html
-    - name: Day 7 (Luhuo to Wengdaxiang)
-      link: 
-    - name: Day 8 (Wengdaxiang to Zamtang)
-      link: 
+    - name: Day 7 (Dawu to Luhuo)
+      link: /pages/expedition-7.html
+    - name: Day 8 (Luhuo to Zamtang)
+      link: /pages/expedition-8.html
+    - name: Day 8 (Zamtang to Aba)
+      link: /pages/expedition-9.html
+    - name: Day 8 (Aba to ...)
+      link: /pages/expedition-10.html
+
 
 - name: Methods
-  link: /pages/assignments.html
+  link: /pages/methods.html
 
 - name: Lists
   link: /pages/lists.html
