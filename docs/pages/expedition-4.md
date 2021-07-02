@@ -1,6 +1,6 @@
 ---
 layout: default
-title: expedition-4
+title: day-4
 image: /assets/images/hackers-1.jpg
 ---
 
@@ -9,16 +9,19 @@ image: /assets/images/hackers-1.jpg
 
 ## Day 4: Litang to Litang (day trips)
 
-- Day trips around Litang.
+- Day trips around Litang. If you run out of time today you can visit
+the last few sites on the morning of day 5 instead, which is a shorter day.
 
-- Revisit sites from previous years to collect morphometric
-  data for species that we already have collections for 
-  (DE- accession numbers)
+- Morphometrics of samples from previous years sites:
+	- approximately 40 samples.
 
-- Collect <i>P. latituba</i> genome plant, pollen, RNAs for annotation,
-  and silica leaf collections for 10 individuals for popgen.
+- Genomes (DNA, RNA, pollen, 10 individuals for popgen)
+	- <i>P. cranolopha</i> (site 80 preferred, or 83)
+	- <i>P. latituba</i> (site 80 or 82, or see day 5)
 
-- Collect RNA for comparative transcriptomes for ...
+- Comparative RNAs:
+	- <i>P. przewalskii</i> (site 16, 17, or 82)
+	- <i>P. lophotricha</i> (site 81)
 
 
  <iframe src="/assets/maps/day4.html" height='400px' width="100%" title="Iframe Example"></iframe> 
@@ -26,39 +29,93 @@ image: /assets/images/hackers-1.jpg
 
 -----------------------
 
-
 <h3 class="mt-5"> Site 80 </h3>
 - 30°17'49.3" N,	99°40'15.6" E
 - 30.2970277, 99.671
 - 4292m
 - Batang County. West of Litang. Wet meadow and rolling hills.
 
-- [P. cranolopha (DE387)](/assets/flowers/DE387-cranolopha.jpg)    
+- [P. cranolopha (DE387)](/assets/flowers/DE387-cranolopha.jpg)
 <b>Genome plant</b> (DNA, RNA, pollen, 10 individuals), and morphology. It is 
 important to collect the cranolopha genome near this location. It should
-have a long tube and non-forked beak.
-- P. kansuensis (DE388)  
-Collect morphology always.
-- P. anas (DE389)  
-Collect morphology always.
-- P. lachnoglossa (DE390)  
-Collect morphology always.
-- P. sphaerantha (DE391)  
-Purple flowers, short tube, long beak. Collect morphology one time.
-- [P. siphonantha (DE392)](/assets/flowers/DE392-siphonantha.jpg)  
-Collect morphology always.
-- P. rhinanthoides (DE393)  
-Collect morphology always.
-- [P. latituba (DE394)](/assets/flowers/DE394-latituba.jpg)  
+have a long tube and non-forked beak. If you really really can't find it then
+site 82 is a backup.
+- P. kansuensis (DE388): Morphology always.
+- P. anas (DE389): Morphology always.
+- P. lachnoglossa (DE390): Morphology always.
+- [P. sphaerantha (DE391)](/assets/flowers/rree04061-sphaerantha.jpg): Morphology.
+- [P. siphonantha (DE392)](/assets/flowers/DE392-siphonantha.jpg): Morphology always.
+- P. rhinanthoides (DE393): Morphology always.
+- [P. latituba (DE394)](/assets/flowers/DE394-latituba.jpg): Morphology and 
 <b>Genome plant</b> (DNA, RNA, pollen, 10 individuals), and morphology. If you 
-	cannot find it here you can look at other locations nearby. Or, there
-	will be another opportunity at site 82 also. This spp occurs at high
-	elevation ridges. Purple flowers, smaller than cranolopha, but similar 
-	shape.
-- [P. longiflora var. tubiformes (DE395)](/assets/flowers/DE395-longiflora.jpg)    
-Collect morphology always.
-- P. integrifolia (DE396)  
-Collect morphology always.
+cannot find it here you can look at other locations nearby. Or, there
+will be another opportunity at site 82 also. This spp occurs at high
+elevation ridges. Purple flowers, smaller than cranolopha, but similar 
+shape.
+- [P. longiflora var. tubiformes (DE395)](/assets/flowers/DE395-longiflora.jpg): Morphology always.
+- P. integrifolia (DE396): Morphology always.
+
+
+---------------------------------------
+South of Litang
+
+---------------------------------------
+
+<h3 class="mt-5"> Site 83 </h3>
+- 29°49'15.0" N, 100°20'45.2" E
+- 29.820833, 100.34588
+- 3882m
+- Litang County. South of Litang towards Sanduixiang. Dry meadow near stream.
+
+- [P. siphonantha (DE411)](/assets/flowers/DE411-siphonantha.jpg): Morphology always.
+- [P. densispica (DE412)](/assets/flowers/DE412-densispica.jpg): Morphology
+- P. cyathophylla (DE413): Morphology.
+- [P. cranolopha (DE414)](/assets/flowers/DE414-cranolopha.jpg): Morphology. 
+(This can be a backup genome sample if you cannot find it at site 80).
+- P. lachnoglossa (DE415): Morphology.
+- P. integrifolia (DE416): Morphology.
+- [P. kansuensis (DE417)](/assets/flowers/DE417-kansuensis.jpg): Morphology.
+
+
+
+<h3 class="mt-5"> Site 17 </h3>
+- 29°23'9" N, 100°08'58" E
+- 29.385833, 100.14944
+- 4479m
+- Road between Sanduixiang and Litang. Boulder strewn meadow.
+- <i>All of the species at this site can be found at Site 16 nearby. So I 
+	recommend trying there first, and only visit here if you cannot
+	find them at the other site.</i>
+
+- P. lachnoglossa (DE67): Morphology
+- [P. integrifolia (DE68)](/assets/flowers/DE64-integrifolia.jpg): Morphology
+- [P. przewalskii (DE69)](/assets/flowers/DE63-przewalskii.jpg): Morphology and <b>transcriptome RNAs</b>
+
+
+
+
+<h3 class="mt-5"> Site 16 </h3>
+- 29°20'05.5" N,	100°05'57.9" E
+- 29.3348611, 100.0994166
+- 3680m
+- Daocheng County, South of Litang towards Sanduixiang. Glacial outwash area w/ granite boulders. Wet meadow w/ Rhododendron, Rheum alexandrae, and Ligularia. 
+
+- P. confertiflora (DE60): Morphology (small tube, long beak, purple)
+- [P. longiflora (DE61)](/assets/flowers/DE61-longiflora.jpg): Morphology
+- P. rhynchodonta (DE62): Morphology
+- [P. przewalskii (DE63)](/assets/flowers/DE63-przewalskii.jpg): Morphology (<b>and RNA if not already collected.</b>)
+- [P. integrifolia (DE64)](/assets/flowers/DE64-integrifolia.jpg): Morphology
+- [P. lachnoglossa (DE65)](/assets/flowers/DE65-lachnoglossa.jpg): Morphology
+- P. rhodotricha (DE66): Morphology
+
+
+---------------------------------------
+North of Litang: if you are running low on time these next sites
+could be pushed back one day, so that you visit these 
+sites North of Litang the next morning.
+
+---------------------------------------
+
 
 
 <h3 class="mt-5"> Site 81 </h3>
@@ -67,24 +124,16 @@ Collect morphology always.
 - 4210m
 - Litang County. North of Litang towards Xinlong just beyond first pass. Wet meadow and Rhododendron thicket.
 
-- [P. ingens (DE397)](/assets/flowers/DE397-ingens.jpg)  
-Collect morphology once.
-- [P. rhodotricha (DE398)](/assets/flowers/DE398-rhodotricha.jpg)  
-Collect morphology.
-- [P. lophotricha (DE399)](/assets/flowers/DE399-lophotricha.jpg)  
-Collect morphology if you haven't previously.
-- [P. siphonantha (DE400)](/assets/flowers/DE400-siphonantha.jpg)  
-Collect morphology always.
-- [P. cranolopha (DE401)](/assets/flowers/DE401-cranolopha.jpg)    
-Collect morphology always. Long hairy corolla tube, forked beak. Important.
-- P. longiflora (DE402)   
-Collect morphology always.
-- P. cephalantha (DE403)  
-Collect morphology if you haven't previously. Purple flower, short tube, long beak.
-- P. kansuensis (DE404)  
-Collect morphology always.
-- P. rhinanthoides (DE405)  
-Collect morphology always.
+- [P. ingens (DE397)](/assets/flowers/DE397-ingens.jpg): Morphology. 
+- [P. rhodotricha (DE398)](/assets/flowers/DE398-rhodotricha.jpg): Morphology.
+- [P. lophotricha (DE399)](/assets/flowers/DE399-lophotricha.jpg): Morphology and <b>transcriptome RNAs</b>.
+- [P. siphonantha (DE400)](/assets/flowers/DE400-siphonantha.jpg): Morphology.
+- [P. cranolopha (DE401)](/assets/flowers/DE401-cranolopha.jpg): Morphology always.
+Important. Long hairy corolla tube, forked beak.
+- P. longiflora (DE402): Morphology always.
+- P. cephalantha (DE403): Morphology. Purple flower, short tube, long beak.
+- P. kansuensis (DE404): Morphology always.
+- P. rhinanthoides (DE405): Morphology always.
 
 
 <h3 class="mt-5"> Site 82 </h3>
@@ -93,73 +142,14 @@ Collect morphology always.
 - 4350m
 - Litang County. North of Litang towards Xinlong. Wet meadow and stunted shrubs.
 
-- [P. delavayi (DE476)]
-Collect morphology always. Collect new specimens labeled DE476.
-- [P. latituba (DE406)](/assets/flowers/DE406-latituba.png)  
-Collect morphology always. If not found previously, collect as genome plant.
-- [P. przewalskii (DE407)]
-Collect morphology. Pink flowers, long tube, forked beak.
-- [P. rhynchodonta (DE408)]
-Collect morphology.
-- [P. anas (DE409)]
-Collect morphology. 
-- [P. integrifolia (DE410)]
-Collect morphology
-
-
-<h3 class="mt-5"> Site 83 </h3>
-- 29°49'15.0" N, 100°20'45.2" E
-- 29.820833, 100.34588
-- 3882m
-- Litang County. South of Litang towards Sanduixiang. Dry meadow near stream.
-
-- [P. siphonantha (DE411)](/assets/flowers/DE411-siphonantha.jpg)  
-Morphology.
-- [P. densispica (DE412)](/assets/flowers/DE412-densispica.jpg)  
-Morphology.
-- P. cyathophylla (DE413)
-Morphology.
-- [P. cranolopha (DE414)](/assets/flowers/DE414-cranolopha.jpg)  
-Morphology. This can be a backup genome sample if you cannot find it at site 80.
-- P. lachnoglossa (DE415)
-Morphology.
-- P. integrifolia (DE416)  
-Morphology.
-- [P. kansuensis (DE417)](/assets/flowers/DE417-kansuensis.jpg)
-Morphology.
-
-
-------------------------------------------------------------------------
-If you are running low on time sites 18 and 19 can be visited on Day 5.
-
---------------------------------------------------------------------------
-
-
-<h3 class="mt-5"> Site 18 </h3>
-- 30°00'39.5" N,	100°18'58.2" E
-- 4301m
-- Litang County. On old road above new tunnel near Litang on 
-road towards Yajiang. Alpine meadow on N facing slope.
-
-- lachnoglossa
-- rhinanthoides
-- integrifolia
-- inaequilobata
-- roylei
-- siphonantha
-- anas
-
-
-<h3 class="mt-5"> Site 19 </h3>
-- 30°02'02.5" N,	100°22'29.9" E
-- 4020m
-- Litang County. Near junction of S217 and G318 just outside of Litang 
-at intersection of two valleys and a river.	P. cranolopha admixture zone.
-
-- cranolopha var. longicornuta (DE85)  
-This admixture zone contains individuals with small, medium and large 
-forked beaks. Try to collect morphometric images for all 3 types. 
-Maybe label these as DE85-small, DE85-medium, DE85-large.
+- [P. delavayi (DE476)](/assets/flowers/DE476-delavayi.jpg): Morphology always.
+Collect new specimens labeled DE476.
+- [P. latituba (DE406)](/assets/flowers/DE406-latituba.png): Morphology always. If not found previously, collect as genome plant.
+- [P. przewalskii (DE407)](/assets/flowers/DE63-przewalskii.jpg): Morphology
+(and <b> transcriptome RNAs</b> if not already collected). 
+- [P. rhynchodonta (DE408)](/assets/flowers/DE408-rhynchodonta.jpg): Morphology optional.
+- P. anas (DE409): Morphology always.
+- P. integrifolia (DE410): Morphology always.
 
 
 

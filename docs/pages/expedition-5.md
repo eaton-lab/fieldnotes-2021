@@ -1,5 +1,62 @@
-expedition-5.md
+---
+layout: default
+title: day-5
+image: /assets/images/hackers-1.jpg
+---
 
+
+
+## Day 5: Litang to Bamei
+
+- Morphometrics for samples from previous collection sites:
+	- Approximately 25 samples.
+
+- Genomes (DNA, RNA, pollen, and 10 individuals)
+	- Another opportunity to collect <i>P. latituba</i> (site 21)
+
+- RNA for comparative transcriptomes:
+	- P. dolichocymba (site 20)
+	- P. tatsienensis (site 23)
+	- P. inaequilobata (sites 18 or 21)
+
+
+ <iframe src="/assets/maps/day5.html" height='400px' width="100%" title="Iframe Example"></iframe> 
+
+
+
+------------------------------------------------------------------------
+Remember to visit sites 81 and 82 from day 4 if you have not 
+already.
+
+--------------------------------------------------------------------------
+
+
+
+<h3 class="mt-5"> Site 18 </h3>
+- 30°00'39.5" N,	100°18'58.2" E
+- 4301m
+- Litang County. On old road above new tunnel near Litang on 
+road towards Yajiang. Alpine meadow on N facing slope.
+
+- [P. lachnoglossa (DE70)](/assets/flowers/DE70-lachnoglossa.jpg): Morphology always.
+- P. rhinanthoides (DE71): Morphology always.
+- [P. integrifolia (DE72)](/assets/flowers/DE72-integrifolia.jpg): Morphology always.
+- [P. inaequilobata (DE73)](/assets/flowers/DE73-inaequilobata.jpg): Morphology and <b>transcriptome RNAs</b>.
+- [P. roylei (DE74)](/assets/flowers/DE74-roylei.jpg): Morphology
+- [P. siphonantha (DE75)](/assets/flowers/DE75-siphonantha.jpg): Morphology
+- [P. anas (DE76)](/assets/flowers/DE76-anas.jpg): Morphology
+
+
+<h3 class="mt-5"> Site 19 </h3>
+- 30°02'02.5" N, 100°22'29.9" E
+- 4020m
+- Litang County. Near junction of S217 and G318 just outside of Litang 
+at intersection of two valleys and a river.	P. cranolopha admixture zone.
+
+- [cranolopha var. longicornuta (DE85)](/assets/flowers/DE85-cranolopha.jpg)
+This admixture zone contains individuals with small, medium and large 
+forked beaks. Try to collect morphometric images for 2-3 types. 
+Maybe label these as DE85-small, DE85-medium, DE85-large.
 
 
 
@@ -10,28 +67,28 @@ expedition-5.md
 - 4177m
 - Yajiang county. Alpine Kobresia meadow.
 
-- densispica
-- cranolopha
-- anas
-- lachnoglossa
-- dolichocymba
-- integrifolia
+
+- densispica (DE79): Morphology optional.
+- cranolopha (DE80): Morphology always.
+- anas (DE81): Morphology always.
+- lachnoglossa (DE82): Morphology always.
+- [P. dolichocymba (DE83)](/assets/flowers/DE83-dolichocymba.jpg): Morphology and <b>transcriptome RNAs.</b>
+- integrifolia (DE84): Morphology always.
 
 
 
+<h3 class="mt-5"> Site 21 </h3>
+- 30°10'08.1" N,	100°35'03.6" E
+- 30.1689166, 100.5843333
+- 4355m
+- Litang county, Wet meadow w/ adjacent Rhododendron thicket blending into pines.
 
-
-<h3 class="mt-5"> Site 30 </h3>
-- 30°16'42.8" N,	101°31'24.8" E
-- 
-- 3635m
-- Kangding County. Boulder strewn area along river with Tibetan scripts 
-and stories and old dangerous walking bridge for tourists. Dry, shrubby, rocky.
-
-- brevilabris
-- lachnoglossa
-- verticillata
-
+- [P. rhynchodonta (DE86)](/assets/flowers/DE86-rhynchodonta.jpg): Morphology optional.
+- P. siphonantha (DE87): Morphology always.
+- [P. latituba (DE88)](/assets/flowers/DE88-latituba.jpg): Morphology. Another
+backup location for genome if not found previously.
+- [P. inaequilobata (DE89)](/assets/flowers/DE95-inaequilobata.jpg): Morphology and transcriptome RNAs if not collected previously.
+- [P. rupicola subsp. zambalensis (DE90)](/assets/flowers/DE90-rupicola.jpg): Morphology.
 
 
 
@@ -52,35 +109,10 @@ Important morphological sample. Forked beak, short tube, light color.
 - 4300m
 - Wet Rhododendron thicket transitioning to meadow.
 
-- [P. tatsienensis (DE92)](/assets/flowers/DE92-tatsienensis.jpg)  
-Collect morphology.
-- P. anas  
-Collect morphology always.
-- [P. urceolata (DE94)](/assets/flowers/DE94-urceolata.jpg)  
-Collect morphology if you haven't previously.
-- [P. inaequilobata (DE95)](/assets/flowers/DE95-inaequilobata.jpg)  
-Collect morphology.
-- P. tongolensis (DE96)  
-Collect morphology. This will look like ingens (yellow large).
+- [P. tatsienensis (DE92)](/assets/flowers/DE92-tatsienensis.jpg): Morphology and <b>transcriptome RNAs</b>
+- P. anas: Morphology always.
+- [P. urceolata (DE94)](/assets/flowers/DE94-urceolata.jpg): Morphology optional.
+- [P. inaequilobata (DE95)](/assets/flowers/DE95-inaequilobata.jpg): Morphology and transcriptome RNAs if not collected previously.
+- P. tongolensis (DE96): Morphology. This will look like ingens (yellow large).
 
-
-
-
-<h3 class="mt-5"> Site 21 </h3>
-- 30°10'08.1" N,	100°35'03.6" E
-- 30.1689166, 100.5843333
-- 4355m
-- Litang county, Wet meadow w/ adjacent Rhododendron thicket blending into pines.
-
-- [P. rhynchodonta (DE86)](/assets/flowers/DE86-rhynchodonta.jpg)  
-Collect morphology if not already, or if you have extra time.
-- P. siphonantha (DE87)  
-Collect morphology always.
-- [P. latituba (DE88)](/assets/flowers/DE88-latituba.jpg)  
-<b>Collect genome (DNA, RNA, pollen, 10 leaf samples)</b>. If it is hard
-to find enough plants there will be other opportunities later. But try here.
-- [P. inaequilobata (DE89)](/assets/flowers/DE95-inaequilobata.jpg)  
-Collect if not already.
-- [P. rupicola subsp. zambalensis (DE90)](/assets/flowers/DE90-rupicola.jpg)  
-Collect morphology
 

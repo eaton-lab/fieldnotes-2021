@@ -1,21 +1,27 @@
 ---
 layout: default
-title: expedition-2
+title: day-2
 image: /assets/images/hackers-1.jpg
 ---
 
 
 ## Day 2: Shimian to Xinduqiao
+- This day has a lot of stops, and lots of morphometrics, 
+so try to work quickly. The next day is much shorter and you may want to 
+finish morphometrics in the morning if you cannot finish all this evening. 
 
-- Revisit sites from previous years to collect morphometric
-  data for species that we already have collections for 
-  (DE- accession numbers)
 
-- Collect <i>P. davidii</i> genome plant, pollen, RNAs for annotation,
-  and silica leaf collections for 10 individuals for popgen.
+- Morphometrics for accessions from previous sites
+	- approx. 40 samples.
+- Genomes (DNA, RNA, pollen, 10 individuals for popgen)
+	- <i>P. davidii</i> (site 106)
 
-- Collect RNA for comparative transcriptomes for brevilabris, delavayi, 
-dolichoglossa, and siphonantha.
+
+- Transcriptomes: 
+	- brevilabris (sites 106, 107, or 114)
+	- delavayi (sites 108 or 115)
+	- dolichoglossa (site 113)
+	- siphonantha (sites 113 or 114)
 
 
  <iframe src="/assets/maps/day2.html" height='400px' width="100%" title="Iframe Example"></iframe> 
@@ -25,18 +31,14 @@ dolichoglossa, and siphonantha.
 - 29˚50'39" N, 102˚2'42.7" E
 - 29.844166, 102.045194
 - Forested rocky roadside on switchbacks.
+- I remember these plants being quite abundant. Rex was mostly on the slope
+below the road, and kansuensis, davidii and brevilabris are on roadside.
+- Take some photos, but try to collect quickly, this is a very busy day.
 
-- [P. kansuensis (pink) (DE507)](/assets/flowers/DE507-kansuensis-pink.jpg)  
-Collect morphometrics every time you find this species.
-- [P. brevilabris (DE508)](/assets/flowers/DE508-brevilabris.jpg)  
-<b>Collect leaf and flower transcriptome RNAs</b> (sample failed last time). 
-Collect morphometrics one time for this species. If you do not find
-it here there will be more opportunities later.
-- [P. davidii (DE509)](/assets/flowers/DE509-davidii.jpg)  
-<b>Collect genome sample</b> (DNA, RNA, pollen, and leaf silica for 10 individuals)
-- [P. rex (red) (DE510)](/assets/flowers/DE510-rex-red.jpg)  
-Collect morphometrics. If you have time, do single flower, 
-and a small inflorescence with cupule.
+- [P. kansuensis (pink) (DE507)](/assets/flowers/DE507-kansuensis-pink.jpg): Morphology always.
+- [P. brevilabris (DE508)](/assets/flowers/DE508-brevilabris.jpg): Morphology and <b>transcriptome RNAs</b> (sample failed last time). 
+- [P. davidii (DE509)](/assets/flowers/DE509-davidii.jpg): Morphology and <b>genome sample</b> (DNA, RNA, pollen, and leaf silica for 10 individuals).
+- [P. rex (red) (DE510)](/assets/flowers/DE510-rex-red.jpg): Morphology.
 
 
 
@@ -45,13 +47,12 @@ and a small inflorescence with cupule.
 - 29˚52'53" N	102˚1'12" E
 - 29.881388, 102.02
 - Alpine meadow near ridge
+- This should be quick, stick some plants of rhinanth and kansu in plastic
+bags, label them, and move on.
 
-- P. brevilabris (DE511)
-Collect transcriptome and/or morphometrics <i>if not collected already at site 106.</i>
-- [P. rhinanthoides (DE512)](/assets/flowers/DE512-rhinanthoides.jpg)  
-Collect morphometrics every time this spp is found.
-- [P. kansuensis (DE513)](/assets/flowers/DE513-kansuensis.jpg)  
-Collect morphometrics every time this spp is found.
+- P. brevilabris (DE511): Morphology and transcriptome both only if not collected at site 106.
+- [P. rhinanthoides (DE512)](/assets/flowers/DE512-rhinanthoides.jpg): Morphology always.
+- [P. kansuensis (DE513)](/assets/flowers/DE513-kansuensis.jpg): Morphology always.
 
 
 <h3 class="mt-5"> Site 108 </h3>
@@ -59,33 +60,26 @@ Collect morphometrics every time this spp is found.
 - 29.9035277, 101.9996111
 - 3979m
 - Alpine meadow with scattered rhododendron shrubs.
+- rhynchodonta is common elsewhere, so do not spend a lot of time looking
+for it. This would be the best place to get delavayi, but its available elsewhere
+if hard to find.
 
-- [P. kansuensis? (DE514)](/assets/flowers/DE514-kansuensis.jpg)  
-Collect morphometrics every time you find this species.
-- [P. rhynchodonta (DE515)](/assets/flowers/DE543-rhynchodonta.jpg)  
-Collect morphometrics for this species one time. You will have 
-other opportunities if it is hard to find here. The image linked
-to here is not from this exact location, it may look a bit different.
-- [P. delavayi (DE516)](/assets/flowers/DE516-delavayi.jpg)  
-<b>Collect transriptome RNAs</b>, and morphometrics. Collect morpho 
-every time we find this species. If hard to find there will be other
-opportunities.
+- [P. kansuensis (DE514)](/assets/flowers/DE514-kansuensis.jpg): Morphology always.
+- [P. rhynchodonta (DE515)](/assets/flowers/DE543-rhynchodonta.jpg): Morphology optional. Species is common. The image linked is not from this exact location.
+- [P. delavayi (DE516)](/assets/flowers/DE516-delavayi.jpg): Morphology and <b>transriptome RNAs</b>. 
 
 
 <h3 class="mt-5"> Site 109 </h3>
 - 30˚3'3" N,	101˚57'45.5" E
 - 30.05083333, 101.96263888
 - 2549m
-- Rocky hillside on walking path off busy roadside inside the city of Garze.
-- get lunch.
+- Rocky hillside on stone walking path off busy roadside inside the city of Garze.
+- You can find these plants easily on the walking path.
+- get lunch afterwards.
 
-- [P. kansuensis (DE517)](/assets/flowers/DE517-kansuensis.jpg)  
-Collect morphometrics every time you find this species.
-- [P. cranolopha (DE518)](/assets/flowers/DE518-cranolopha.jpg)  
-Collect morphometrics every time you find this species.
-- [P. macrosiphon (DE519)](/assets/flowers/DE519-macrosiphon.jpg)  
-Collect morphometrics one time for this species, and optionally 
-at other locations after if you have extra time.
+- [P. kansuensis (DE517)](/assets/flowers/DE517-kansuensis.jpg): Morphology always.
+- [P. cranolopha (DE518)](/assets/flowers/DE518-cranolopha.jpg): Morphology always.
+- [P. macrosiphon (DE519)](/assets/flowers/DE519-macrosiphon.jpg): Morphology.
 
 
 <h3 class="mt-5"> Site 110 </h3>
@@ -93,15 +87,12 @@ at other locations after if you have extra time.
 - 30.1446111, 101.85930555
 - 3790m
 - At Mucho Lake, scenic spot of the Kanding Love Song.
+- <i>You can skip this site if you are running low on time, since it is out of the way.</i>
 
-- [P. lachnoglossa (DE520)](/assets/flowers/DE520-lachnoglossa.jpg)  
-Collect morphometrics every time you find this species.
-- [P. lineata (DE521)](/assets/flowers/DE521-lineata.jpg)  
-Collect morphometrics.
-- [P. rhinanthoides (DE522)](/assets/flowers/DE522-rhinanthoides.jpg)  
-Collect morphometrics every time you find this species.
-- [P. fetisowii (DE523)](/assets/flowers/DE523-fetisowii.jpg)  
-Collect morphometrics.
+- [P. lachnoglossa (DE520)](/assets/flowers/DE520-lachnoglossa.jpg): Morphology always.
+- [P. lineata (DE521)](/assets/flowers/DE521-lineata.jpg): Morphology
+- [P. rhinanthoides (DE522)](/assets/flowers/DE522-rhinanthoides.jpg): Morphology always.
+- [P. fetisowii (DE523)](/assets/flowers/DE523-fetisowii.jpg): Morphology
 
 
 <h3 class="mt-5"> Site 113 </h3>
@@ -109,19 +100,17 @@ Collect morphometrics.
 - 30.012888, 101.862722
 - 3525m
 - On G318 from Kanding to Xinduqiao, Rocky alpine meadow with shrubs and a stream.
+- These are all common plants that you will see again many times. But we want
+morphology for them from many locations. Try to collect quickly especially
+if it is getting late.
 
-- [P. kansuensis pink (DE527)](/assets/flowers/DE527-kansuensis-pink.jpg)  
-Collect morphometrics every time you find this species.
-- [P. kansuensis white (DE528)](/assets/flowers/DE528-kansuensis-white.jpg)  
-Collect morphometrics every time you find this species.
-- P. rhinanthoides (DE529)  
-Collect morphometrics every time you find this species.
-- [P. siphonantha (DE530)](/assets/flowers/DE530-siphonantha.jpg)   
-<b>Collect transcriptome RNAs</b>, and morphometrics.
-- [P. longiflora (DE531)](/assets/flowers/DE531-longiflora.jpg)  
-Collect morphometrics every time you find this species.
-- [P. dolichoglossa (DE532)](/assets/flowers/DE532-dolichoglossa.jpg)  
-<b>Collect transcriptome RNAs</b>, and morphometrics.
+- [P. kansuensis pink (DE527)](/assets/flowers/DE527-kansuensis-pink.jpg): Morphology always. 
+- [P. kansuensis white (DE528)](/assets/flowers/DE528-kansuensis-white.jpg): Morphology always.
+- P. rhinanthoides (DE529): Morphology always.
+- [P. siphonantha (DE530)](/assets/flowers/DE530-siphonantha.jpg): Morphology always.
+- [P. longiflora (DE531)](/assets/flowers/DE531-longiflora.jpg): Morphology always.
+- [P. dolichoglossa (DE532)](/assets/flowers/DE532-dolichoglossa.jpg): Morphology and 
+<b>transcriptome RNAs</b>.
 
 
 <h3 class="mt-5"> Site 114 </h3>
@@ -130,26 +119,15 @@ Collect morphometrics every time you find this species.
 - 3776m
 - On G318 from Kanding to Xinduqiao. Rocky meadow near a stream.
 
-- [P. urceolata (DE533)](/assets/flowers/DE533-urceolata.jpg)  
-Collect morphometrics. If hard to find you have another chance at the 
-next site.  
-- [P. rhodotricha (DE534)](/assets/flowers/DE534-rhodotricha.jpg)  
-Collect morphometrics. If hard to find you have another chance at the 
-next site.  
-- P. rhinanthoides (DE535)  
-Collect morphometrics every time you find this species.
-- [P. lachnoglossa (DE536)](/assets/flowers/DE536-lachnoglossa.jpg)  
-Collect morphometrics every time you find this species.
-- [P. integrifolia (DE537)](/assets/flowers/DE537-integrifolia.jpg)  
-Collect morphometrics every time you find this species.
-- [P. kansuensis (DE538)](/assets/flowers/DE538-kansuensis.jpg)  
-Collect morphometrics every time you find this species.
-- P. brevilabris (DE539)
-Only if you have not yet found it collect morphometrics.
-- [P. szetschuanica (DE540)](/assets/flowers/DE540-szetschuanica.jpg)  
-Collect morphometrics once.
-- [P. siphonantha (DE541)](/assets/flowers/DE541-siphonantha.jpg)  
-Collect morphometrics every time you find this species.
+- [P. urceolata (DE533)](/assets/flowers/DE533-urceolata.jpg): Morphology.
+- [P. rhodotricha (DE534)](/assets/flowers/DE534-rhodotricha.jpg): Morphology.
+- P. rhinanthoides (DE535): Morphology always.
+- [P. lachnoglossa (DE536)](/assets/flowers/DE536-lachnoglossa.jpg): Morphology always.
+- [P. integrifolia (DE537)](/assets/flowers/DE537-integrifolia.jpg): Morphology always.
+- [P. kansuensis (DE538)](/assets/flowers/DE538-kansuensis.jpg): Morphology always.
+- P. brevilabris (DE539): Morphology optional.
+- [P. szetschuanica (DE540)](/assets/flowers/DE540-szetschuanica.jpg): Morphology optional.
+- [P. siphonantha (DE541)](/assets/flowers/DE541-siphonantha.jpg): Morphology always and <b>transcriptome RNAs</b>.
 
 
 <h3 class="mt-5"> Site 115 </h3>
@@ -158,23 +136,15 @@ Collect morphometrics every time you find this species.
 - 4304m
 - On G318 from Kanding to Xinduqiao. High mountain pass near Buddhist monument.	Wet alpine meadow, heavy mist, scattered shrubs.
 
-- P. cinerascens (DE542)  
-Collect morphometrics. There will be other opportunities to find this spp
-if it is hard to find here.
-- [P. rhynchodonta (DE543)](/assets/flowers/DE543-rhynchodonta.jpg)  
-Collect morphometrics only if you have not found it previously.
-- [P. cheilanthifolia (DE544)](/assets/flowers/DE544-cheilanthifolia.jpg)  
-Collect morphometrics once for this spp. Important, rare species.
-- [P. delavayi (DE545)](/assets/flowers/DE545-delavayi.jpg)  
-Collect morphometrics every time you find this spp.
-- [P. urceolata (DE546)](/assets/flowers/DE546-urceolata.jpg)  
-Collect morphometrics only if you have not found it previously.
-- [P. verticillata (DE547)](/assets/flowers/DE547-verticillata.jpg)  
-Collect morphometrics every time you find this spp.
-- P. rhodotricha DE548  
-Collect morphometrics only if you have not found it previously.
-- [P. souliei (DE549)](/assets/flowers/DE549-souliei.jpg)  
-Collect morphometrics. If hard to find there is another chance later.
-- [P. mussotii (DE550)](/assets/flowers/DE550-mussotii.jpg)  
-Collect morphometrics. If hard to find there is another chance later.
+
+- P. cinerascens (DE542): Morphology.
+- [P. rhynchodonta (DE543)](/assets/flowers/DE543-rhynchodonta.jpg): Morphology optional.
+- [P. cheilanthifolia (DE544)](/assets/flowers/DE544-cheilanthifolia.jpg): Morphology (important).
+- [P. delavayi (DE545)](/assets/flowers/DE545-delavayi.jpg): Morphology (and transcriptome if not found previously).
+- [P. urceolata (DE546)](/assets/flowers/DE546-urceolata.jpg): Morphology optional.
+- [P. verticillata (DE547)](/assets/flowers/DE547-verticillata.jpg): Morphology always.
+- P. rhodotricha DE548: Morphology.
+- [P. souliei (DE549)](/assets/flowers/DE549-souliei.jpg): Morphology.
+- [P. mussotii (DE550)](/assets/flowers/DE550-mussotii.jpg): Morphology.
+
 
