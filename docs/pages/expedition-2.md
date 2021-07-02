@@ -24,7 +24,7 @@ finish morphometrics in the morning if you cannot finish all this evening.
 	- siphonantha (sites 113 or 114)
 
 
- <iframe src=../assets/maps/day2.html height='400px' width="100%" title="Iframe Example"></iframe> 
+ <iframe src="../assets/maps/day2.html" height='400px' width="100%" title="Iframe Example"></iframe> 
 
 
 <h3 class="mt-5"> Site 106 </h3>
