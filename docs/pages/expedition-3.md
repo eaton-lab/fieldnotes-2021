@@ -24,7 +24,7 @@ includes additional sites between Xinduqiao and Litang.
 
 
 
- <iframe src="/assets/maps/day3.html" height='400px' width="100%" title="Iframe Example"></iframe> 
+ <iframe src="../assets/maps/day3.html" height='400px' width="100%" title="Iframe Example"></iframe> 
 
 
 
@@ -34,7 +34,7 @@ includes additional sites between Xinduqiao and Litang.
 - 4047m	
 - Kangding County. On old road from Yajiang to Xinduqiaozhen near end.	Alpine meadow, dry shrubby, Rosa.
 
-- [cranolopha (DE121)](/assets/flowers/DE121-cranolopha.jpg): Morphology. 
+- [cranolopha (DE121)](../assets/flowers/DE121-cranolopha.jpg): Morphology. 
 Important. First time seeing long tube in a while. Has forked beak.
 
 
@@ -46,15 +46,15 @@ Important. First time seeing long tube in a while. Has forked beak.
 - Kangding County. Old road from Yajiang to Xinduqiaozhen.	
 Wet shrubby meadow on shale. Rhododendron thicket.
 
-- [P. mussotii (DE113)](/assets/flowers/DE113-mussotii.jpg): Morphology optional.
+- [P. mussotii (DE113)](../assets/flowers/DE113-mussotii.jpg): Morphology optional.
 - P. rhinanthoides (DE114): Morphology always.
-- [P. cephalantha (DE115)](/assets/flowers/DE51-cephalantha.jpg): Morphology and <b>transcriptome RNAs</b> (photo is not from the same location, but should look similar)
-- [P. souliei (DE115)](/assets/flowers/DE116-souliei.jpg): Morphology optional.
+- [P. cephalantha (DE115)](../assets/flowers/DE51-cephalantha.jpg): Morphology and <b>transcriptome RNAs</b> (photo is not from the same location, but should look similar)
+- [P. souliei (DE115)](../assets/flowers/DE116-souliei.jpg): Morphology optional.
 - P. rhynchodonta (DE117): Morphology optional.
-- [P. verticillata (DE118)](/assets/flowers/DE118-verticillata.jpg): Morphology always.
-- [P. szetschuanica (DE119)](/assets/flowers/DE119-szetschuanica.jpg): Morphology
+- [P. verticillata (DE118)](../assets/flowers/DE118-verticillata.jpg): Morphology always.
+- [P. szetschuanica (DE119)](../assets/flowers/DE119-szetschuanica.jpg): Morphology
 and collect a specimen labeled DE119 (we found too few last time).
-- [P. fetisowii (DE120)](/assets/flowers/DE120-fetisowii.jpg): Morphology.
+- [P. fetisowii (DE120)](../assets/flowers/DE120-fetisowii.jpg): Morphology.
 
 
 <h3 class="mt-5"> Site 27 </h3>
@@ -86,11 +86,11 @@ Before peak at 4400m.	Very wet misty shrubby meadows on shale.
 Wet misty site. Pine, juniper, rhododendron shrubs, shrubby meadow on shale.
 
 - P. brevilabris (DE103): Morphology optional.
-- [P. polyodonta (DE104)](/assets/flowers/DE104-polyodonta.jpg): Morphology.
+- [P. polyodonta (DE104)](../assets/flowers/DE104-polyodonta.jpg): Morphology.
 - P. verticillata (DE105): Morphology always.
 - P. ingens (DE106): Morphology.
-- [P. cyathophylla (DE107)](/assets/flowers/DE107-cyathophylla.jpg): Morphology.
-- [P. cranolopha (DE108)](/assets/flowers/DE108-cranolopha.jpg): Morphology always.
+- [P. cyathophylla (DE107)](../assets/flowers/DE107-cyathophylla.jpg): Morphology.
+- [P. cranolopha (DE108)](../assets/flowers/DE108-cranolopha.jpg): Morphology always.
 
 
 <h3 class="mt-5"> Site 24 </h3>
@@ -99,9 +99,9 @@ Wet misty site. Pine, juniper, rhododendron shrubs, shrubby meadow on shale.
 - 3470m
 - Road from Yajiang to Xinduqiaozhen. Forest edge and small meadow by "A store" and a stream in valley by curving bridge.
 
-- [P. cranolopha (DE98)](/assets/flowers/DE98-cranolopha.jpg): Morphology always.
+- [P. cranolopha (DE98)](../assets/flowers/DE98-cranolopha.jpg): Morphology always.
 Important. Very short tube with forked beak.
-- [P. kansuensis (DE99)](/assets/flowers/DE99-kansuensis.jpg): Morphology always.
+- [P. kansuensis (DE99)](../assets/flowers/DE99-kansuensis.jpg): Morphology always.
 Both a purple and white sample if possible. They have the same accession number here.
 
 

@@ -27,7 +27,7 @@ laundry service.
 
 - Sites: 30, 31, 33, 34, 35, 36, 37
 
- <iframe src="/assets/maps/day6.html" height='400px' width="100%" title="Iframe Example"></iframe> 
+ <iframe src="../assets/maps/day6.html" height='400px' width="100%" title="Iframe Example"></iframe> 
 
 
 
@@ -46,9 +46,9 @@ already.
 - Quick stop to get morphology of pink kansuensis.
 - Boulder strewn area along river with Tibetan scripts and stories and old dangerous walking bridge. Dry, shrubby, rocky.
 
-- [bridge photo](/assets/flowers/site-30.jpg)
-- [P. kansuensis (DE124) (pink)](/assets/flowers/DE124-kansuensis.jpg): Morphology.
-- [P. brevilabris (DE122)](/assets/flowers/DE122-brevilabris.jpg): Morphology.
+- [bridge photo](../assets/flowers/site-30.jpg)
+- [P. kansuensis (DE124) (pink)](../assets/flowers/DE124-kansuensis.jpg): Morphology.
+- [P. brevilabris (DE122)](../assets/flowers/DE122-brevilabris.jpg): Morphology.
 
 
 <h3 class="mt-5"> Site 31 </h3>
@@ -57,14 +57,14 @@ already.
 - 3605m
 - Small bridge over stream to reach alpine meadow, fenced on one side of road for long distance. We climbed it.	Kobresia meadow and wet meadow; hilly area.
 
-- [P. rhinanthoides (DE125)](/assets/flowers/DE125-rhinanthoides.jpg): Morphology always. 
-- [P. lutescens (DE126)](/assets/flowers/DE126-lutescens.jpg): Morphology and <b>Transcriptome RNAs</b>
-- [P. brevilabris (DE127)](/assets/flowers/DE127-brevilabris.jpg): Morphology optional.
-- [P. kansuensis (DE128) (purple)](/assets/flowers/DE128-kansuensis.jpg): Morphology always. 
-- [P. densispica (DE129)](/assets/flowers/DE129-densispica.jpg): Morphology optional.
-- [P. integrifolia (DE130)](/assets/flowers/DE130-integrifolia.jpg): Morphology always. 
-- [P. cranolopha (DE131)](/assets/flowers/DE131-cranolopha.jpg): Morphology. Important.
-- [P. longiflora (DE132)](/assets/flowers/DE132-longiflora.jpg): Morphology. Important.
+- [P. rhinanthoides (DE125)](../assets/flowers/DE125-rhinanthoides.jpg): Morphology always. 
+- [P. lutescens (DE126)](../assets/flowers/DE126-lutescens.jpg): Morphology and <b>Transcriptome RNAs</b>
+- [P. brevilabris (DE127)](../assets/flowers/DE127-brevilabris.jpg): Morphology optional.
+- [P. kansuensis (DE128) (purple)](../assets/flowers/DE128-kansuensis.jpg): Morphology always. 
+- [P. densispica (DE129)](../assets/flowers/DE129-densispica.jpg): Morphology optional.
+- [P. integrifolia (DE130)](../assets/flowers/DE130-integrifolia.jpg): Morphology always. 
+- [P. cranolopha (DE131)](../assets/flowers/DE131-cranolopha.jpg): Morphology. Important.
+- [P. longiflora (DE132)](../assets/flowers/DE132-longiflora.jpg): Morphology. Important.
 
 
 <h3 class="mt-5"> Site 33 </h3>
@@ -74,15 +74,15 @@ already.
 - On road from Bamei to Dawu. Grazed meadow near stream.
 
 
-- [P. cranolopha (DE137)](/assets/flowers/DE137-cranolopha.jpg): Morphology always. Important.
+- [P. cranolopha (DE137)](../assets/flowers/DE137-cranolopha.jpg): Morphology always. Important.
 - P. lachnoglossa (DE138): Morphology always.
-- [P. batangensis (DE139)](/assets/flowers/DE139-batangensis.jpg): Morphology. Often growing on steep slopes.
-- [P. rhinanthoides (DE140)](/assets/flowers/DE140-rhinanthoides.jpg): Morphology always.
-- [P. longiflora (DE141)](/assets/flowers/DE141-longiflora.jpg): Morphology always. Important.
-- [P. kansuensis (DE142) (white)](/assets/flowers/DE142-kansuensis.jpg): Morphology.
-- [P. integrifolia (DE143)](/assets/flowers/DE143-integrifolia.jpg): Morphology always.
-- [P. lutescens (DE144)](/assets/flowers/DE144-lutescens.jpg): Morphology and transcriptome RNAs if not collected already.
-- [P. densispica (DE145)](/assets/flowers/DE145-densispica.jpg): Morphology optional.
+- [P. batangensis (DE139)](../assets/flowers/DE139-batangensis.jpg): Morphology. Often growing on steep slopes.
+- [P. rhinanthoides (DE140)](../assets/flowers/DE140-rhinanthoides.jpg): Morphology always.
+- [P. longiflora (DE141)](../assets/flowers/DE141-longiflora.jpg): Morphology always. Important.
+- [P. kansuensis (DE142) (white)](../assets/flowers/DE142-kansuensis.jpg): Morphology.
+- [P. integrifolia (DE143)](../assets/flowers/DE143-integrifolia.jpg): Morphology always.
+- [P. lutescens (DE144)](../assets/flowers/DE144-lutescens.jpg): Morphology and transcriptome RNAs if not collected already.
+- [P. densispica (DE145)](../assets/flowers/DE145-densispica.jpg): Morphology optional.
 
 
 
@@ -93,13 +93,13 @@ already.
 - On road from Bamei to Dawu. Wet meadow beside stream.
 
 - P. lachnoglossa (DE147): Morphology always.
-- [P. kansuensis (DE148) (white)](/assets/flowers/DE148-kansuensis.jpg): Morphology always.
-- [P. lutescens (DE149)](/assets/flowers/DE149-lutescens.jpg): Morphology always.
+- [P. kansuensis (DE148) (white)](../assets/flowers/DE148-kansuensis.jpg): Morphology always.
+- [P. lutescens (DE149)](../assets/flowers/DE149-lutescens.jpg): Morphology always.
 - P. brevilabris: Morphology optional.
-- [P. cranolopha (DE151)](/assets/flowers/DE151-cranolopha.jpg): Morphology always. Important.
-- [P. integrifolia (DE152)](/assets/flowers/DE152-integrifolia.jpg): Morphology always.
+- [P. cranolopha (DE151)](../assets/flowers/DE151-cranolopha.jpg): Morphology always. Important.
+- [P. integrifolia (DE152)](../assets/flowers/DE152-integrifolia.jpg): Morphology always.
 - P. rhinanthoides (DE153): Morphology always.
-- [P. longiflora (DE154)](/assets/flowers/DE154-longiflora.jpg): Morphology. Important.
+- [P. longiflora (DE154)](../assets/flowers/DE154-longiflora.jpg): Morphology. Important.
 
 
 <h3 class="mt-5"> Site 35 </h3>
@@ -110,15 +110,15 @@ already.
 
 
 - P. integrifolia (DE155): Morphology always.
-- [P. longiflora (DE156)](/assets/flowers/DE156-longiflora.jpg): Morphology always. Important.
-- [P. szetschuanica (DE157)](/assets/flowers/DE157-szetschuanica.jpg): Morphology.
+- [P. longiflora (DE156)](../assets/flowers/DE156-longiflora.jpg): Morphology always. Important.
+- [P. szetschuanica (DE157)](../assets/flowers/DE157-szetschuanica.jpg): Morphology.
 - P. brevilabris (DE158): Morphology optional.
 - P. rhinanthoides (DE159): Morphology always.
-- [P. siphonantha (DE160)](/assets/flowers/DE160-siphonantha.jpg): Morphology always.
+- [P. siphonantha (DE160)](../assets/flowers/DE160-siphonantha.jpg): Morphology always.
 - P. lachnoglossa (DE161): Morphology always.
-- [P. kansuensis (DE162)](/assets/flowers/DE162-kansuensis.jpg) (pale yellow): Morphology always.
+- [P. kansuensis (DE162)](../assets/flowers/DE162-kansuensis.jpg) (pale yellow): Morphology always.
 - P. kansuensis (DE163) (light purple): Morphology always.
-- [P. decorissima (DE164)](/assets/flowers/DE164-decorissima.jpg): Morphology and <b>RNA transcriptome</b>.
+- [P. decorissima (DE164)](../assets/flowers/DE164-decorissima.jpg): Morphology and <b>RNA transcriptome</b>.
 - P. longiflora (DE165): Morphology always.
 - P. macrosiphon (DE166): Morphology.
 
@@ -130,8 +130,8 @@ already.
 - 3845m
 - Hilly area, Kobresia meadow at bottom and shrubby on slopes.
 
-- [P. cranlopha (DE167)](/assets/flowers/DE167-cranolopha.jpg): Morphology always.
-- [P. cheilanthifolia (DE168)](/assets/flowers/DE168-cheilanthifolia): Morphology.
+- [P. cranlopha (DE167)](../assets/flowers/DE167-cranolopha.jpg): Morphology always.
+- [P. cheilanthifolia (DE168)](../assets/flowers/DE168-cheilanthifolia): Morphology.
 
 
 
