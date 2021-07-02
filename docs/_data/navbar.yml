@@ -12,8 +12,8 @@
       link: /pages/expedition-4.html
     - name: Day 5 (Litang to Bamei)
       link: /pages/expedition-5.html
-    - name: Day 6 (Dawu to Luhuo)
-      link: 
+    - name: Day 6 (Bamei to Dawu)
+      link: /pages/expedition-6.html
     - name: Day 7 (Luhuo to Wengdaxiang)
       link: 
     - name: Day 8 (Wengdaxiang to Zamtang)
@@ -21,3 +21,6 @@
 
 - name: Methods
   link: /pages/assignments.html
+
+- name: Lists
+  link: /pages/lists.html
