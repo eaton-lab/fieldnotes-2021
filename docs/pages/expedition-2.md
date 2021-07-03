@@ -22,6 +22,7 @@ finish morphometrics in the morning if you cannot finish all this evening.
 	- delavayi (sites 108 or 115)
 	- dolichoglossa (site 113)
 	- siphonantha (sites 113 or 114)
+	- cinerascens (115)
 
 
  <iframe src="../assets/maps/day2.html" height='400px' width="100%" title="Iframe Example"></iframe> 
@@ -82,7 +83,7 @@ if hard to find.
 - [P. macrosiphon (DE519)](../assets/flowers/DE519-macrosiphon.jpg): Morphology.
 
 
-<h3 class="mt-5"> Site 110 </h3>
+<!-- <h3 class="mt-5"> Site 110 </h3>
 - 30˚8'40.6" N,	101˚51'33.5" E
 - 30.1446111, 101.85930555
 - 3790m
@@ -93,6 +94,7 @@ if hard to find.
 - [P. lineata (DE521)](../assets/flowers/DE521-lineata.jpg): Morphology
 - [P. rhinanthoides (DE522)](../assets/flowers/DE522-rhinanthoides.jpg): Morphology always.
 - [P. fetisowii (DE523)](../assets/flowers/DE523-fetisowii.jpg): Morphology
+ -->
 
 
 <h3 class="mt-5"> Site 113 </h3>

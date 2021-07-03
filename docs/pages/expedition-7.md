@@ -18,10 +18,12 @@ previous day.
 	- None
 
 - RNA for comparative transcriptomes:
-	- P. alaschanica (site 52 or 43)
-	- P. psuedomelampyriflora (41)
+	- P. alaschanica (site 52, 122, or 43)
+	- P. cranolopha (site 43)
+	- P. psuedomelampyriflora (site 41, 122)
 
-- Sites: 38, 40, 41, 43, 52
+
+- Sites: 38, 40, 41, 43, 122, 52
 
  <iframe src="../assets/maps/day7.html" height='400px' width="100%" title="Iframe Example"></iframe> 
 
@@ -32,7 +34,7 @@ previous day.
 - 3550m
 - On road from Bamei to Dawu. Wet meadow with grazing horses and adjacent shrubby hillside.
 
-- P. cranolopha (DE173): Morphology. Very important. No forked beak.
+- [P. cranolopha (DE173)](/assets/flowers/DE173-cranolopha.jpg): Morphology. Very important. No forked beak.
 - P. szetschuanica (DE174): Morphology optional.
 - P. longiflora (DE175): Morphology always.
 - P. siphonantha (DE176): Morphology always.
@@ -46,9 +48,12 @@ previous day.
 - 3074m
 - On road from Bamei to Dawu. Rocky slope with meadow on top.
 
-- P. cyathophylloides (DE181): Morphology. Important. Grows on steep slopes.
+- [P. cyathophylloides (DE181)](/assets/flowers/DE181-cyathophylloides.jpg): Morphology. Important. Grows on steep slopes.
 - P. batangensis (DE182): Morphology optional.
-- P. cranolopha (DE183): Morphology always.
+- P. cranolopha (DE183): Morphology always. No fork.
+- [P. pseudomelampyriflora (DE565)](): Morphology and transcriptome RNAs. It
+may be easier to find at some later sites.
+ 
 
 
 <h3 class="mt-5"> Site 41 </h3>
@@ -59,9 +64,11 @@ previous day.
 - P. cranolopha hybrid site, with variable presence/absence of fork. Very 
 important morphology site.
 
-- [P. cranolopha (DE186)](): Morphology (multiple measurements: small, medium, big). Growing
-in the disturbed enclosed pasture highly abundant.
-- [P. psuedomelampyriflora (DE563)](): Morphology and <b>transcriptome RNAs</b>. Growing
+- [P. cranolopha (DE186)](/assets/flowers/DE186-cranolopha.jpg): 
+Morphology (multiple measurements: small, medium, big). 
+[Hybrid morphologies](/assets/flowers/DE186-hybrids.jpg)
+Growing in the disturbed enclosed pasture highly abundant.
+- [P. pseudomelampyriflora (DE563)](): Morphology and <b>transcriptome RNAs</b>. Growing
 on scrubby slope understory more than in open fields.
 
 <!-- 
@@ -82,11 +89,27 @@ Just beyond Simuxiang on road from Bamei to Dawu. Rocky cliffs/hillside.
 - Hillside inside the city of Luhuo near the south entrance to the city. 
 Rocky soil, disturbed eroding hillside. Important morphology site.
 
-- [P. cranolopha (DE189)](/assets/flowers/DE189-cranolopha.jpg): Morphology always. Important. Huge fork.
+- [P. cranolopha (DE189)](/assets/flowers/DE189-cranolopha.jpg): Morphology always. Important. Huge fork. <b>Transcriptome RNAs</b>.
 - [P. alaschanica (DE190)](/assets/flowers/DE190-alaschanica.jpg): Morphology and 
 <b>transcriptome RNAs</b> optional, you can instead get it at site 52.
 - [P. kansuensis (DE191)](/assets/flowers/DE191-kansuensis.jpg) (purple): Morphology always.
 
+
+<h3 class="mt-5"> Site 122 </h3>
+- 31˚25'25" N, 100˚37'15" E
+- 31.423611, 100.620833
+- 3433m. 
+- Patrick's experiment site. Find cranolopha with forked beak.
+- If running low on time focus on finding the species of interest only.
+
+- P. kansuensis (DE589) (pink): Morphology always.
+- P. cranolopha (DE590): Morphology. forked beak.
+- P. lachnoglossa (DE591): Morphology always.
+- P. pseudomelampyriflora (DE593): Morphology and transcriptome RNAs
+if not found at earlier site.
+- P. oliveriana: Morphology optional.
+- P. rex: Morphology.
+- P. alaschanica: Morphology optional.
 
 
 <h3 class="mt-5"> Site 52 </h3>
@@ -98,9 +121,9 @@ Rocky slopes, dry region, valley with stream.
 - P. batangensis (DE226): Morphology optional.
 - P. lachnoglossa (DE227): Morphology.
 - P. longiflora (DE228): Morphology. Important.
-- P. alaschanica (DE229): Morphology and <b>transcriptome RNAs</b>
+- P. alaschanica (DE229): Morphology and transcriptome RNAs if not already collected.
 - P. polyodonta (DE230): Morphology.
-- P. cranolopha (DE231): Morphology. Important.
+- [P. cranolopha (DE231)](/assets/flowers/DE231-cranolopha.jpg): Morphology. Important. Not forked beak.
 - P. kansuensis (DE232): Morphology.
 - P. oliveriana (DE233): Morphology.
 
