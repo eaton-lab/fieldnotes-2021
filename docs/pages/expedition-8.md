@@ -26,7 +26,7 @@ Collections and morphology at sites 134 and 135 are important.
 - Sites: 45, 46, 47, 134, 135, 136 (optional)
 
 
-<iframe src="../assets/maps/day8.html" height='400px' width="100%" title="Iframe Example"></iframe> 
+<iframe src="../assets/maps/day8.html" height='500px' width="100%" title="Iframe Example"></iframe> 
 
 
 --------------------------
