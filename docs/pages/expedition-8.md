@@ -41,7 +41,7 @@ move very fast on the short stops.
 - Make a very quick stop, semitorta is easy to find here. Get it for
 morphology here and then you do not need to collect it again at later sites.
 
-- [P. semitorta (DE195)](/assets/flowers/DE195-semitorta.jpg) (magenta): 
+- [P. semitorta (DE195)](../assets/flowers/DE195-semitorta.jpg) (magenta): 
 Morphology. Growing abundant on roadside.
 
 
@@ -49,20 +49,20 @@ Morphology. Growing abundant on roadside.
 - 31°39'27.0" N, 100°42'04.7" E
 - 31.6575, 100.7013055
 - 3600m
-- [Canyon](/assets/flowers/site-46.jpg) with rushing stream. Rocky, sandy soil in flood plain, pine forest on periphery.
+- [Canyon](../assets/flowers/site-46.jpg) with rushing stream. Rocky, sandy soil in flood plain, pine forest on periphery.
 - Many species here. The cranolopha is growing near the road, morphology
 of this is important. Rhinanthoides is growing on the edge of the stream. Find
 kansuensis growing common. Others are not necessary, do not spend too much time.
 
-- [P. cranolopha (DE196)](/assets/flowers/DE196-cranolopha.jpg): Morphology always. <b>Important.</b> First 'tricolor-like'. 
+- [P. cranolopha (DE196)](../assets/flowers/DE196-cranolopha.jpg): Morphology always. <b>Important.</b> First 'tricolor-like'. 
 - P. ingens (DE198): Morphology.
 - P. kansuensis (DE199): Morphology always.
 - P. semitorta (DE200): Morphology optional.
 - P. densispica (DE201): Morphology optional.
-- [P. decorissima (DE202)](/assets/flowers/DE202-decorissima.jpg): Morphology optional.
-- [P. brevilabris (DE203)](/assets/flowers/DE203-brevilabris.jpg): Morphology optional.
-- [P. cyathophylla (DE204)](/assets/flowers/DE204-cyathophylla.jpg): Morphology optional.
-- [P. rhinanthoides (DE205)](/assets/flowers/DE205-rhinanthoides.jpg): Morphology always.
+- [P. decorissima (DE202)](../assets/flowers/DE202-decorissima.jpg): Morphology optional.
+- [P. brevilabris (DE203)](../assets/flowers/DE203-brevilabris.jpg): Morphology optional.
+- [P. cyathophylla (DE204)](../assets/flowers/DE204-cyathophylla.jpg): Morphology optional.
+- [P. rhinanthoides (DE205)](../assets/flowers/DE205-rhinanthoides.jpg): Morphology always.
 
 
 
