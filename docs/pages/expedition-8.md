@@ -17,12 +17,16 @@ move very fast on the short stops.
 
 - Genomes (DNA, RNA, pollen, and 10 individuals)
 	- P. armata
+	- P. bidentata
 
 - RNA for comparative transcriptomes:
-	- P. bidentata
-	- P. ...
+	- P. debilis
+	- P. cinerascens (if not already collected)
 
-- Sites: 45, 46, 47, 124, 127, 118, 
+- If the road to sites 124-127 is not accessible, then look for another
+high mountain pass.
+
+- Sites: 45, 46, 47, 124, 125, 126, 127.
 
 
 <iframe src="../assets/maps/day8.html" height='400px' width="100%" title="Iframe Example"></iframe> 
@@ -79,39 +83,80 @@ which you should take to find site 118.
 
 
 
+<h3 class="mt-5"> Site 49</h3>
+- 31°49'54.7" N, 100°44'21.4" E	
+- 31.83186111, 100.739277
+- 3672m	
+- On road from Luhuo to Aba after passing through new tunnel.
+Pine forest with shrubby understory. Rocky soil, eroding hillside. 
+Valley with heavy stream.
+
+- P. cyathophylla (DE213)
+- P. brevilabris (DE214)
+- P. decorissima (DE215)
+- P. ingens (DE216)
+- P. kansuensis (DE217)
+- P. cranolopha (DE218)
+- P. rhinanthoides (DE219)
 
 
 
+<h3 class="mt-5"> Site 124</h3>
+- site 124: 32˚8'19.3" N, 101˚2'24" E  (road entrance)
+- near the village  
+
+- [P. brevilabris (DE602)](/assets/flowers/DE602-brevilabris.jpg): Morphology optional.
+- P. semitorta (DE603)
+- P. pseudomelampyriflora (DE604)
+- P. kansuensis (DE605)
+- P. cristatella (DE606)
+- P. cranolopha (DE607)
+- [P. rhinanthoides (DE608)](/assets/flowers/DE608-rhinanthoides.jpg): Morphology always.
 
 
+<h3 class="mt-5"> Site 125 </h3>
+- Coordinates are only approximate, better to wait until you see
+bidentata (yellow flowers) out the car window.
+- on mountain road between sites 124 and 127
+- drive up road to higher elevation:  
+
+- [P. bidentata (DE609)](/assets/flowers/DE609-bidentata.jpg): Morphology <b>important.</b>
+- P. szetschuanica (DE610): Morphology optional.
+- [P. decorissima (DE611)](/assets/flowers/DE611-decorissima.jpg) (purple): Morphology.
 
 
-<h3 class="mt-5"> Site 124-217 </h3>
-- 32˚8'19.3" N, 101˚2'24" E
-- Road entrance near this coordinate, leads up into the mountains
-to a lake.
+<h3 class="mt-5"> Site 126 </h3>
+- Coordinates are only approximate, better to wait until you see armata.
+- High elevation before the lake  
+- on mountain road between sites 124 and 127
+
+- [P. lachnoglossa (DE612)](/assets/flowers/DE612-lachnoglossa.jpg): Morphology always.
+- [P. armata (DE613)](/assets/flowers/DE611-armata.jpg): Morphology <b>important</b>.
+- [P. tatsienensis (DE614)](/assets/flowers/DE614-tatsienensis.jpg): Morphology.
+- P. souliei (DE615)
+- P. bidentata (DE616)
+- [P. rhinanthoides (DE617)](/assets/flowers/DE617-rhinanthoides.jpg): Morphology always.
 
 
 <h3 class="mt-5"> Site 127 </h3>
-- 32°10'16.4"N	101°05'19.3"E
-- Mountain lake
+- Coordinates are only approximate, you will see the lake from the ridge
+[pic1](/assets/flowers/site-127.jpg), [pic2](/assets/flowers/site-127-1.jpg).
+- 32.04375855784076, 101.11153946598694 (drive towards high mountain lake)
+- High elevation lake  
 
+- [P. minima (DE618)](/assets/flowers/DE618-minima.jpg): Morphology.
+- [P. debilis var. debilior (DE619)](/assets/flowers/DE619-debilis.jpg): Morphology and <b>transcriptome RNAs.</b>
+- [P. cinerascens (DE620)](/assets/flowers/DE620-cinerascens.jpg): Morphology and transcriptome if not collected already.
+- [P. anas (purple) (DE621)](/assets/flowers/DE621-anas.jpg): Morphology always.
+- [P. longiflora (DE622)](/assets/flowers/DE622-longiflora.jpg): Morphology always.
 
-<h3 class="mt-5"> Site 118 </h3>
-- 31˚45'41.5" N, 100˚45'26" E
-- 
-
-- P. decorissima
-- P. pectinatiformis
-- P. ingens
-- P. anas
-- P. fetisowii
-- P. szetschuanica
-
+<!-- 
 
 <h3 class="mt-5"> Site 128 </h3>
+- ...
+
 - P. semitorta
 - P. brevilabris
 - P. bidentata
 - P. szetschuanica
-- P. rhinanthoides
+- P. rhinanthoides -->

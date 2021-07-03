@@ -89,6 +89,9 @@ already.
 
 
 
+
+
+
 <h3 class="mt-5"> Site 34 </h3>
 - 30°38'35.2"N,	101°24'14.9" E
 - 30.64311, 101.4041388
@@ -144,7 +147,7 @@ already.
 - Pine forest with thorny shrub understory and patches of wet mossy slopes.
 
 - P. macrosiphon (DE169): Morphology optional.
-- P. decora (DE170): Morphology.
+- P. decora (DE170): Morphology. <b>Important.</b>
 - P. lutescens (DE171): Morphology optional.
 - P. cyathophylla (DE172): Morphology.
 
