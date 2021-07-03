@@ -23,10 +23,12 @@ during day 6 it is no problem, you can visit some on day 7.
 	- Approximately N samples.
 
 - Genomes (DNA, RNA, pollen, and 10 individuals)
-	- P. decorissima (site 35)
+	- P. longiflora (site 31, 33)
+	- P. kansuensis (site 31 (preferred))
 
 - RNA for comparative transcriptomes:
-	- P. lutescens
+	- P. lutescens (site 31, 33, 34, 37)
+	- P. decorissima (white/purple) (site 35)
 
 - Sites: 30, 31, 33, 34, 35, 36, 37
 
@@ -63,11 +65,12 @@ already.
 - [P. rhinanthoides (DE125)](../assets/flowers/DE125-rhinanthoides.jpg): Morphology always. 
 - [P. lutescens (DE126)](../assets/flowers/DE126-lutescens.jpg): Morphology and <b>Transcriptome RNAs</b>
 - [P. brevilabris (DE127)](../assets/flowers/DE127-brevilabris.jpg): Morphology optional.
-- [P. kansuensis (DE128) (purple)](../assets/flowers/DE128-kansuensis.jpg): Morphology always. 
+- [P. kansuensis (DE128) (purple)](../assets/flowers/DE128-kansuensis.jpg): Morphology always. <b>Genome plant (DNA, RNA, pollen, 10 inds)</b>
 - [P. densispica (DE129)](../assets/flowers/DE129-densispica.jpg): Morphology optional.
 - [P. integrifolia (DE130)](../assets/flowers/DE130-integrifolia.jpg): Morphology always. 
 - [P. cranolopha (DE131)](../assets/flowers/DE131-cranolopha.jpg): Morphology. Important.
 - [P. longiflora (DE132)](../assets/flowers/DE132-longiflora.jpg): Morphology. Important.
+
 
 
 <h3 class="mt-5"> Site 33 </h3>
@@ -81,7 +84,7 @@ already.
 - P. lachnoglossa (DE138): Morphology always.
 - [P. batangensis (DE139)](../assets/flowers/DE139-batangensis.jpg): Morphology. Often growing on steep slopes.
 - [P. rhinanthoides (DE140)](../assets/flowers/DE140-rhinanthoides.jpg): Morphology always.
-- [P. longiflora (DE141)](../assets/flowers/DE141-longiflora.jpg): Morphology always. Important.
+- [P. longiflora (DE141)](../assets/flowers/DE141-longiflora.jpg): Morphology always. Important. <b>Genome plant (DNA, RNA, pollen, 10 inds)</b>
 - [P. kansuensis (DE142) (white)](../assets/flowers/DE142-kansuensis.jpg): Morphology.
 - [P. integrifolia (DE143)](../assets/flowers/DE143-integrifolia.jpg): Morphology always.
 - [P. lutescens (DE144)](../assets/flowers/DE144-lutescens.jpg): Morphology optional, transcriptome RNAs if not collected already.
@@ -121,12 +124,11 @@ already.
 - P. rhinanthoides (DE159): Morphology always.
 - [P. siphonantha (DE160)](../assets/flowers/DE160-siphonantha.jpg): Morphology always.
 - P. lachnoglossa (DE161): Morphology always.
-- [P. kansuensis (DE162)](../assets/flowers/DE162-kansuensis.jpg) (pale yellow): Morphology always.
+- [P. kansuensis (DE162)](../assets/flowers/DE162-kansuensis.jpg) (pale yellow): Morphology always. <b>Transcriptome RNAs only for yellow kansuensis, if you can find it.</b>
 - P. kansuensis (DE163) (light purple): Morphology always.
-- [P. decorissima (DE164)](../assets/flowers/DE164-decorissima.jpg): Morphology and <b>Genome plant (DNA, RNA, pollen, 10 individuals).</b>
-- P. longiflora (DE165): Morphology always.
+- [P. decorissima (DE164)](../assets/flowers/DE164-decorissima.jpg): Morphology and <b>Transcriptome RNAs.</b>
 - P. macrosiphon (DE166): Morphology.
-
+<!-- - P. longiflora (DE165): Morphology always. -->
 
 
 <h3 class="mt-5"> Site 36 </h3>

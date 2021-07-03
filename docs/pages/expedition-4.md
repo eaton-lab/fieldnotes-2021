@@ -131,7 +131,7 @@ sites North of Litang the next morning.
 - [P. cranolopha (DE401)](../assets/flowers/DE401-cranolopha.jpg): Morphology always.
 Important. Long hairy corolla tube, forked beak.
 - P. longiflora (DE402): Morphology always.
-- P. cephalantha (DE403): Morphology. Purple flower, short tube, long beak.
+- P. cephalantha (DE403): Morphology. Purple flower, short tube, long beak. Transcriptome RNAs if not collected day 3.
 - P. kansuensis (DE404): Morphology always.
 - P. rhinanthoides (DE405): Morphology always.
 
@@ -143,7 +143,7 @@ Important. Long hairy corolla tube, forked beak.
 - Litang County. North of Litang towards Xinlong. Wet meadow and stunted shrubs.
 
 - [P. delavayi (DE476)](../assets/flowers/DE476-delavayi.jpg): Morphology always.
-Collect new specimens labeled DE476.
+Collect new specimens labeled DE476. Too few last time.
 - [P. latituba (DE406)](../assets/flowers/DE406-latituba.png): Morphology always. If not found previously, collect as genome plant.
 - [P. przewalskii (DE407)](../assets/flowers/DE63-przewalskii.jpg): Morphology
 (and <b> transcriptome RNAs</b> if not already collected). 

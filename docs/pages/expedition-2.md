@@ -14,18 +14,15 @@ finish morphometrics in the morning if you cannot finish all this evening.
 - Morphometrics for accessions from previous sites
 	- approx. 40 samples.
 - Genomes (DNA, RNA, pollen, 10 individuals for popgen)
-	- <i>P. davidii</i> (site 106)
-
-
+	- <i>P. kansuensis</i> (site 106)
 - Transcriptomes: 
 	- brevilabris (sites 106, 107, or 114)
-	- delavayi (sites 108 or 115)
-	- dolichoglossa (site 113)
+	- delavayi (site 115)
 	- siphonantha (sites 113 or 114)
 	- cinerascens (115)
 
 
- <iframe src="../assets/maps/day2.html" height='400px' width="100%" title="Iframe Example"></iframe> 
+<iframe src="../assets/maps/day2.html" height='400px' width="100%" title="Iframe Example"></iframe> 
 
 
 <h3 class="mt-5"> Site 106 </h3>
@@ -34,13 +31,11 @@ finish morphometrics in the morning if you cannot finish all this evening.
 - Forested rocky roadside on switchbacks.
 - I remember these plants being quite abundant. Rex was mostly on the slope
 below the road, and kansuensis, davidii and brevilabris are on roadside.
-- Take some photos, but try to collect quickly, this is a very busy day.
 
-- [P. kansuensis (pink) (DE507)](../assets/flowers/DE507-kansuensis-pink.jpg): Morphology always.
+- [P. kansuensis (pink) (DE507)](../assets/flowers/DE507-kansuensis-pink.jpg): Morphology always.  <b>genome sample</b> (DNA, RNA, pollen, and leaf silica for 10 individuals).
 - [P. brevilabris (DE508)](../assets/flowers/DE508-brevilabris.jpg): Morphology and <b>transcriptome RNAs</b> (sample failed last time). 
-- [P. davidii (DE509)](../assets/flowers/DE509-davidii.jpg): Morphology and <b>genome sample</b> (DNA, RNA, pollen, and leaf silica for 10 individuals).
+- [P. davidii (DE509)](../assets/flowers/DE509-davidii.jpg): Morphology.
 - [P. rex (red) (DE510)](../assets/flowers/DE510-rex-red.jpg): Morphology.
-
 
 
 
@@ -51,7 +46,7 @@ below the road, and kansuensis, davidii and brevilabris are on roadside.
 - This should be quick, stick some plants of rhinanth and kansu in plastic
 bags, label them, and move on.
 
-- P. brevilabris (DE511): Morphology and transcriptome both only if not collected at site 106.
+- P. brevilabris (DE511): Morphology optional (i.e., if not collect yet.)
 - [P. rhinanthoides (DE512)](../assets/flowers/DE512-rhinanthoides.jpg): Morphology always.
 - [P. kansuensis (DE513)](../assets/flowers/DE513-kansuensis.jpg): Morphology always.
 
@@ -66,8 +61,8 @@ for it. This would be the best place to get delavayi, but its available elsewher
 if hard to find.
 
 - [P. kansuensis (DE514)](../assets/flowers/DE514-kansuensis.jpg): Morphology always.
-- [P. rhynchodonta (DE515)](../assets/flowers/DE543-rhynchodonta.jpg): Morphology optional. Species is common. The image linked is not from this exact location.
-- [P. delavayi (DE516)](../assets/flowers/DE516-delavayi.jpg): Morphology and <b>transriptome RNAs</b>. 
+- [P. rhynchodonta (DE515)](../assets/flowers/DE543-rhynchodonta.jpg): Morphology optional. 
+- [P. delavayi (DE516)](../assets/flowers/DE516-delavayi.jpg): Morphology and <b>transriptomics RNAs</b>. 
 
 
 <h3 class="mt-5"> Site 109 </h3>
@@ -111,8 +106,7 @@ if it is getting late.
 - P. rhinanthoides (DE529): Morphology always.
 - [P. siphonantha (DE530)](../assets/flowers/DE530-siphonantha.jpg): Morphology always.
 - [P. longiflora (DE531)](../assets/flowers/DE531-longiflora.jpg): Morphology always.
-- [P. dolichoglossa (DE532)](../assets/flowers/DE532-dolichoglossa.jpg): Morphology and 
-<b>transcriptome RNAs</b>.
+- [P. dolichoglossa (DE532)](../assets/flowers/DE532-dolichoglossa.jpg): Morphology.
 
 
 <h3 class="mt-5"> Site 114 </h3>
@@ -136,13 +130,15 @@ if it is getting late.
 - 30˚4'28.4" N,	101˚48'15" E	
 - 30.074555, 101.8041666
 - 4304m
-- On G318 from Kanding to Xinduqiao. High mountain pass near Buddhist monument.	Wet alpine meadow, heavy mist, scattered shrubs.
+- On G318 from Kanding to Xinduqiao. High mountain pass near Buddhist monument.	
+Wet alpine meadow, heavy mist, scattered shrubs. If you cannot find cinerascens
+it can be found at later sites.
 
 
-- P. cinerascens (DE542): Morphology.
+- [P. cinerascens (DE542)](../assets/flowers/DE620-cinerascens.jpg): Morphology and <b>Transcriptome RNAs</b>.
 - [P. rhynchodonta (DE543)](../assets/flowers/DE543-rhynchodonta.jpg): Morphology optional.
 - [P. cheilanthifolia (DE544)](../assets/flowers/DE544-cheilanthifolia.jpg): Morphology (important).
-- [P. delavayi (DE545)](../assets/flowers/DE545-delavayi.jpg): Morphology (and transcriptome if not found previously).
+- [P. delavayi (DE545)](../assets/flowers/DE545-delavayi.jpg): Morphology always and <b>Transcriptome RNAs </b> (this site preferred over earlier one.)
 - [P. urceolata (DE546)](../assets/flowers/DE546-urceolata.jpg): Morphology optional.
 - [P. verticillata (DE547)](../assets/flowers/DE547-verticillata.jpg): Morphology always.
 - P. rhodotricha DE548: Morphology.
