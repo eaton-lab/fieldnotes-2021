@@ -4,24 +4,48 @@
 
 - name: Itinerary
   dropdown:
-    - name: Day 2 (Shimian to Xinduqiao)
+    - name: Trip 1-2 (Shimian to Xinduqiao)
       link: /pages/expedition-2.html
-    - name: Day 3 (Xinduqiao to Litang)
+    - name: Trip 1-3 (Xinduqiao to Litang)
       link: /pages/expedition-3.html
-    - name: Day 4 (Litang to Litang)
+    - name: Trip 1-4 (Litang to Litang)
       link: /pages/expedition-4.html
-    - name: Day 5 (Litang to Bamei)
+    - name: Trip 1-5 (Litang to Bamei)
       link: /pages/expedition-5.html
-    - name: Day 6 (Bamei to Dawu)
+    - name: Trip 1-6 (Bamei to Dawu)
       link: /pages/expedition-6.html
-    - name: Day 7 (Dawu to Luhuo)
+    - name: Trip 1-7 (Dawu to Luhuo)
       link: /pages/expedition-7.html
-    - name: Day 8 (Luhuo to Hongyuan)
+    - name: Trip 1-8 (Luhuo to Hongyuan)
       link: /pages/expedition-8.html
-    - name: Day 9 (Hongyuan to Gansu and then HOME)
+    - name: Trip 1-9 (Hongyuan to Gansu and then HOME)
       link: /pages/expedition-9.html
-    - name: Day 10 (traveling to Kunming I)
-    - name: Day 11 (traveling to Kunming II)
+    - name: Trip 1-10 (traveling to Kunming I)
+    - name: Trip 1-11 (traveling to Kunming II)
+
+    - name: Trip 2-1 (Kunming to Shangrila)
+      link: /pages/trip-2-1.html
+    - name: Trip 2-2 (Shangrila to Markam)
+      link: /pages/trip-2-2.html
+    - name: Trip 2-3 (Markam to Bangdazhen)
+      link: /pages/trip-2-3.html
+    - name: Trip 2-4 (Bangdazhen to Rawu)
+      link: /pages/trip-2-4.html
+    - name: Trip 2-5 (Rawu to Nyingchi)
+      link: /pages/trip-2-5.html
+    - name: Trip 2-6 (Stay in Nyingchi)
+      link: /pages/trip-2-6.html
+
+    - name: Trip 2-7 (Nyingchi to Rawu)
+      link: /pages/trip-2-7.html
+    - name: Trip 2-8 (Rawu to Bangdazhen)
+      link: /pages/trip-2-8.html
+    - name: Trip 2-9 (Bangdazhen to Markam)
+      link: /pages/trip-2-9.html
+    - name: Trip 2-10 (Markam to Shangrila)
+      link: /pages/trip-2-10.html
+    - name: Trip 2-11 (Shangrila to Kunming)
+      link: /pages/trip-2-11.html
 
 
 - name: Methods
