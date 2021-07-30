@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2959c19e0c1349efb736e51991c1adf8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_2959c19e0c1349efb736e51991c1adf8" ></div>
+        
+</body>
+<script>    
+    
+            var map_2959c19e0c1349efb736e51991c1adf8 = L.map(
+                "map_2959c19e0c1349efb736e51991c1adf8",
+                {
+                    center: [0, 0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 1,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_aeb3052c6337402eb836dffe55cf2bf2 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_2959c19e0c1349efb736e51991c1adf8);
+        
+    
+            var marker_f35ac95c7b804cc1b731bf8aa1a7e997 = L.marker(
+                [27.897198, 99.639426],
+                {}
+            ).addTo(map_2959c19e0c1349efb736e51991c1adf8);
+        
+    
+        var popup_e9c480a8815b4a68afcbe9520ff1165d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c8b6bd5123ee4fd1b02ef015ec35fde5 = $(`<div id="html_c8b6bd5123ee4fd1b02ef015ec35fde5" style="width: 100.0%; height: 100.0%;">Shangrila Gaoshan botanic garden</div>`)[0];
+            popup_e9c480a8815b4a68afcbe9520ff1165d.setContent(html_c8b6bd5123ee4fd1b02ef015ec35fde5);
+        
+
+        marker_f35ac95c7b804cc1b731bf8aa1a7e997.bindPopup(popup_e9c480a8815b4a68afcbe9520ff1165d)
+        ;
+
+        
+    
+    
+            var marker_71e0ee8c51324f1a8d529a2d8a1a01bc = L.marker(
+                [29.263333333333332, 98.68],
+                {}
+            ).addTo(map_2959c19e0c1349efb736e51991c1adf8);
+        
+    
+        var popup_3bcbeb7358464f80950b0e50a557756b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1aa9f4a9d1d94fb2bccf59d8f4f8eb27 = $(`<div id="html_1aa9f4a9d1d94fb2bccf59d8f4f8eb27" style="width: 100.0%; height: 100.0%;">loc-112</div>`)[0];
+            popup_3bcbeb7358464f80950b0e50a557756b.setContent(html_1aa9f4a9d1d94fb2bccf59d8f4f8eb27);
+        
+
+        marker_71e0ee8c51324f1a8d529a2d8a1a01bc.bindPopup(popup_3bcbeb7358464f80950b0e50a557756b)
+        ;
+
+        
+    
+    
+            map_2959c19e0c1349efb736e51991c1adf8.fitBounds(
+                [[27.897198, 98.68], [29.263333333333332, 99.639426]],
+                {}
+            );
+        
+</script>
