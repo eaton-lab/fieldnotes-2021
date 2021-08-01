@@ -65,3 +65,8 @@ collected species, collect silica, and do morphometrics if you have time.
 <h3 class="mt-5"> Deqen Northern valley</h3>
 - 28.6559 N, 98.8848 E
 - 3450m
+
+<h3 class="mt-5"> Near border</h3>
+- 28.9506257 N, 98.668185 E
+- 3500m
+- You can visit here if you get stopped at the border.
