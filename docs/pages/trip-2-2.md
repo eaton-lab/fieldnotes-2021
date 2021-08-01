@@ -46,6 +46,14 @@ collected species, collect silica, and do morphometrics if you have time.
 - P. elwesii
 
 
+----------------------
+
+Extra sites: Collect any Pedicularis you find.
+
+----------------------
+
+
+
 <h3 class="mt-5"> East of Baima Mtn</h3>
 - 28.341949 N, 99.1294387 E
 - 4000m
