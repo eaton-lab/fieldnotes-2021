@@ -46,6 +46,22 @@ collected species, collect silica, and do morphometrics if you have time.
 - P. elwesii
 
 
+<h3 class="mt-5"> East of Baima Mtn</h3>
+- 28.341949 N, 99.1294387 E
+- 4000m
 
-<h3 class="mt-5"> TODO </h3>
-- Do we need a side trip to get P. superba for RNAs?
+<h3 class="mt-5"> East of Baima Mtn</h3>
+- 28.3727935 N, 99.1112078 E
+- 3300m
+
+<h3 class="mt-5"> West of Baima Mtn</h3>
+- 28.4365995 N, 98.954445 E
+- 3500 m
+
+<h3 class="mt-5"> Deqen mountain lake</h3>
+- 28.508 N, 98.909013 E
+- 3550m
+
+<h3 class="mt-5"> Deqen Northern valley</h3>
+- 28.6559 N, 98.8848 E
+- 3450m
