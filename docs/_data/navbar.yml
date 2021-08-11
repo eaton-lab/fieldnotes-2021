@@ -35,17 +35,10 @@
       link: /pages/trip-2-5.html
     - name: Trip 2-6 (Stay in Nyingchi)
       link: /pages/trip-2-6.html
-
-    - name: Trip 2-7 (Nyingchi to Rawu)
+    - name: Trip 2-7-extended (Nyingchi to Rawu)
       link: /pages/trip-2-7.html
-    - name: Trip 2-8 (Rawu to Bangdazhen)
+    - name: Trip 2-8 (Bangdazhen to Markam)
       link: /pages/trip-2-8.html
-    - name: Trip 2-9 (Bangdazhen to Markam)
-      link: /pages/trip-2-9.html
-    - name: Trip 2-10 (Markam to Shangrila)
-      link: /pages/trip-2-10.html
-    - name: Trip 2-11 (Shangrila to Kunming)
-      link: /pages/trip-2-11.html
 
 
 - name: Methods
