@@ -4,6 +4,7 @@ title: trip-2-8
 image: /assets/images/hackers-1.jpg
 ---
 
+
 ## Day 10: Bangdazhen to Markam
 
 
@@ -102,8 +103,3 @@ Wet misty site. Pine, juniper, rhododendron shrubs, shrubby meadow on shale.
 Important. Very short tube with forked beak.
 - [P. kansuensis (DE99)](../assets/flowers/DE99-kansuensis.jpg): Morphology always.
 Both a purple and white sample if possible. They have the same accession number here.
-
-
-
-
-
