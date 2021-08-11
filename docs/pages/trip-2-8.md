@@ -42,10 +42,14 @@ image: /assets/images/hackers-1.jpg
 - 29.7698265 N
 - 97.6864638 E
 - 3900 m.
-- No information. Looks like a good site, with river from North.
+- No information. Looks like a good site.
 
 
-
+<h3 class="mt-5"> S of Yu Qu near Zogang</h3>
+- 29.5703414 N
+- 97.9173345 E
+- 3780 m.
+- No information. Looks like a good site.
 
 
 <h3 class="mt-5"> HUH Locality 121 from year 2000</h3>
